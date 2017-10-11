@@ -27,3 +27,6 @@ Para instalar:
 
  - Crear usuario:
  	'$ python manage.py createsuperuser'
+
+ - Instalar postgres y crear base de datos llamada django_test
+ asi como cambiar la contrasena del usuario "postgres" a "postgres"
