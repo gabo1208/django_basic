@@ -37,11 +37,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_extensions',
 
-    ## Custom Written apps ##
+    # Extensions al packages
+    'django_extensions',
+    'bootstrap3',
+
+    # Custom Written apps #
     'main.apps.MainConfig',
     'users.apps.UsersConfig',
+    'memberits.apps.MemberItsConfig',
 ]
 
 MIDDLEWARE = [
@@ -123,7 +127,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
@@ -133,4 +136,7 @@ MEDIA_URL = '/media/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+LOGIN_REDIRECT_URL = '/user'

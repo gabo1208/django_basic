@@ -10,8 +10,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     # Main Views
     url(r'^', include('main.urls')),
-    # Auth urls 
-    url(r'^user/', include('django.contrib.auth.urls')),
     # User Views
     url(r'^user/', include('users.urls', namespace='users')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

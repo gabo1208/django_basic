@@ -1,9 +1,22 @@
 {% extends "base.html" %}
 
 {% block content %}
-	<form method="post">
-	{% csrf_token %}
-	{{ form.as_p }}
-	<button type="submit">Sign up</button>
-	</form>
+    {# Load the tag library #}
+    {% load bootstrap3 %}
+
+    {# Load CSS and JavaScript #}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+    {# Display django.contrib.messages as Bootstrap alerts #}
+    {% bootstrap_messages %}
+    <div class="sign-up-form">
+        <form method="post">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+            {% buttons %}
+           <button type="submit">Sign up</button>
+           {% endbuttons %}
+        </form>
+    </div>
 {% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{# Load the tag library #}
+{% load bootstrap3 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+
+{% block content %}
+    <div class="sign-up-form">
+        {% bootstrap_messages %}
+        <form method="post" action="{% url 'users:login' %}">
+        {% csrf_token %}
+            {% bootstrap_form form %}
+                {% buttons %}
+                <button type="submit">Login</button>
+                <input type="hidden" name="next" value="{{ next }}" />
+                {% endbuttons %}
+        </form>
+
+        {# Assumes you setup the password_reset view in your URLconf #}
+        <p><a href="{% url 'home' %}">Lost password?</a></p>
+    </div>
+{% endblock %}
