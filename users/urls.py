@@ -6,7 +6,6 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.index, name='user_index'),
-    url(r'^logout/admin/$', logout, {'next_page': '/'}),
-    url(r'^decorator_index/$', views.index_decorator, name='user_logged_decorator'),
-    url(r'^aspect_index/$', views.index_aspect, name='user_logged_aspect'),
+    url(r'^logout/$', logout, {'next_page': '/'}),
+    url(r'^sign_up/$', views.sign_up, name='user_sign_up'),
 ]

@@ -27,13 +27,17 @@ body{
 	margin-top: 40px;
 }
 
-.main-sidebar, .navbar-custom-menu{
-	visibility: hidden;
-}
-
 .code_snippet{
     background: grey;
     color: white;
     font-size: larger;
     padding: 10px;
+}
+
+.content-wrapper.full, .main-footer.full{
+    margin-left: 0;
+}
+
+.navbar-custom-menu.no-user{
+    margin-right: 10%;
 }

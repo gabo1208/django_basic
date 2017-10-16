@@ -86,7 +86,7 @@ desired effect
           
           <!-- Login and Sign in icons-->
           <li>
-            <a href="{% url 'login' %}" class="login-header">
+            <a href="{% url 'login' %}?next=/user" class="login-header">
               <b>Login</b> 
               <i class="fa fa-user-circle"></i>
             </a>
@@ -249,7 +249,7 @@ desired effect
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="{% url 'logout' %}?next=/" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>
@@ -322,13 +322,8 @@ desired effect
     <!-- /.sidebar -->
   </aside>
   {% endif %}
-  {% if not user.is_authenticated %}
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper full">
-  {% else %}
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-  {% endif %}
     <!-- Content Header (Page header) -->
     <section class="content-header">
       {% block content-header %}
@@ -348,13 +343,8 @@ desired effect
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-  {% if not user.is_authenticated %}
   <!-- Main Footer -->
   <footer class="main-footer full">
-  {% else %}
-  <!-- Main Footer -->
-  <footer class="main-footer">
-  {% endif %}
     <!-- To the right -->
     <div class="pull-right hidden-xs">
       Made with love <3

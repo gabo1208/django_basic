@@ -1,34 +1,34 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-import aspectlib
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth import login, authenticate
+from django.contrib.auth.forms import UserCreationForm
+from users.models import Profile, ProfilePreferences
 
 
 def index(request):
-    return render(request, 'index.html', context={'msg':"Hello, world. You're at index."})
+    return render(request, 'index.html', context={'msg': "Hello, world. You're at index."})
 
-
-@login_required(login_url='/user/login')
-def index_decorator(request):
-    return render(request, 'decorator.html', context={'msg':"Hello, world. You're at the decorator index, if you're logged in."})
-
-
-@aspectlib.Aspect
-def strip_return_value(request):
-    if not request.user.is_authenticated:
-        yield aspectlib.Return(HttpResponseRedirect(
-            '/user/login/?next=' + request.path)
-        )
+# View to sign up a new user // TODO: organization and enterprises cases
+def sign_up(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        # Check if user form is Valid
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=raw_password)
+            # Create profile with its options and asociate it with the created user
+            preferences = ProfilePreferences()
+            preferences.save()
+            profile = Profile(user=user, preferences=preferences)
+            profile.save()
+            # Authenticate the user and redirect it to home view
+            login(request, user)
+            return redirect('users:user_index')
     else:
-        yield aspectlib.Proceed(
-            request,
-            args={"message": "Hello, world. You're at the aspects index, if you're logged in."}
-        )
-
-
-@strip_return_value
-def index_aspect(request, **kwargs):
-    return render(request, 'aspect.html', context={'msg': kwargs['args']['message']})
+        form = UserCreationForm()
+    return render(request, 'sign_up.html', context={"form": form})
