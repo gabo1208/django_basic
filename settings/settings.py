@@ -46,6 +46,9 @@ INSTALLED_APPS = [
     'main.apps.MainConfig',
     'users.apps.UsersConfig',
     'memberits.apps.MemberItsConfig',
+
+    # App for the integration API
+    'api.apps.ApiConfig',
 ]
 
 MIDDLEWARE = [

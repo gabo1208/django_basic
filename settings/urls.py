@@ -12,4 +12,7 @@ urlpatterns = [
     url(r'^', include('main.urls')),
     # User Views
     url(r'^user/', include('users.urls', namespace='users')),
+    # Api view
+    url(r'^api/', include('api.urls', namespace='api')),
+    
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
