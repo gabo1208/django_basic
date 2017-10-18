@@ -29,8 +29,8 @@ class Group(TimeStampedModel):
     title = models.CharField(max_length=30)
     image = models.ImageField(null=True)
     created_by = models.ForeignKey('Profile', on_delete=models.CASCADE)
-    admins = models.ManyToManyField('Profile', blank=True, related_name="admins")
-    members = models.ManyToManyField('Profile', blank=True, related_name="members")
+    admins = models.ManyToManyField('Profile', blank=True, related_name="group_admins")
+    members = models.ManyToManyField('Profile', blank=True, related_name="group_members")
 
 
 class Event(TimeStampedModel):
@@ -38,12 +38,16 @@ class Event(TimeStampedModel):
     title = models.CharField(max_length=30)
     description = models.CharField(max_length=30)
     image = models.ImageField(null=True)
-    created_by = models.ForeignKey('Profile', on_delete=models.CASCADE)
-    organizers = models.ManyToManyField('Profile', blank=True, related_name="organizers")
+    created_by = models.ForeignKey('Profile')
+    organizers = models.ManyToManyField(
+        'Profile',
+        blank=True,
+        related_name="event_organizers"
+    )
     invited = models.ManyToManyField(
         'ProfileRequest',
         blank=True,
-        related_name="invited"
+        related_name="event_invited"
     )
 
 
@@ -63,10 +67,25 @@ class ProfileRequest(TimeStampedModel):
         (ORGANIZATION, 'Invitation to become part of an Organization.'),
         (ENTERPRISE, 'Invitation to become part of an Enterprise.'),
     )
-    from_user = models.ForeignKey('Profile', on_delete=models.CASCADE)
-    sugested_user = models.ForeignKey('Profile', related_name="sugested", blank=True, null=True)
-    sugested_event = models.ForeignKey(Event, related_name="event", blank=True, null=True)
-    sugested_group = models.ForeignKey(Group, related_name="group", blank=True, null=True)
+    from_user = models.ForeignKey('Profile')
+    sugested_user = models.ForeignKey(
+        'Profile',
+        related_name="request_user_sugested",
+        blank=True,
+        null=True
+    )
+    sugested_event = models.ForeignKey(
+        Event,
+        related_name="request_event_sugested",
+        blank=True,
+        null=True
+    )
+    sugested_group = models.ForeignKey(
+        Group,
+        related_name="request_group_sugested",
+        blank=True,
+        null=True
+    )
     message = models.CharField(max_length=50)
     reason = models.CharField(max_length=2, choices=USER_REQUEST_CHOICES)
 
@@ -105,10 +124,10 @@ class Profile(TimeStampedModel):
         choices=USER_ROLE_CHOICES,
         default=NORMAL,
     )
-
-    following = models.ManyToManyField("Profile", blank=True, related_name="folowing")
-    followers = models.ManyToManyField("Profile", blank=True, related_name="folowers")
-    interests = models.ManyToManyField(ProfileInterest, blank=True, related_name="interests")
-    requests = models.ManyToManyField(ProfileRequest, blank=True, related_name="requests")
-    events = models.ManyToManyField(Event, blank=True, related_name="envents")
-    groups = models.ManyToManyField(Group, blank=True, related_name="groups")
+    # Social Related Relations
+    following = models.ManyToManyField("Profile", blank=True, related_name="profile_folowing")
+    followers = models.ManyToManyField("Profile", blank=True, related_name="profile_folowers")
+    interests = models.ManyToManyField(ProfileInterest, blank=True, related_name="profile_interests")
+    requests = models.ManyToManyField(ProfileRequest, blank=True, related_name="profile_requests")
+    events = models.ManyToManyField(Event, blank=True, related_name="profile_envents")
+    groups = models.ManyToManyField(Group, blank=True, related_name="profile_groups")
