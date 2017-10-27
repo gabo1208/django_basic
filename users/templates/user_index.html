@@ -1,0 +1,33 @@
+{% extends "base_main.html" %}
+
+{# Load the tag library #}
+{% load bootstrap3 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{% block content-header %}
+    <h1> {{ user.username }} </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+        <li class="active">Home</li>
+    </ol>
+{% endblock %}
+
+{% block content %}
+    {# Display django.contrib.messages as Bootstrap alerts #}
+    {% bootstrap_messages %}
+    <div class="user-edit-form">
+        <form method="post">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+            {% buttons %}
+           <button type="submit">Edit</button>
+           {% endbuttons %}
+        </form>
+    </div> <br>
+{% endblock %}
+
+{% block jsblock %}
+{% endblock %}

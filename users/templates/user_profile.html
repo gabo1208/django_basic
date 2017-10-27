@@ -1,0 +1,43 @@
+{% extends "base_main.html" %}
+
+{# Load the tag library #}
+{% load bootstrap3 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{% block content-header %}
+    <h1> {{ userprofile.username }}
+    {% if friends %}
+        <small>You are friends :)!</small>
+    {% elif friends_request %}
+        <small>Request Sent</small>
+    {% else %}
+        <small data-reason="FR" class="user_request">Add as a Friend</small>
+    {% endif %}
+
+    {% if following %}
+        <small>Following</small>
+    {% elif follow_request %}
+        <small>Follow Request Sent</small>
+    {% else %}
+        <small data-reason="FL" class="user_request">Follow</small>
+    {% endif %}
+
+    {% if follower %}
+        <small>/ Follows you</small>
+    {% endif %}
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+        <li class="active">Home</li>
+    </ol>
+{% endblock %}
+
+{% block content %}
+
+{% endblock %}
+
+{% block jsblock %}
+{% endblock %}

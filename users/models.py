@@ -3,6 +3,8 @@ from __future__ import unicode_literals
 
 from django.db import models
 from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 from decimal import Decimal
 
 
@@ -67,6 +69,15 @@ class ProfileRequest(TimeStampedModel):
         (ORGANIZATION, 'Invitation to become part of an Organization.'),
         (ENTERPRISE, 'Invitation to become part of an Enterprise.'),
     )
+
+    PENDING = '1'
+    ANSWERED = '0'
+
+    STATUS_CHOICES = (
+        (PENDING, 'Pending Request'),
+        (ANSWERED, 'Request responded')
+    )
+
     from_user = models.ForeignKey('Profile')
     sugested_user = models.ForeignKey(
         'Profile',
@@ -86,10 +97,40 @@ class ProfileRequest(TimeStampedModel):
         blank=True,
         null=True
     )
-    message = models.CharField(max_length=50)
-    reason = models.CharField(max_length=2, choices=USER_REQUEST_CHOICES)
+    reason = models.CharField(
+        max_length=2,
+        choices=USER_REQUEST_CHOICES,
+        default=FOLLOW
+    )
+    status = models.CharField(
+        max_length=1,
+        choices=STATUS_CHOICES,
+        default=PENDING
+    )
+
+    class Meta:
+        unique_together = ('from_user', 'sugested_user', 'reason')
 
 
+class ProfileMessage(TimeStampedModel):
+    created_by = models.ForeignKey('Profile', on_delete=models.CASCADE)
+    title = models.CharField(max_length=50)
+    content = models.TextField(blank=True, null=True)
+
+
+class ProfileMessageHistory(models.Model):
+    profile1 = models.ForeignKey('Profile', related_name="profile1")
+    profile2 = models.ForeignKey('Profile', related_name="profile2")
+    message_history = models.ManyToManyField(
+        ProfileMessage,
+        related_name="profile_messages_history_messages"
+    )
+
+    class Meta:
+        unique_together = ('profile1', 'profile2')
+
+
+# Profile Model, the base of the Users Interface
 class Profile(TimeStampedModel):
     NORMAL = 'NU'
     VIP = 'VU'
@@ -107,7 +148,12 @@ class Profile(TimeStampedModel):
         (ADMIN, 'Admin'),
     )
 
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    country = models.CharField(max_length=50, blank=True, null=True)
+    city = models.CharField(max_length=50, blank=True, null=True)
+    location = models.CharField(max_length=100, blank=True, null=True)
+    phone = models.CharField(max_length=50, blank=True, null=True)
+    mail = models.CharField(max_length=50, blank=True, null=True)
     image = models.ImageField(null=True)
     reputation = models.DecimalField(
         max_digits=3,
@@ -118,16 +164,89 @@ class Profile(TimeStampedModel):
     description = models.CharField(max_length=50, blank=True, null=True)
     verified = models.BooleanField(default=False)
     active = models.BooleanField(default=True)
-    preferences = models.ForeignKey('ProfilePreferences')
+    preferences = models.ForeignKey(ProfilePreferences)
     role = models.CharField(
         max_length=2,
         choices=USER_ROLE_CHOICES,
         default=NORMAL,
     )
-    # Social Related Relations
-    following = models.ManyToManyField("Profile", blank=True, related_name="profile_folowing")
-    followers = models.ManyToManyField("Profile", blank=True, related_name="profile_folowers")
-    interests = models.ManyToManyField(ProfileInterest, blank=True, related_name="profile_interests")
-    requests = models.ManyToManyField(ProfileRequest, blank=True, related_name="profile_requests")
-    events = models.ManyToManyField(Event, blank=True, related_name="profile_envents")
-    groups = models.ManyToManyField(Group, blank=True, related_name="profile_groups")
+    # Social Related Relations---------
+    # Profiles followed by self profile
+    following = models.ManyToManyField(
+        'self',
+        blank=True,
+        related_name="profile_folowing"
+    )
+    # Profiles following by self profile
+    followers = models.ManyToManyField(
+        'self',
+        blank=True,
+        related_name="profile_folowers"
+    )
+    # Profiles friends of self profile
+    friends = models.ManyToManyField(
+        'self',
+        blank=True,
+        related_name="profile_friends"
+    )
+    # Profile interests
+    interests = models.ManyToManyField(
+        ProfileInterest,
+        blank=True,
+        related_name="profile_interests"
+    )
+    # Request sent to profile
+    requests = models.ManyToManyField(
+        ProfileRequest,
+        blank=True,
+        related_name="profile_requests"
+    )
+    # Events accepted by profile
+    events = models.ManyToManyField(
+        Event,
+        blank=True,
+        related_name="profile_events"
+    )
+    # Profile accepted Groups
+    groups = models.ManyToManyField(
+        Group,
+        blank=True,
+        related_name="profile_groups"
+    )
+    # TODO: groups message history
+    message_history = models.ManyToManyField(
+        ProfileMessageHistory,
+        blank=True,
+        related_name="profile_message_history"
+    )
+
+    def check_if_friends(self, user):
+        return user in self.friends.all()
+
+    def check_if_follower(self, user):
+        return user in self.followers.all()
+
+    def check_if_following(self, user):
+        return user in self.following.all()
+
+    def check_if_repeated_interest(self, interest):
+        return interest in self.insterests.all()
+
+    def check_if_request_from_user(self, user, reason):
+        return self.requests.filter(
+            reason=reason,
+            from_user=user
+        )
+
+    def check_if_repeated_event(self, event):
+        return event in self.events.all()
+
+    def check_if_already_in_group(self, group):
+        return group in self.groups.all()
+
+    def get_pending_requests(self):
+        return self.requests.filter(status='1')
+
+    # TODO: This -------------------------------
+    def check_if_have_messages_with(self, user):
+        return user in self.messages.all()
