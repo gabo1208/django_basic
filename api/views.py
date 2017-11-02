@@ -36,7 +36,7 @@ class User2UserRequest(View):
         # Check if they're already friends, the request has been sent already or if a request is needed
         if request.user.profile.check_if_friends(to_user) and request_t == 'FR':
             return JsonResponse({'message': to_user.username + ' is already a Friend.'}, status=500)
-        elif to_user.profile.check_if_request_from_user(request.user.profile, request_t):
+        elif to_user.profile.get_if_request_from_user(request.user.profile, request_t):
             return JsonResponse({'message': 'Request to ' + to_user.username + ' is already sent.'}, status=500)
         elif to_user.profile.check_if_follower(request.user.profile) and request_t == 'FL':
             return JsonResponse({'message': 'You already follow ' + to_user.username + '.'}, status=500)
@@ -78,7 +78,7 @@ class ConfirmRequest(View):
             username=request.POST.get('username', None)
         )
 
-        user_request = request.user.profile.check_if_request_from_user(from_user.profile, request_t)
+        user_request = request.user.profile.get_if_request_from_user(from_user.profile, request_t)
         print(request_t)
         print(from_user.profile)
         # Check if they're already friends, the request has been sent already or if a request is needed

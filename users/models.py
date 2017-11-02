@@ -70,12 +70,14 @@ class ProfileRequest(TimeStampedModel):
         (ENTERPRISE, 'Invitation to become part of an Enterprise.'),
     )
 
+    CANCELED = '2'
     PENDING = '1'
     ANSWERED = '0'
 
     STATUS_CHOICES = (
         (PENDING, 'Pending Request'),
-        (ANSWERED, 'Request responded')
+        (ANSWERED, 'Request Responded'),
+        (CANCELED, 'Request Canceled')
     )
 
     from_user = models.ForeignKey('Profile')
@@ -232,7 +234,7 @@ class Profile(TimeStampedModel):
     def check_if_repeated_interest(self, interest):
         return interest in self.insterests.all()
 
-    def check_if_request_from_user(self, user, reason):
+    def get_if_request_from_user(self, user, reason):
         return self.requests.filter(
             reason=reason,
             from_user=user
@@ -248,5 +250,8 @@ class Profile(TimeStampedModel):
         return self.requests.filter(status='1')
 
     # TODO: This -------------------------------
-    def check_if_have_messages_with(self, user):
-        return user in self.messages.all()
+    def get_if_have_messages_with(self, user):
+        return (
+            self.messages.filter(profile1=user) |
+            self.messages.filter(profile2=user)
+        )
