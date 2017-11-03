@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 from django.http import JsonResponse
-from users.models import Profile, ProfileRequest
+from ..users.models import Profile, ProfileRequest
 from django.views import View
 from django.contrib.auth.models import User
 from django.shortcuts import get_object_or_404

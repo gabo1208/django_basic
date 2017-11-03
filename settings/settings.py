@@ -42,13 +42,16 @@ INSTALLED_APPS = [
     'django_extensions',
     'bootstrap3',
 
+    # Central app
+    'apps.apps.AppsConfig',
+
     # Custom Written apps #
-    'main.apps.MainConfig',
-    'users.apps.UsersConfig',
-    'memberits.apps.MemberItsConfig',
+    'apps.main',
+    'apps.users',
+    'apps.memberits',
 
     # App for the integration API
-    'api.apps.ApiConfig',
+    'apps.api',
 ]
 
 MIDDLEWARE = [

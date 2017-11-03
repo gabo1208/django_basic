@@ -9,10 +9,10 @@ urlpatterns = [
     # Admin urls
     url(r'^admin/', admin.site.urls),
     # Main Views
-    url(r'^', include('main.urls')),
+    url(r'^', include('apps.main.urls')),
     # User Views
-    url(r'^user/', include('users.urls', namespace='users')),
+    url(r'^user/', include('apps.users.urls', namespace='users')),
     # Api view
-    url(r'^api/', include('api.urls', namespace='api')),
+    url(r'^api/', include('apps.api.urls', namespace='api')),
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

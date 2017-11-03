@@ -62,7 +62,7 @@ def user_profile(request, username):
         context={
             "userprofile": user,
             "friends": request.user.profile.check_if_friends(user.profile),
-            "friends_request": user.profile.check_if_request_from_user(request.user.profile, 'FR'),
+            "friends_request": user.profile.get_if_request_from_user(request.user.profile, 'FR'),
             "following": request.user.profile.check_if_following(user.profile),
             "follow_request": user.profile.get_if_request_from_user(request.user.profile, 'FL'),
             "follower": request.user.profile.check_if_follower(user.profile),

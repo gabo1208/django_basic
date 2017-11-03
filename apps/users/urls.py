@@ -17,5 +17,5 @@ urlpatterns = [
     url(r'^profiles/@(?P<username>\w+)$', views.user_profile, name='user_profile'),
 
     # Include user member-its urls
-    url(r'^', include('memberits.urls', namespace='member-it')),
+    url(r'^', include('apps.memberits.urls', namespace='member-it')),
 ]
