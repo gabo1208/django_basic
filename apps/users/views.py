@@ -1,20 +1,22 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponseRedirect
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from django.shortcuts import get_object_or_404
+from django.contrib.auth.decorators import login_required
+
 from .models import Profile, ProfilePreferences
 from .forms import ProfileForm
 
 
 # Home profile view for requested user
+@login_required
 def user_index(request):
     profile_form = ProfileForm(request.POST or None, instance=request.user.profile)
-    
+
     if request.method == 'POST':
         if profile_form.is_valid():
             profile_form.save()
@@ -56,15 +58,25 @@ def sign_up(request):
 def user_profile(request, username):
     user = get_object_or_404(User, username=username)
 
-    return render(
-        request,
-        'user_profile.html',
-        context={
-            "userprofile": user,
-            "friends": request.user.profile.check_if_friends(user.profile),
-            "friends_request": user.profile.get_if_request_from_user(request.user.profile, 'FR'),
-            "following": request.user.profile.check_if_following(user.profile),
-            "follow_request": user.profile.get_if_request_from_user(request.user.profile, 'FL'),
-            "follower": request.user.profile.check_if_follower(user.profile),
-        }
-    )
+    if request.user.is_authenticated:
+        current_profile = request.user.profile
+        return render(
+            request,
+            'user_profile.html',
+            context={
+                "userprofile": user,
+                "friends": current_profile.check_if_friends(user.profile),
+                "friends_request": user.profile.get_if_request_from_user(current_profile, 'FR'),
+                "following": current_profile.check_if_following(user.profile),
+                "follow_request": user.profile.get_if_request_from_user(current_profile, 'FL'),
+                "follower": current_profile.check_if_follower(user.profile),
+            }
+        )
+    else:
+        return render(
+            request,
+            'user_profile.html',
+            context={
+                "userprofile": user
+            }
+        )

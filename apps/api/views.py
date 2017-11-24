@@ -2,11 +2,17 @@
 from __future__ import unicode_literals
 
 from django.http import JsonResponse
-from ..users.models import Profile, ProfileRequest
 from django.views import View
 from django.contrib.auth.models import User
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.decorators import login_required
+
+from ..users.models import Profile, ProfileRequest
+
+
+class ApiEndpoint(View):
+    def get(self, request, *args, **kwargs):
+        return JsonResponse({'message': 'Hello, OAuth2!'})
 
 
 # Return users that has a username, email, email or last name like the string passed
