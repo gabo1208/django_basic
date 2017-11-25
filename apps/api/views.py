@@ -1,18 +1,42 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+import requests
 
 from django.http import JsonResponse
 from django.views import View
 from django.contrib.auth.models import User
 from django.shortcuts import get_object_or_404
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth import authenticate, login
+from django.utils.decorators import method_decorator
+from django.views.decorators.csrf import csrf_exempt
 
 from ..users.models import Profile, ProfileRequest
 
 
-class ApiEndpoint(View):
-    def get(self, request, *args, **kwargs):
-        return JsonResponse({'message': 'Hello, OAuth2!'})
+class ApiHello(View):
+    def get(self, request):
+        if request.user.is_authenticated:
+            return JsonResponse({'message': 'Hello, ' + request.user.username + '! Welcome back to MemeberIt API!'})
+        else:
+            return JsonResponse({'message': 'Hello stranger, welcome to  MemberIt API!'})
+
+
+@method_decorator(csrf_exempt, name='dispatch')
+class ApiLogin(View):
+    def post(self, request):
+        username = request.POST['username']
+        password = request.POST['password']
+        data = {
+            'grant_type': 'password',
+            'username': username,
+            'password': password,
+            'client_id': 'vdix4xPAt4HVU9SfMKoVV8DoLysiWMMoADYMCP3A',
+            'client_secret': 'KVyVBeL2JGTqc177b5pw7GJWHsdcju4fWcYUGOYAE8sfJ5ZEeiL6azuoMylbAl1a9Gh4CWkCzZUzHfD23GPxASPmzFk2Oi5fjLQK3Y7iCU8OARiusQHYPusNfTseaeu1'
+        }
+        r = requests.post("http://localhost:8000/o/token/", data=data)
+
+        return JsonResponse(r.json(), status=r.status_code)
 
 
 # Return users that has a username, email, email or last name like the string passed
