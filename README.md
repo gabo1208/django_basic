@@ -1,8 +1,10 @@
 # Project - django_basic -
-### A basic project done with django *2.0*
+### - A basic project done with [Django](https://www.djangoproject.com/) *2.0*
 
-### Channels, web sockets and server push notifications
+### - [Admin LTE]() Theme 
 
-### Vue.js or any other hypen JS Framework that catch my attention
+### - [Django Channels](https://channels.readthedocs.io/en/latest/), web sockets and server push notifications
 
-#### Made with love and in my spare time
+### - [Vue.js](https://vuejs.org/) or any other hypen JS Framework that catch my attention
+
+#### -Made with love in my spare time
