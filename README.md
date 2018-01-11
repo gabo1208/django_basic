@@ -7,4 +7,6 @@
 
 ### - [Vue.js](https://vuejs.org/) or any other hypen JS Framework that catch my attention
 
-#### -Made with love in my spare time
+### - Any other feature that i find interesting as time goes by
+
+#### - Made with love and my spare time
