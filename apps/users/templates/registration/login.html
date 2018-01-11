@@ -14,14 +14,14 @@
         {% bootstrap_messages %}
         <form method="post" action="{% url 'users:login' %}">
         {% csrf_token %}
-            {% bootstrap_form form %}
-                {% buttons %}
-                <button type="submit">Login</button>
-                <input type="hidden" name="next" value="{{ next }}" />
-                {% endbuttons %}
+        {% bootstrap_form form %}
+            {% buttons %}
+            <button type="submit">Login</button>
+            <input type="hidden" name="next" value="{{ next }}" />
+            {% endbuttons %}
         </form>
 
         {# Assumes you setup the password_reset view in your URLconf #}
-        <p><a href="{% url 'home' %}">Lost password?</a></p>
+        <p><a href="{% url 'main:home' %}">Lost password?</a></p>
     </div>
 {% endblock %}

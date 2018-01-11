@@ -40,7 +40,10 @@ class Event(TimeStampedModel):
     title = models.CharField(max_length=30)
     description = models.CharField(max_length=30)
     image = models.ImageField(null=True)
-    created_by = models.ForeignKey('Profile')
+    created_by = models.ForeignKey(
+        'Profile',
+        on_delete=models.DO_NOTHING
+    )
     organizers = models.ManyToManyField(
         'Profile',
         blank=True,
@@ -80,24 +83,27 @@ class ProfileRequest(TimeStampedModel):
         (CANCELED, 'Request Canceled')
     )
 
-    from_user = models.ForeignKey('Profile')
+    from_user = models.ForeignKey('Profile', on_delete=models.DO_NOTHING)
     sugested_user = models.ForeignKey(
         'Profile',
         related_name="request_user_sugested",
         blank=True,
-        null=True
+        null=True,
+        on_delete=models.DO_NOTHING
     )
     sugested_event = models.ForeignKey(
         Event,
         related_name="request_event_sugested",
         blank=True,
-        null=True
+        null=True,
+        on_delete=models.DO_NOTHING
     )
     sugested_group = models.ForeignKey(
         Group,
         related_name="request_group_sugested",
         blank=True,
-        null=True
+        null=True,
+        on_delete=models.DO_NOTHING
     )
     reason = models.CharField(
         max_length=2,
@@ -121,8 +127,15 @@ class ProfileMessage(TimeStampedModel):
 
 
 class ProfileMessageHistory(models.Model):
-    profile1 = models.ForeignKey('Profile', related_name="profile1")
-    profile2 = models.ForeignKey('Profile', related_name="profile2")
+    profile1 = models.ForeignKey(
+        'Profile',
+        related_name="profile1",
+        on_delete=models.DO_NOTHING
+    )
+    profile2 = models.ForeignKey('Profile',
+        related_name="profile2",
+        on_delete=models.DO_NOTHING
+    )
     message_history = models.ManyToManyField(
         ProfileMessage,
         related_name="profile_messages_history_messages"
@@ -166,7 +179,7 @@ class Profile(TimeStampedModel):
     description = models.CharField(max_length=50, blank=True, null=True)
     verified = models.BooleanField(default=False)
     active = models.BooleanField(default=True)
-    preferences = models.ForeignKey(ProfilePreferences)
+    preferences = models.ForeignKey(ProfilePreferences, on_delete=models.DO_NOTHING)
     role = models.CharField(
         max_length=2,
         choices=USER_ROLE_CHOICES,

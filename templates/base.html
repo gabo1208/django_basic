@@ -74,7 +74,7 @@ desired effect
     {% if not user.is_authenticated %}
     <ul class="nav navbar-nav">
       <li>
-        <a href="{% url 'home' %}" class="pages-header">
+        <a href="{% url 'main:home' %}" class="pages-header">
           <b>Home</b>
         </a>
       </li>
@@ -106,7 +106,7 @@ desired effect
       </a>
       <ul class="nav navbar-nav">
         <li>
-          <a href="{% url 'home' %}" class="pages-header">
+          <a href="{% url 'main:home' %}" class="pages-header">
             <b>Home</b>
           </a>
         </li>

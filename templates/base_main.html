@@ -34,6 +34,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Google Font -->
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+  <!-- Vue.js minified -->
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 </head>
 <!--
 BODY TAG OPTIONS:
@@ -74,7 +77,7 @@ desired effect
     {% if not user.is_authenticated %}
     <ul class="nav navbar-nav">
       <li>
-        <a href="{% url 'home' %}" class="pages-header">
+        <a href="{% url 'main:home' %}" class="pages-header">
           <b>Home</b>
         </a>
       </li>
@@ -106,7 +109,7 @@ desired effect
       </a>
       <ul class="nav navbar-nav">
         <li>
-          <a href="{% url 'home' %}" class="pages-header">
+          <a href="{% url 'main:home' %}" class="pages-header">
             <b>Home</b>
           </a>
         </li>
