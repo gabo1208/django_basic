@@ -43,6 +43,9 @@ INSTALLED_APPS = [
     'django_extensions',
     'bootstrap3',
 
+    # Django-channels for websockets/server pushs
+    'channels',
+
     # OAuth2
     'oauth2_provider',
     'corsheaders',
