@@ -4,6 +4,7 @@ This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
 -->
 {% load staticfiles %}
+{% load static %}
 <html>
 <head>
   <meta charset="utf-8">
@@ -126,11 +127,11 @@ desired effect
             <!-- Menu toggle button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-envelope-o"></i>
-              <span class="label label-success">4</span>
+              <span class="label label-success">{[ messages ]}</span>
             </a>
             <ul class="dropdown-menu">
               
-              <li class="header">You have 4 messages</li>
+              <li class="header">You have {[ messages ]} messages</li>
               <li>
                 <!-- inner menu: contains the messages -->
                 <ul class="menu">
@@ -167,10 +168,10 @@ desired effect
             <!-- Menu toggle button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-bell-o"></i>
-              <span class="label label-warning">{{ user.profile.get_pending_requests|length }}</span>
+              <span class="label label-warning">{[ notifications ]}</span>
             </a>
             <ul class="dropdown-menu">
-              <li class="header">You have {{ user.profile.get_pending_requests|length }} notifications</li>
+              <li class="header">You have {[ notifications ]} notifications</li>
               <li>
                 <!-- Inner Menu: contains the notifications -->
                 <ul class="menu">
@@ -192,10 +193,10 @@ desired effect
             <!-- Menu Toggle Button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-flag-o"></i>
-              <span class="label label-danger">9</span>
+              <span class="label label-danger">{[ memberits ]}</span>
             </a>
             <ul class="dropdown-menu">
-              <li class="header">You have 9 tasks</li>
+              <li class="header">You have {[ memberits ]} memberIts!</li>
               <li>
                 <!-- Inner menu: contains the tasks -->
                 <ul class="menu">
@@ -220,7 +221,7 @@ desired effect
                 </ul>
               </li>
               <li class="footer">
-                <a href="#">View all tasks</a>
+                <a href="#">View all memberIts</a>
               </li>
             </ul>
           </li>
@@ -558,92 +559,118 @@ desired effect
 
 {% csrf_token %}
 <script type="text/javascript">
-  $(document).ready(function() {
-      function getCookie(name) {
-          var cookieValue = null;
-          if (document.cookie && document.cookie !== '') {
-              var cookies = document.cookie.split(';');
-              for (var i = 0; i < cookies.length; i++) {
-                  var cookie = jQuery.trim(cookies[i]);
-                  // Does this cookie string begin with the name we want?
-                  if (cookie.substring(0, name.length + 1) === (name + '=')) {
-                      cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                      break;
-                  }
-              }
-          }
-          return cookieValue;
-      }
+$(document).ready(function() {
+    function getCookie(name) {
+        var cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = jQuery.trim(cookies[i]);
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
 
-      var csrftoken = getCookie('csrftoken');
-      var reason = 'FR';
+    var csrftoken = getCookie('csrftoken');
+    var reason = 'FR';
 
-      function csrfSafeMethod(method) {
-          // these HTTP methods do not require CSRF protection
-          return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
-      }
+    function csrfSafeMethod(method) {
+        // these HTTP methods do not require CSRF protection
+        return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+    }
 
-      function user_2_user_request(reason, target_div){
-          $.ajax({
-              type:"POST",
-              url:"{% url 'api:user_2_user_request' %}",
-              data: {
-                  'username': '{{ userprofile.username }}',
-                  'request_type': reason
-              }
-          }).done(function(data){
-              alert(JSON.stringify(data));
-              if(reason == 'FR'){
-                  $(target_div).text("Request Sent")
-              }else{
-                  $(target_div).text("Follow Request Sent")
-              }
-          }).fail(function(data){
-              alert(JSON.stringify(data) + ' status:' + data.status)
-          })
-      }
+    function user_2_user_request(reason, target_div){
+        $.ajax({
+            type:"POST",
+            url:"{% url 'api:user_2_user_request' %}",
+            data: {
+                'username': '{{ userprofile.username }}',
+                'request_type': reason
+            }
+        }).done(function(data){
+            alert(JSON.stringify(data));
+            if(reason == 'FR'){
+                $(target_div).text("Request Sent")
+            }else{
+                $(target_div).text("Follow Request Sent")
+            }
+        }).fail(function(data){
+            alert(JSON.stringify(data) + ' status:' + data.status)
+        })
+    }
 
-      function user_request_confirm(reason, from_user, target_div){
-          $.ajax({
-              type:"POST",
-              url:"{% url 'api:user_request_confirm' %}",
-              data: {
-                  'username': from_user,
-                  'request_type': reason
-              }
-          }).done(function(data){
-              alert(JSON.stringify(data));
-              if(reason == 'FR'){
-                  $(target_div).text("Now Friends!")
-              }else{
-                  $(target_div).text("Now Follows you!")
-              }
-          }).fail(function(data){
-              alert(JSON.stringify(data) + ' status:' + data.status)
-          })
-      }
+    function user_request_confirm(reason, from_user, target_div){
+        $.ajax({
+            type:"POST",
+            url:"{% url 'api:user_request_confirm' %}",
+            data: {
+                'username': from_user,
+                'request_type': reason
+            }
+        }).done(function(data){
+            alert(JSON.stringify(data));
+            if(reason == 'FR'){
+                $(target_div).text("Now Friends!")
+            }else{
+                $(target_div).text("Now Follows you!")
+            }
+        }).fail(function(data){
+            alert(JSON.stringify(data) + ' status:' + data.status)
+        })
+    }
 
-      $.ajaxSetup({
-          beforeSend: function(xhr, settings) {
-              if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
-                  xhr.setRequestHeader("X-CSRFToken", csrftoken);
-              }
-          }
-      });
+    $.ajaxSetup({
+        beforeSend: function(xhr, settings) {
+            if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                xhr.setRequestHeader("X-CSRFToken", csrftoken);
+            }
+        }
+    });
 
-      $(".user_request").click(function(event){
-          reason = $(this).data("reason");
-          user_2_user_request(reason, this);
-      });
+    $(".user_request").click(function(event){
+        reason = $(this).data("reason");
+        user_2_user_request(reason, this);
+    });
 
-      $(".user_request_confirm").click(function(event){
-          reason = $(this).data("reason");
-          from_user = $(this).data("user");
-          user_request_confirm(reason, from_user, this);
-      });
+    $(".user_request_confirm").click(function(event){
+        reason = $(this).data("reason");
+        from_user = $(this).data("user");
+        user_request_confirm(reason, from_user, this);
+    });
 
-  });
+});
 </script>
+
+{% if user.is_authenticated %}
+<script>
+  s_key = "{{ request.session.session_key }}" | "";
+  var base_controller = new Vue({
+    delimiters: ["{[", "]}"],
+    el: '.navbar-custom-menu',
+    data: {
+        messages: 0,
+        notifications: {{ user.profile.get_pending_requests|length }},
+        memberits: 0,
+    }
+  })
+
+  base_socket = new WebSocket("ws://" + window.location.host + "/notifications/?session_key="+ s_key);
+  base_socket.onmessage = function(e) {
+    base_controller.messages += 1
+    alert("tabmein")
+  }
+  base_socket.onopen = function() {
+    base_socket.send("hello world2");
+  }
+  // Call onopen directly if socket is already open
+if (base_socket.readyState == WebSocket.OPEN) base_socket.onopen();
+</script>
+{% endif %}
 
 {% block jsblock %}
 {% endblock %}

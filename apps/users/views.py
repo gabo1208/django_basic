@@ -33,7 +33,6 @@ def user_index(request):
 
 # View to sign up a new user // TODO: organization and enterprises cases
 def sign_up(request):
-    print("HEREEE")
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         # Check if user form is Valid

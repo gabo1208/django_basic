@@ -3,7 +3,7 @@
 {% block content %}
 	{{ msg }} <br>
     <div id="app">
-        [{ message }] test
+        {[ message ]} test
     </div>
 
     <script>
@@ -14,5 +14,16 @@
                 message: 'Hello Vue!'
             }
         })
+
+        socket = new WebSocket("ws://" + window.location.host + "/notifications/");
+        socket.onmessage = function(e) {
+            alert(e.data);
+            app.message = "testing"
+        }
+        socket.onopen = function() {
+            socket.send("hello world");
+        }
+        // Call onopen directly if socket is already open
+        if (socket.readyState == WebSocket.OPEN) socket.onopen();
     </script>
 {% endblock %}
