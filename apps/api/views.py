@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-import requests
 
+import requests
+import json
+
+from channels import Group
 from django.http import JsonResponse
 from django.views import View
 from django.contrib.auth.models import User
