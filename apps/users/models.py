@@ -55,6 +55,17 @@ class Event(TimeStampedModel):
         related_name="event_invited"
     )
 
+    #date
+    #asisted
+    #tickets until
+    #event_photos
+    #recurrent
+    #restrictions
+    #score
+    #colaborators
+    #aliances
+    #tags
+
 
 class ProfileRequest(TimeStampedModel):
     FOLLOW = 'FL'
@@ -162,6 +173,8 @@ class Profile(TimeStampedModel):
         (STAFF, 'Staff'),
         (ADMIN, 'Admin'),
     )
+
+    #member_its = blah
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     country = models.CharField(max_length=50, blank=True, null=True)

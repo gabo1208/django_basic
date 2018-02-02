@@ -2,5 +2,8 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from ..users.models import TimeStampedModel
 
-# Create your models here.
+
+class memberIt(TimeStampedModel):
+    pass

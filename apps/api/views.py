@@ -82,6 +82,12 @@ class User2UserRequest(View):
                 )
                 # Save request and add it to targe user requests
                 p_request.save()
+                Group("chat-").send({
+                    "text": json.dumps({
+                        "text": "desde el api",
+                        "username": 000#message.channel_session["username"],
+                    }),
+                })
                 to_user.profile.requests.add(p_request)
                 return JsonResponse({'message': request_t + ' request sent to ' + to_user.username + '.'}, status=200)
             # Catch and send the exception
