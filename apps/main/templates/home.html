@@ -15,13 +15,27 @@
             }
         })
 
+        webSocketBridge = new channels.WebSocketBridge();
+        webSocketBridge.connect("ws://" + window.location.host + "/notifications/");
+        webSocketBridge.listen();
+        webSocketBridge.socket.addEventListener('message', function(e) {
+            alert("websb " + e.data);
+            app.message = "testing";
+        })
+
+        webSocketBridge.socket.addEventListener('open', function() {
+            console.log("Connected to WebSocket");
+            webSocketBridge.send("nooo");
+        })
+
         socket = new WebSocket("ws://" + window.location.host + "/notifications/");
         socket.onmessage = function(e) {
-            alert(e.data);
-            app.message = "testing"
+            alert("wsn " + e.data);
+            app.message = "testing";
         }
-        socket.onopen = function() {
-            socket.send("hello world");
+        socket.onopen = function(e) {
+            alert("oli");
+            socket.send("HUEHUE");
         }
         // Call onopen directly if socket is already open
         if (socket.readyState == WebSocket.OPEN) socket.onopen();

@@ -39,12 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # Django-channels for websockets/server pushs
+    'channels',
+
     # Extension packages
     'django_extensions',
     'bootstrap3',
-
-    # Django-channels for websockets/server pushs
-    'channels',
 
     # OAuth2
     'oauth2_provider',
@@ -81,13 +81,16 @@ MIDDLEWARE = [
     'oauth2_provider.middleware.OAuth2TokenMiddleware',
 ]
 
+redis_host = os.environ.get('REDIS_HOST', 'localhost')
+
+ASGI_APPLICATION = 'settings.routing.application'
+
 CHANNEL_LAYERS = {
     "default": {
-        "BACKEND": "asgi_redis.RedisChannelLayer",
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
         "CONFIG": {
-            "hosts": [("localhost", 6379)],
+            "hosts": [(redis_host, 6379)],
         },
-        'ROUTING': "settings.routing.channel_routing",
     },
 }
 

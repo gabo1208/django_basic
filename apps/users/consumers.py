@@ -1,35 +1,25 @@
 import json
 
-from django.http import HttpResponse
-from channels.handler import AsgiHandler
-from channels import Group
-from channels.sessions import channel_session
-from urllib.parse import parse_qs
+from channels.layers import get_channel_layer
+from channels.generic.websocket import WebsocketConsumer, AsyncWebsocketConsumer
+from asgiref.sync import async_to_sync
 
+class NotificationsConsumer(WebsocketConsumer):
 
-@channel_session
-def ws_connect(message):
-    # Accept connection
-    message.reply_channel.send({"accept": True})
-    # Parse the query string
-    params = parse_qs(message.content["query_string"])
-    # Set the username in the session
-    message.channel_session["username"] = 123
-    # Add the user to the room_name group
-    Group("chat-").add(message.reply_channel)
+    def connect(self):
+        if self.scope["user"].is_anonymous:
+            # Reject the connection
+            self.accept()
+        else:
+            # Accept the connection
+             self.accept()
+        print("si")
 
-# Connected to websocket.receive
-@channel_session
-def ws_message(message):
-    print(message.channel_session["username"])
-    Group("chat-").send({
-        "text": json.dumps({
-            "text": message["text"],
-            "username": 123#message.channel_session["username"],
-        }),
-    })
+    # Connected to websocket.receive
+    def receive(self, *, text_data):
+        print("here AUSDASD " + text_data)
+        self.send(json.dumps("ola vengo del websocket"))
 
-# Connected to websocket.disconnect
-@channel_session
-def ws_disconnect(message):
-    Group("chat-").discard(message.reply_channel)
+    # Connected to websocket.disconnect
+    def disconnect(self, close_code):
+        print("bye")

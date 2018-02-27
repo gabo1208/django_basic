@@ -1,13 +1,14 @@
-from channels.routing import route,include
-from apps.users.consumers import ws_message, ws_connect, ws_disconnect
+
+from django.urls import path
+from channels.routing import ProtocolTypeRouter, URLRouter
+from channels.auth import AuthMiddlewareStack
+from apps.users.consumers import NotificationsConsumer
 
 
-notifications_routing = [
-    route("websocket.connect", ws_connect, path=r"^/$"),
-    route("websocket.receive", ws_message, path=r"^/$"),
-    route("websocket.disconnect", ws_disconnect, path=r"^/$")
-]
-
-channel_routing = [
-    include(notifications_routing, path=r"^/notifications")
-]
+application = ProtocolTypeRouter({
+    "websocket": AuthMiddlewareStack(
+        URLRouter([
+            path("notifications/", NotificationsConsumer)
+        ])
+    )
+})

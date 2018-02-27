@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 import requests
 import json
 
-from channels import Group
+from channels.layers import get_channel_layer
 from django.http import JsonResponse
 from django.views import View
 from django.contrib.auth.models import User
@@ -13,6 +13,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import authenticate, login
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
+from asgiref.sync import async_to_sync
 
 from ..users.models import Profile, ProfileRequest
 
@@ -85,12 +86,14 @@ class User2UserRequest(View):
                 )
                 # Save request and add it to targe user requests
                 p_request.save()
-                Group("chat-").send({
-                    "text": json.dumps({
-                        "text": "desde el api",
-                        "username": 000#message.channel_session["username"],
-                    }),
-                })
+                cl = get_channel_layer()
+                await (self.channel_layer.group_send)(
+                    "chat",
+                    {
+                        "type": "chat.message",
+                        "text": "oli",
+                    },
+                )
                 to_user.profile.requests.add(p_request)
                 return JsonResponse({'message': request_t + ' request sent to ' + to_user.username + '.'}, status=200)
             # Catch and send the exception
