@@ -661,10 +661,23 @@ $(document).ready(function() {
     }
   })
 
-  base_socket = new WebSocket("ws://" + window.location.host + "/notifications/?session_key="+ s_key);
+  base_webSocketBridge = new channels.WebSocketBridge();
+  base_webSocketBridge.connect("ws://" + window.location.host + "/notifications/");
+  base_webSocketBridge.listen();
+  base_webSocketBridge.socket.addEventListener('message', function(e) {
+      alert("websb base " + e.data);
+      base_controller.notifications += 1;
+  })
+
+  base_webSocketBridge.socket.addEventListener('open', function() {
+      console.log("Connected to WebSocket from base");
+      base_webSocketBridge.send("nooo from base");
+  })
+
+  base_socket = new WebSocket("ws://" + window.location.host + "/notifications/");
   base_socket.onmessage = function(e) {
-    base_controller.messages += 1
-    alert("tabmein")
+    base_controller.notifications += 1;
+    alert("tabmein base")
   }
   base_socket.onopen = function() {
     base_socket.send("hello world2");

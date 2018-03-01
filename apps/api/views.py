@@ -87,11 +87,10 @@ class User2UserRequest(View):
                 # Save request and add it to targe user requests
                 p_request.save()
                 cl = get_channel_layer()
-                await (self.channel_layer.group_send)(
+                async_to_sync(cl.group_send)(
                     "chat",
                     {
-                        "type": "chat.message",
-                        "text": "oli",
+                        "notifications": len(request.user.profile.requests.all())
                     },
                 )
                 to_user.profile.requests.add(p_request)

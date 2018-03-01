@@ -33,8 +33,7 @@
             alert("wsn " + e.data);
             app.message = "testing";
         }
-        socket.onopen = function(e) {
-            alert("oli");
+        socket.onopen = function() {
             socket.send("HUEHUE");
         }
         // Call onopen directly if socket is already open
