@@ -77,7 +77,7 @@ class User2UserRequest(View):
         elif request_t not in ['FR', 'FL']:
             return JsonResponse({'error': 'Bad user request.'}, status=500)
         else:
-            # Create Friend Request
+            # Create Friend or Follow Request
             try:
                 p_request = ProfileRequest(
                     from_user=request.user.profile,
@@ -87,10 +87,11 @@ class User2UserRequest(View):
                 # Save request and add it to targe user requests
                 p_request.save()
                 cl = get_channel_layer()
+                # alert receiver user websockets so they can update the notifications number
                 async_to_sync(cl.group_send)(
-                    "chat",
+                    "notifications-" + to_user.username,
                     {
-                        "notifications": len(request.user.profile.requests.all())
+                        "notifications": len(request.user.profile.requests.filter(status=1))
                     },
                 )
                 to_user.profile.requests.add(p_request)
@@ -129,13 +130,13 @@ class ConfirmRequest(View):
                 if request_t == 'FR':
                     from_user.profile.friends.add(request.user.profile)
                     request.user.profile.friends.add(from_user.profile)
-                    user_request.status = '0'
+                    user_request.status = 0
                     user_request.save()
                     return JsonResponse({'message': 'You and ' + from_user.username + ' are friends!'}, status=200)
                 elif request_t == 'FL':
                     from_user.profile.following.add(request.user.profile)
                     request.user.profile.followers.add(from_user.profile)
-                    user_request.status = '0'
+                    user_request.status = 0
                     user_request.save()
                     return JsonResponse({'message': from_user.username + ' is now following you!'}, status=200)
                 else:

@@ -14,7 +14,7 @@ class NotificationsConsumer(WebsocketConsumer):
             # Accept the connection
             print("USER: " + str(self.scope["user"]))
             self.accept()
-            async_to_sync(self.channel_layer.group_add)("chat", self.channel_name)
+            async_to_sync(self.channel_layer.group_add)("notifications-" + self.scope["user"].username, self.channel_name)
 
     # Connected to websocket.receive
     def receive(self, *, text_data):
@@ -23,5 +23,5 @@ class NotificationsConsumer(WebsocketConsumer):
 
     # Connected to websocket.disconnect
     def disconnect(self, close_code):
-        async_to_sync(self.channel_layer.group_discard)("chat", self.channel_name)
+        async_to_sync(self.channel_layer.group_discard)("notifications-" + self.scope["user"].username, self.channel_name)
         print("bye")

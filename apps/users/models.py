@@ -126,6 +126,9 @@ class ProfileRequest(TimeStampedModel):
         choices=STATUS_CHOICES,
         default=PENDING
     )
+    seen = models.BooleanField(
+        default=False, 
+    )
 
     class Meta:
         unique_together = ('from_user', 'sugested_user', 'reason')
