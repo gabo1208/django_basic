@@ -8,7 +8,6 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 
-from .models import Profile, ProfilePreferences
 from .forms import ProfileForm
 
 
@@ -41,11 +40,7 @@ def sign_up(request):
             username = form.cleaned_data.get('username')
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=raw_password)
-            # Create profile with its options and asociate it with the created user
-            preferences = ProfilePreferences()
-            preferences.save()
-            profile = Profile(user=user, preferences=preferences)
-            profile.save()
+
             # Authenticate the user and redirect it to home view
             login(request, user)
             return redirect('users:user_index')

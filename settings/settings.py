@@ -11,10 +11,11 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+from unipath import Path
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), os.pardir))
+BASE_DIR = Path(__file__).ancestor(3)
+PROJECT_ROOT = BASE_DIR.child('django_basic')
 
 
 # Quick-start development settings - unsuitable for production
@@ -57,6 +58,8 @@ INSTALLED_APPS = [
     'apps.main',
     'apps.users',
     'apps.memberits',
+    'apps.chat',
+    'apps.quiniela',
 
     # App for the integration API
     'apps.api',
@@ -99,7 +102,7 @@ ROOT_URLCONF = 'settings.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates'), os.path.join(PROJECT_ROOT, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

@@ -1,19 +1,17 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.db import models
-from django.contrib.auth.models import User
-from django.db.models.signals import post_save
-from django.dispatch import receiver
 from decimal import Decimal
 
+from django.db import models
+from django.contrib.auth.models import User
+from django.db.models.signals import post_save, pre_save
+from django.dispatch import receiver
+from model_utils.models import TimeStampedModel
+from django.dispatch import receiver
 
-class TimeStampedModel(models.Model):
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
 
-
-class ProfilePreferences(TimeStampedModel):
+class ProfilePreferences(models.Model):
     option1 = models.BooleanField(default=True)
 
 
@@ -30,7 +28,7 @@ class Group(TimeStampedModel):
     name = models.CharField(max_length=20)
     title = models.CharField(max_length=30)
     image = models.ImageField(null=True)
-    created_by = models.ForeignKey('Profile', on_delete=models.CASCADE)
+    created_by = models.ForeignKey('Profile', on_delete=models.CASCADE, null=True, blank=True)
     admins = models.ManyToManyField('Profile', blank=True, related_name="group_admins")
     members = models.ManyToManyField('Profile', blank=True, related_name="group_members")
 
@@ -40,10 +38,7 @@ class Event(TimeStampedModel):
     title = models.CharField(max_length=30)
     description = models.CharField(max_length=30)
     image = models.ImageField(null=True)
-    created_by = models.ForeignKey(
-        'Profile',
-        on_delete=models.DO_NOTHING
-    )
+    created_by = models.ForeignKey('Profile', on_delete=models.DO_NOTHING, null=True, blank=True)
     organizers = models.ManyToManyField(
         'Profile',
         blank=True,
@@ -55,7 +50,7 @@ class Event(TimeStampedModel):
         related_name="event_invited"
     )
 
-    #date
+    date = models.DateField(null=True, blank=True)
     #asisted
     #tickets until
     #event_photos
@@ -135,7 +130,7 @@ class ProfileRequest(TimeStampedModel):
 
 
 class ProfileMessage(TimeStampedModel):
-    created_by = models.ForeignKey('Profile', on_delete=models.CASCADE)
+    created_by = models.ForeignKey('Profile', on_delete=models.CASCADE, null=True, blank=True)
     title = models.CharField(max_length=50)
     content = models.TextField(blank=True, null=True)
 
@@ -179,23 +174,29 @@ class Profile(TimeStampedModel):
 
     #member_its = blah
 
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(
+        User,
+        on_delete=models.CASCADE
+    )
     country = models.CharField(max_length=50, blank=True, null=True)
     city = models.CharField(max_length=50, blank=True, null=True)
     location = models.CharField(max_length=100, blank=True, null=True)
     phone = models.CharField(max_length=50, blank=True, null=True)
     mail = models.CharField(max_length=50, blank=True, null=True)
-    image = models.ImageField(null=True)
+    image = models.ImageField(null=True, blank=True)
     reputation = models.DecimalField(
         max_digits=3,
-        decimal_places=1,
+        decimal_places=2,
         default=Decimal('0.00')
     )
 
     description = models.CharField(max_length=50, blank=True, null=True)
     verified = models.BooleanField(default=False)
     active = models.BooleanField(default=True)
-    preferences = models.ForeignKey(ProfilePreferences, on_delete=models.DO_NOTHING)
+    preferences = models.OneToOneField(
+        ProfilePreferences,
+        on_delete=models.CASCADE
+    )
     role = models.CharField(
         max_length=2,
         choices=USER_ROLE_CHOICES,
@@ -284,3 +285,15 @@ class Profile(TimeStampedModel):
             self.messages.filter(profile1=user) |
             self.messages.filter(profile2=user)
         )
+
+
+##################### SIGNALS ########################
+@receiver(post_save, sender=User)
+def save_profile(sender, instance, **kwargs):
+    try:
+        instance.profile
+    except:
+        preferences = ProfilePreferences()
+        preferences.save()
+        profile = Profile(user=instance, preferences=preferences)
+        profile.save()

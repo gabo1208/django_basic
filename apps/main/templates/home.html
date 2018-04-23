@@ -16,7 +16,7 @@
         })
 
         webSocketBridge = new channels.WebSocketBridge();
-        webSocketBridge.connect("ws://" + window.location.host + "/notifications/");
+        webSocketBridge.connect("ws://" + window.location.host + "/ws/notifications/");
         webSocketBridge.listen();
         webSocketBridge.socket.addEventListener('message', function(e) {
             alert("websb " + e.data);
@@ -28,7 +28,7 @@
             webSocketBridge.send("nooo");
         })
 
-        socket = new WebSocket("ws://" + window.location.host + "/notifications/");
+        socket = new WebSocket("ws://" + window.location.host + "/ws/notifications/");
         socket.onmessage = function(e) {
             alert("wsn " + e.data);
             app.message = "testing";
