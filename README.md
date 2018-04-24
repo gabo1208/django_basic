@@ -11,7 +11,7 @@
 
 ### - Social Network-ish Proyect
 
-### - Added Chat for Users, using Asyncronous Websockets
+### - Added Chat for Users, using Asynchronous Websockets
 
 ### - Added Quiniela App, because World Cup Hype!!
 
