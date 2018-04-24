@@ -14,6 +14,10 @@ from django.dispatch import receiver
 class User(AbstractUser):
     email = models.EmailField(unique=True)
 
+    def __str__(self):
+        return self.username + " - " + self.email
+
+
 class ProfilePreferences(models.Model):
     option1 = models.BooleanField(default=True)
 
@@ -254,6 +258,9 @@ class Profile(TimeStampedModel):
         blank=True,
         related_name="profile_message_history"
     )
+
+    def __str__(self):
+        return str(self.user)
 
     def check_if_friends(self, user):
         return user in self.friends.all()

@@ -28,3 +28,6 @@ class MemberIt(TimeStampedModel):
     annotations = models.CharField(max_length=50, blank=True, null=True)
     comments = models.CharField(max_length=50, blank=True, null=True)
     tags = models.ManyToManyField(InterestTag, related_name="memberit_tag", blank=True)
+
+    def __str__(self):
+        return self.name + " - " + self.created_by.user.name
