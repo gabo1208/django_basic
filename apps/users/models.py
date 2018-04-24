@@ -4,12 +4,15 @@ from __future__ import unicode_literals
 from decimal import Decimal
 
 from django.db import models
-from django.contrib.auth.models import User
-from django.db.models.signals import post_save, pre_save
+from django.contrib.auth.models import AbstractUser
+from django.db.models.signals import post_save
 from django.dispatch import receiver
 from model_utils.models import TimeStampedModel
 from django.dispatch import receiver
 
+
+class User(AbstractUser):
+    email = models.EmailField(unique=True)
 
 class ProfilePreferences(models.Model):
     option1 = models.BooleanField(default=True)
@@ -21,7 +24,7 @@ class InterestTag(models.Model):
 
 class ProfileInterest(models.Model):
     name = models.CharField(max_length=50, unique=True)
-    tags = models.ManyToManyField(InterestTag, related_name="interest_tag")
+    tags = models.ManyToManyField(InterestTag, related_name="interest_tag", blank=True)
 
 
 class Group(TimeStampedModel):
@@ -59,7 +62,7 @@ class Event(TimeStampedModel):
     #score
     #colaborators
     #aliances
-    #tags
+    tags = models.ManyToManyField(InterestTag, related_name="event_tag", blank=True)
 
 
 class ProfileRequest(TimeStampedModel):

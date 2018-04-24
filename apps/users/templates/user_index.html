@@ -8,18 +8,18 @@
 {% bootstrap_javascript %}
 
 {% block content-header %}
-    <h1> {{ user.username }} </h1>
     <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
         <li class="active">Home</li>
     </ol>
+    <h1> {{ user.username }} </h1>
 {% endblock %}
 
 {% block content %}
     {# Display django.contrib.messages as Bootstrap alerts #}
     {% bootstrap_messages %}
     <div class="user-edit-form">
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {% bootstrap_form form %}
             {% buttons %}

@@ -29,7 +29,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 INSTALLED_APPS = [
     # Django Default packages
@@ -64,6 +63,8 @@ INSTALLED_APPS = [
     # App for the integration API
     'apps.api',
 ]
+
+AUTH_USER_MODEL = 'users.User'
 
 AUTHENTICATION_BACKENDS = (
     'oauth2_provider.backends.OAuth2Backend',
@@ -123,10 +124,8 @@ OAUTH2_PROVIDER = {
 
 WSGI_APPLICATION = 'settings.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
