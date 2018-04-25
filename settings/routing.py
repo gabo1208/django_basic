@@ -8,7 +8,7 @@ from apps.chat.consumers import ChatConsumer
 
 app_name = 'routing'
 application = ProtocolTypeRouter({
-    "websocket": AuthMiddlewareStack(
+    'websocket': AuthMiddlewareStack(
         URLRouter([
             re_path(r'^ws/chat/(?P<room_name>[^/]+)/$', ChatConsumer),
             re_path(r'^ws/notifications/$', NotificationsConsumer),

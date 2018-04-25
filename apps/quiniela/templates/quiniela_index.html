@@ -19,12 +19,12 @@
 {% block content %}
     {% if quinielas %}
     <h3> Quinielas en las que estas participando</h3>
-    <hr>
         {% for quiniela in quinielas %}
             <a href="{% url 'quiniela:quiniela_details' quiniela.id %}">{{ quiniela.name }}</a>
         {% endfor %}
+    <hr>
     {% else %}
-    <h3>No estas participando en ninguna quiniela =(.</h3>
+    <h3>No estas participando en ninguna quiniela =(</h3>
     <hr>
     {% endif %}
 
@@ -32,7 +32,7 @@
     <form method="post">
     {% csrf_token %}
     {% bootstrap_form form %}
-        {% buttons %}
+    {% buttons %}
         <button type="submit">Crear Nueva Quiniela</button>
     {% endbuttons %}
     </form>

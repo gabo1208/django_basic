@@ -18,17 +18,95 @@
 
 {% block content %}
     {% if quiniela %}
-        {% for tournament in quiniela.tournaments.all %}
-        <h3> {{ quiniela.name }} - {{ tournament.name }}</h3>
-        <h5> {{ quiniela.description }}</h5>
+        
+        <h3> 
+            {{ quiniela.name }} - 
+            {% if quiniela.tournament.image %}
+                <img src="{{quiniela.tournament.image.url}}" width="50px" height="auto">
+            {% endif %}
+            {{ quiniela.tournament.name }}
+        </h3>
+        <h5>{{ quiniela.description }}<br>
+            {{ quiniela.tournament.description }}<br>
+        </h5>
         <hr>
-        <h3>Day 1</h3>
-            {% for game in tournament.fixture.all %}
-                Match Day: {{ game.match_date }}<br>
-                Editable Until: {{ game.limit_date }}<br> 
-                {{ game.home_team.name }} <img src="{{ game.home_team.image.url }}"> - <img src="{{ game.away_team.image.url }}"> {{ game.away_team.name }}
-            {% endfor %}
-        {% endfor %}
+
+        <div class="row container-fluid">
+            <div class="col-sm-6">
+                Your Predictions - Day 1<br>
+                <form role="form" method="post">
+                {% csrf_token %}
+                {{ formset.management_form }}
+                {% for pair in predictions %}
+                    {% if forloop.counter0|divisibleby:2 %}
+                    <div class="row">
+                    {% endif %}
+
+                        <div class="col-sm-6">
+                            {% bootstrap_messages %}
+                            {{ pair.1.non_field_errors }}
+                            
+                            <div class="row">
+                                <div class="col-xs-6 no-padding-right">
+                                    <div class="col-xs-6 no-padding-right" align="right">
+                                        <img src="{{ pair.0.home_team.image.url }}" width="48px" height="32px">
+                                    </div>
+                                    <div class="col-xs-6">
+                                        {% bootstrap_field pair.1.score_home size='sm' label=pair.0.home_team.name layout='inline' %}
+                                    </div>
+                                    <div class="col-xs-12">
+                                    {{ pair.1.score_home.errors}}
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 no-padding-left">
+                                    <div class="col-xs-6">
+                                        {% bootstrap_field pair.1.score_away size='sm' label=pair.0.away_team.name layout='inline' %}
+                                    </div>
+                                    <div class="col-xs-6 no-padding-left">
+                                        <img src="{{ pair.0.away_team.image.url }}" width="48px" height="32px">
+                                    </div>
+                                    <div class="col-xs-12">
+                                    {{ pair.1.score_away.errors}}
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                {% buttons submit='Enviar' %}{% endbuttons %}
+                                </div>
+                            </div>
+                        </div>
+
+                    {% if not forloop.counter0|divisibleby:2 %}
+                    </div>
+                    {% endif %}
+                {% endfor %}
+                {% if not predictions|length|divisibleby:2 %}
+                    </div>
+                {% endif %}
+                </form>
+            </div>
+        <div class="col-sm-6">
+            Official Results - Day 1<br>
+                {% for pair in predictions %}
+                    {% if forloop.counter0|divisibleby:2 %}
+                    <div class="row" align="center">
+                    {% endif %}
+
+                        <div class="col-sm-6">                        
+                            Match Day: {{ pair.0.match_date }}<br>
+                            {{ pair.0.home_team.name }} <img src="{{ pair.0.home_team.image.url }}" width="48px" height="32px"> - 
+                            <img src="{{ pair.0.away_team.image.url }}" width="48px" height="32px"> {{ pair.0.away_team.name }}<br>
+                            Editable Until: {{ pair.0.limit_date }}
+                        </div>
+
+                    {% if not forloop.counter0|divisibleby:2 %}
+                    </div>
+                    {% endif %}
+                {% endfor %}
+                {% if not predictions|length|divisibleby:2 %}
+                </div>
+                {% endif %}
+            </div>
+        </div>
     {% else %}
     <h3>No existe esa quiniela =(</h3>
     {% endif %}
