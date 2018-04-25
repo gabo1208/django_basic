@@ -1,0 +1,358 @@
+[
+{
+  "model": "quiniela.team",
+  "pk": 1,
+  "fields": {
+    "name": "Rusia",
+    "image": "rusia_flag.png",
+    "history": "Seleccion Nacional de la Madre Patria",
+    "tags": []
+  }
+},
+{
+  "model": "quiniela.team",
+  "pk": 2,
+  "fields": {
+    "name": "Arabia Saudita",
+    "image": "saudi_arabia_flag.png",
+    "history": "Seleccion Nacional de Arabia Saudita",
+    "tags": []
+  }
+},
+{
+  "model": "quiniela.team",
+  "pk": 3,
+  "fields": {
+    "name": "Egipto",
+    "image": "egipto_flag.png",
+    "history": "Seleccion Nacional de Egipto",
+    "tags": [
+      1,
+      2
+    ]
+  }
+},
+{
+  "model": "quiniela.team",
+  "pk": 4,
+  "fields": {
+    "name": "Uruguay",
+    "image": "uruguay_flag.png",
+    "history": "Seleccion Nacional de Uruguay",
+    "tags": [
+      1,
+      2
+    ]
+  }
+},
+{
+  "model": "quiniela.team",
+  "pk": 5,
+  "fields": {
+    "name": "Marruecos",
+    "image": "marruecos_flag.png",
+    "history": "Seleccion Nacional de Marruecos",
+    "tags": [
+      1,
+      2
+    ]
+  }
+},
+{
+  "model": "quiniela.team",
+  "pk": 6,
+  "fields": {
+    "name": "Iran",
+    "image": "iran_flag.png",
+    "history": "Seleccion Nacional de Iran",
+    "tags": [
+      1,
+      2
+    ]
+  }
+},
+{
+  "model": "quiniela.team",
+  "pk": 7,
+  "fields": {
+    "name": "Espa\u00f1a",
+    "image": "spain_flag.png",
+    "history": "Seleccion Nacional de Espa\u00f1a",
+    "tags": [
+      1,
+      2
+    ]
+  }
+},
+{
+  "model": "quiniela.team",
+  "pk": 8,
+  "fields": {
+    "name": "Portugal",
+    "image": "portugal_flag.png",
+    "history": "Seleccion de Cristiano Ronaldo CRGod",
+    "tags": [
+      1,
+      2
+    ]
+  }
+},
+{
+  "model": "quiniela.team",
+  "pk": 9,
+  "fields": {
+    "name": "Francia",
+    "image": "france_flag.png",
+    "history": "Seleccion Nacional de Francia",
+    "tags": [
+      1,
+      2
+    ]
+  }
+},
+{
+  "model": "quiniela.team",
+  "pk": 10,
+  "fields": {
+    "name": "Australia",
+    "image": "australia_flag.png",
+    "history": "Seleccion Nacional de Australia",
+    "tags": [
+      1,
+      2
+    ]
+  }
+},
+{
+  "model": "quiniela.team",
+  "pk": 11,
+  "fields": {
+    "name": "Argentina",
+    "image": "argentina_flag.png",
+    "history": "Seleccion Nacional de Argentina",
+    "tags": [
+      1,
+      2
+    ]
+  }
+},
+{
+  "model": "quiniela.team",
+  "pk": 12,
+  "fields": {
+    "name": "Islandia",
+    "image": "islandia_flag.png",
+    "history": "Seleccion Nacional de Islandia",
+    "tags": [
+      1,
+      2
+    ]
+  }
+},
+{
+  "model": "quiniela.team",
+  "pk": 13,
+  "fields": {
+    "name": "Peru",
+    "image": "peru_flag.png",
+    "history": "Seleccion Nacional de Peru",
+    "tags": [
+      1,
+      2
+    ]
+  }
+},
+{
+  "model": "quiniela.team",
+  "pk": 14,
+  "fields": {
+    "name": "Dinamarca",
+    "image": "dinamarca_flag.png",
+    "history": "Seleccion Nacional de Dinamarca",
+    "tags": [
+      1,
+      2
+    ]
+  }
+},
+{
+  "model": "quiniela.team",
+  "pk": 15,
+  "fields": {
+    "name": "Croacia",
+    "image": "croatia_flag.png",
+    "history": "Seleccion Nacional de Croacia",
+    "tags": []
+  }
+},
+{
+  "model": "quiniela.team",
+  "pk": 16,
+  "fields": {
+    "name": "Nigeria",
+    "image": "nigeria_flag.png",
+    "history": "Seleccion Nacional de Nigeria",
+    "tags": []
+  }
+},
+{
+  "model": "quiniela.team",
+  "pk": 17,
+  "fields": {
+    "name": "Costa Rica",
+    "image": "costarica_flag.png",
+    "history": "Seleccion Nacional de Costa Rica",
+    "tags": []
+  }
+},
+{
+  "model": "quiniela.team",
+  "pk": 18,
+  "fields": {
+    "name": "Serbia",
+    "image": "serbia_flag.png",
+    "history": "Seleccion Nacional de Serbia",
+    "tags": []
+  }
+},
+{
+  "model": "quiniela.team",
+  "pk": 19,
+  "fields": {
+    "name": "Alemania",
+    "image": "alemania_flag.png",
+    "history": "Seleccion Nacional de Alemania",
+    "tags": []
+  }
+},
+{
+  "model": "quiniela.team",
+  "pk": 20,
+  "fields": {
+    "name": "Mexico",
+    "image": "mexico_flag.png",
+    "history": "Seleccion Nacional de Mexico",
+    "tags": []
+  }
+},
+{
+  "model": "quiniela.team",
+  "pk": 21,
+  "fields": {
+    "name": "Brasil",
+    "image": "brasil_flag.png",
+    "history": "Seleccion Nacional de Brasil",
+    "tags": []
+  }
+},
+{
+  "model": "quiniela.team",
+  "pk": 22,
+  "fields": {
+    "name": "Suiza",
+    "image": "suiza_flag.png",
+    "history": "Seleccion Nacional de Suiza",
+    "tags": []
+  }
+},
+{
+  "model": "quiniela.team",
+  "pk": 23,
+  "fields": {
+    "name": "Suecia",
+    "image": "suecia_flag.png",
+    "history": "Seleccion Nacional de Suecia",
+    "tags": []
+  }
+},
+{
+  "model": "quiniela.team",
+  "pk": 24,
+  "fields": {
+    "name": "Corea del Sur",
+    "image": "coreadelsur_flag.png",
+    "history": "Seleccion Nacional de Corea del Sur",
+    "tags": []
+  }
+},
+{
+  "model": "quiniela.team",
+  "pk": 25,
+  "fields": {
+    "name": "Belgica",
+    "image": "belgica_flag.png",
+    "history": "Seleccion Nacional de Belgica",
+    "tags": []
+  }
+},
+{
+  "model": "quiniela.team",
+  "pk": 26,
+  "fields": {
+    "name": "Panama",
+    "image": "panama_flag.png",
+    "history": "Seleccion Nacional de Panama",
+    "tags": []
+  }
+},
+{
+  "model": "quiniela.team",
+  "pk": 27,
+  "fields": {
+    "name": "Tunez",
+    "image": "tunisia_flag.png",
+    "history": "Seleccion Nacional de Tunez",
+    "tags": []
+  }
+},
+{
+  "model": "quiniela.team",
+  "pk": 28,
+  "fields": {
+    "name": "Inglaterra",
+    "image": "inglaterra_flag.png",
+    "history": "Seleccion Nacional de Inglaterra",
+    "tags": []
+  }
+},
+{
+  "model": "quiniela.team",
+  "pk": 29,
+  "fields": {
+    "name": "Colombia",
+    "image": "colombia_flag.png",
+    "history": "Seleccion Nacional de Colombia",
+    "tags": []
+  }
+},
+{
+  "model": "quiniela.team",
+  "pk": 30,
+  "fields": {
+    "name": "Japan",
+    "image": "japon_flag.png",
+    "history": "Seleccion Nacional de Japon",
+    "tags": []
+  }
+},
+{
+  "model": "quiniela.team",
+  "pk": 31,
+  "fields": {
+    "name": "Polonia",
+    "image": "polonia_flag.png",
+    "history": "Seleccion Nacional de Polonia",
+    "tags": []
+  }
+},
+{
+  "model": "quiniela.team",
+  "pk": 32,
+  "fields": {
+    "name": "Senegal",
+    "image": "senegal_flag.png",
+    "history": "Seleccion Nacional de Senegal",
+    "tags": []
+  }
+}
+]

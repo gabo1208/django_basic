@@ -1,0 +1,22 @@
+[
+{
+  "model": "quiniela.quiniela",
+  "pk": 2,
+  "fields": {
+    "created": "2018-04-24T16:40:47.788Z",
+    "modified": "2018-04-25T13:07:37.254Z",
+    "name": "Kinielakalakaua",
+    "image": "",
+    "description": "Kiniela de los Kalakaua",
+    "tournament": 2,
+    "members": [
+      1,
+      2
+    ],
+    "tags": [
+      1,
+      2
+    ]
+  }
+}
+]

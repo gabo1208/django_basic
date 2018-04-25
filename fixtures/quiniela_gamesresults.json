@@ -1,0 +1,14 @@
+[
+{
+  "model": "quiniela.gameresult",
+  "pk": 11,
+  "fields": {
+    "created": "2018-04-24T21:45:26.021Z",
+    "modified": "2018-04-25T01:14:50.950Z",
+    "game": 3,
+    "user": 1,
+    "score_home": 3,
+    "score_away": 2
+  }
+}
+]

@@ -42,12 +42,9 @@ def quiniela_details(request, quiniela_id):
     if request.method == 'POST':
         results_formset = results_formset(request.POST or None)
         if results_formset.is_valid():
-            print("here2")
             for form in results_formset:
                 if form.is_valid():
                     form.save()
-        else:
-            print(results_formset.errors)
     else:
         # Create one in case the user is new to the quiniela
         if not prediction:

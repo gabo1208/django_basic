@@ -22,7 +22,9 @@ class Game(models.Model):
         related_name='game_context'
     )
     limit_date = models.DateField(null=True, blank=True)
+    limit_datetime = models.DateTimeField(null=True, blank=True)
     match_date = models.DateField(null=True, blank=True)
+    match_datetime = models.DateTimeField(null=True, blank=True)
 
     def __str__(self):
         return str(self.home_team) + ' - ' + str(self.away_team) + ' ' + str(self.match_date)

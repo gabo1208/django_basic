@@ -1,0 +1,20 @@
+[
+{
+  "model": "quiniela.tournament",
+  "pk": 2,
+  "fields": {
+    "name": "FIFA World Cup Rusia 2018",
+    "image": "WCLogo.png",
+    "description": "Copa Mundial de Fifa po wn",
+    "start_in": "2018-06-14",
+    "ends_in": "2018-07-15",
+    "fixture": [
+      3
+    ],
+    "tags": [
+      1,
+      2
+    ]
+  }
+}
+]

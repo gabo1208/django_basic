@@ -1,0 +1,16 @@
+[
+{
+  "model": "quiniela.game",
+  "pk": 3,
+  "fields": {
+    "home_team": 1,
+    "away_team": 2,
+    "score_home": 0,
+    "score_away": 0,
+    "limit_date": "2018-06-13",
+    "limit_datetime": null,
+    "match_date": "2018-06-14",
+    "match_datetime": null
+  }
+}
+]
