@@ -7,6 +7,7 @@ from . import views
 app_name = 'quiniela'
 urlpatterns = [
     # Quiniela related views
-    re_path('^$', views.quiniela_index, name='users_quinielas'),
+    re_path('^$', views.quiniela_index, name='user_quinielas'),
     path('<int:quiniela_id>', views.quiniela_details, name='quiniela_details'),
+    path('<int:quiniela_id>/delete', views.quiniela_delete, name='quiniela_delete'),
 ]

@@ -1,0 +1,322 @@
+[
+{
+  "model": "quiniela.groupteam",
+  "pk": 1,
+  "fields": {
+    "team": 3,
+    "group": 1,
+    "score": 0,
+    "games_checked": 0
+  }
+},
+{
+  "model": "quiniela.groupteam",
+  "pk": 2,
+  "fields": {
+    "team": 1,
+    "group": 1,
+    "score": 0,
+    "games_checked": 0
+  }
+},
+{
+  "model": "quiniela.groupteam",
+  "pk": 3,
+  "fields": {
+    "team": 2,
+    "group": 1,
+    "score": 0,
+    "games_checked": 0
+  }
+},
+{
+  "model": "quiniela.groupteam",
+  "pk": 4,
+  "fields": {
+    "team": 4,
+    "group": 1,
+    "score": 0,
+    "games_checked": 0
+  }
+},
+{
+  "model": "quiniela.groupteam",
+  "pk": 5,
+  "fields": {
+    "team": 6,
+    "group": 2,
+    "score": 0,
+    "games_checked": 0
+  }
+},
+{
+  "model": "quiniela.groupteam",
+  "pk": 6,
+  "fields": {
+    "team": 5,
+    "group": 2,
+    "score": 0,
+    "games_checked": 0
+  }
+},
+{
+  "model": "quiniela.groupteam",
+  "pk": 7,
+  "fields": {
+    "team": 8,
+    "group": 2,
+    "score": 0,
+    "games_checked": 0
+  }
+},
+{
+  "model": "quiniela.groupteam",
+  "pk": 8,
+  "fields": {
+    "team": 7,
+    "group": 2,
+    "score": 0,
+    "games_checked": 0
+  }
+},
+{
+  "model": "quiniela.groupteam",
+  "pk": 9,
+  "fields": {
+    "team": 10,
+    "group": 3,
+    "score": 0,
+    "games_checked": 0
+  }
+},
+{
+  "model": "quiniela.groupteam",
+  "pk": 10,
+  "fields": {
+    "team": 14,
+    "group": 3,
+    "score": 0,
+    "games_checked": 0
+  }
+},
+{
+  "model": "quiniela.groupteam",
+  "pk": 11,
+  "fields": {
+    "team": 9,
+    "group": 3,
+    "score": 0,
+    "games_checked": 0
+  }
+},
+{
+  "model": "quiniela.groupteam",
+  "pk": 12,
+  "fields": {
+    "team": 13,
+    "group": 3,
+    "score": 0,
+    "games_checked": 0
+  }
+},
+{
+  "model": "quiniela.groupteam",
+  "pk": 13,
+  "fields": {
+    "team": 11,
+    "group": 4,
+    "score": 0,
+    "games_checked": 0
+  }
+},
+{
+  "model": "quiniela.groupteam",
+  "pk": 14,
+  "fields": {
+    "team": 15,
+    "group": 4,
+    "score": 0,
+    "games_checked": 0
+  }
+},
+{
+  "model": "quiniela.groupteam",
+  "pk": 15,
+  "fields": {
+    "team": 12,
+    "group": 4,
+    "score": 0,
+    "games_checked": 0
+  }
+},
+{
+  "model": "quiniela.groupteam",
+  "pk": 16,
+  "fields": {
+    "team": 16,
+    "group": 4,
+    "score": 0,
+    "games_checked": 0
+  }
+},
+{
+  "model": "quiniela.groupteam",
+  "pk": 17,
+  "fields": {
+    "team": 21,
+    "group": 5,
+    "score": 0,
+    "games_checked": 0
+  }
+},
+{
+  "model": "quiniela.groupteam",
+  "pk": 18,
+  "fields": {
+    "team": 17,
+    "group": 5,
+    "score": 0,
+    "games_checked": 0
+  }
+},
+{
+  "model": "quiniela.groupteam",
+  "pk": 19,
+  "fields": {
+    "team": 22,
+    "group": 5,
+    "score": 0,
+    "games_checked": 0
+  }
+},
+{
+  "model": "quiniela.groupteam",
+  "pk": 20,
+  "fields": {
+    "team": 18,
+    "group": 5,
+    "score": 0,
+    "games_checked": 0
+  }
+},
+{
+  "model": "quiniela.groupteam",
+  "pk": 21,
+  "fields": {
+    "team": 19,
+    "group": 6,
+    "score": 0,
+    "games_checked": 0
+  }
+},
+{
+  "model": "quiniela.groupteam",
+  "pk": 22,
+  "fields": {
+    "team": 24,
+    "group": 6,
+    "score": 0,
+    "games_checked": 0
+  }
+},
+{
+  "model": "quiniela.groupteam",
+  "pk": 23,
+  "fields": {
+    "team": 20,
+    "group": 6,
+    "score": 0,
+    "games_checked": 0
+  }
+},
+{
+  "model": "quiniela.groupteam",
+  "pk": 24,
+  "fields": {
+    "team": 23,
+    "group": 6,
+    "score": 0,
+    "games_checked": 0
+  }
+},
+{
+  "model": "quiniela.groupteam",
+  "pk": 25,
+  "fields": {
+    "team": 25,
+    "group": 7,
+    "score": 0,
+    "games_checked": 0
+  }
+},
+{
+  "model": "quiniela.groupteam",
+  "pk": 26,
+  "fields": {
+    "team": 28,
+    "group": 7,
+    "score": 0,
+    "games_checked": 0
+  }
+},
+{
+  "model": "quiniela.groupteam",
+  "pk": 27,
+  "fields": {
+    "team": 26,
+    "group": 7,
+    "score": 0,
+    "games_checked": 0
+  }
+},
+{
+  "model": "quiniela.groupteam",
+  "pk": 28,
+  "fields": {
+    "team": 27,
+    "group": 7,
+    "score": 0,
+    "games_checked": 0
+  }
+},
+{
+  "model": "quiniela.groupteam",
+  "pk": 29,
+  "fields": {
+    "team": 29,
+    "group": 8,
+    "score": 0,
+    "games_checked": 0
+  }
+},
+{
+  "model": "quiniela.groupteam",
+  "pk": 30,
+  "fields": {
+    "team": 30,
+    "group": 8,
+    "score": 0,
+    "games_checked": 0
+  }
+},
+{
+  "model": "quiniela.groupteam",
+  "pk": 31,
+  "fields": {
+    "team": 31,
+    "group": 8,
+    "score": 0,
+    "games_checked": 0
+  }
+},
+{
+  "model": "quiniela.groupteam",
+  "pk": 32,
+  "fields": {
+    "team": 32,
+    "group": 8,
+    "score": 0,
+    "games_checked": 0
+  }
+}
+]

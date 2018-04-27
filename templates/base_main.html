@@ -43,6 +43,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <script src="{% static 'vue/vue.js' %}"></script>
   <script src="{% static 'channels/js/websocketbridge.js' %}"></script>
 
+  <link rel="icon" type="image/png" href="{% static 'icon.png' %}" />
+
 </head>
 <!--
 BODY TAG OPTIONS:
@@ -88,7 +90,7 @@ desired effect
         </a>
       </li>
       <li>
-        <a href="{% url 'quiniela:users_quinielas' %}" class="pages-header">
+        <a href="{% url 'quiniela:user_quinielas' %}" class="pages-header">
           <b>Quinielas</b>
         </a>
       </li>
@@ -125,7 +127,7 @@ desired effect
           </a>
         </li>
         <li>
-          <a href="{% url 'quiniela:users_quinielas' %}" class="pages-header">
+          <a href="{% url 'quiniela:user_quinielas' %}" class="pages-header">
             <b>Quinielas</b>
           </a>
         </li>
@@ -473,7 +475,7 @@ desired effect
   {% endif %}
     <!-- To the right -->
     <div class="pull-right hidden-xs">
-      Made with love <3
+      Made with love gabohd@gmail.com<3
     </div>
     <!-- Default to the left -->
     <strong>Copyright &copy; 2017 <a href="#">Member It Team</a>.</strong> All rights reserved.

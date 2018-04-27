@@ -1,0 +1,53 @@
+[
+{
+  "model": "quiniela.tournament",
+  "pk": 2,
+  "fields": {
+    "name": "FIFA World Cup Rusia 2018",
+    "image": "WCLogo.png",
+    "description": "Copa Mundial de Fifa po wn",
+    "start_in": "2018-06-14",
+    "ends_in": "2018-07-15",
+    "fixture": [
+      20,
+      3,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "tags": [
+      1,
+      2
+    ]
+  }
+},
+{
+  "model": "quiniela.tournament",
+  "pk": 4,
+  "fields": {
+    "name": "Test",
+    "image": "",
+    "description": "test",
+    "start_in": "2018-04-26",
+    "ends_in": "2018-04-26",
+    "fixture": [
+      24,
+      23,
+      25,
+      26
+    ],
+    "tags": []
+  }
+}
+]

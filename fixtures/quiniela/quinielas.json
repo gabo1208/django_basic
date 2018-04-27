@@ -1,0 +1,42 @@
+[
+{
+  "model": "quiniela.quiniela",
+  "pk": 2,
+  "fields": {
+    "created": "2018-04-24T16:40:47.788Z",
+    "modified": "2018-04-25T13:07:37.254Z",
+    "name": "Kinielakalakaua",
+    "image": "",
+    "description": "Kiniela de los Kalakaua",
+    "tournament": 2,
+    "score_type": "TO",
+    "score_type_cache": "TO",
+    "members": [
+      1,
+      2
+    ],
+    "tags": [
+      1,
+      2
+    ]
+  }
+},
+{
+  "model": "quiniela.quiniela",
+  "pk": 4,
+  "fields": {
+    "created": "2018-04-26T03:28:14.411Z",
+    "modified": "2018-04-26T16:37:03.594Z",
+    "name": "TestNiela",
+    "image": "",
+    "description": "test",
+    "tournament": 4,
+    "score_type": "EA",
+    "score_type_cache": "EA",
+    "members": [
+      1
+    ],
+    "tags": []
+  }
+}
+]

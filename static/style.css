@@ -23,10 +23,6 @@ body{
     color: white;
 }
 
-.content{
-	margin-top: 40px;
-}
-
 .code_snippet{
     background: grey;
     color: white;
@@ -47,8 +43,8 @@ body{
     margin-left: 5%;
 }
 
-hr{
-    color: #d6d6d6;
+.form-group{
+    margin: 0;
 }
 
 .form-group input{
