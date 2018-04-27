@@ -149,6 +149,15 @@ def quiniela_details(request, quiniela_id):
     if count % 16 != 0:
         groups_formsets.append((group_forms, formset.management_form))
 
+    leaders = MemberFixture.objects.filter(tournament=quiniela.tournament).order_by('score')
+    pendings = []
+
+    for user in quiniela.members.all():
+        print(user)
+        print(leaders.filter(user=user))
+        if not leaders.filter(user=user):
+            pendings.append(user)
+
     return render(
         request,
         'quiniela_detail.html',
@@ -156,6 +165,7 @@ def quiniela_details(request, quiniela_id):
             'quiniela': quiniela,
             'group_predictions': groups_formsets,
             'leaders': MemberFixture.objects.filter(tournament=quiniela.tournament).order_by('score'),
+            'pendings': pendings,
             'groups': Group.objects.filter(tournament=quiniela.tournament).order_by('name'),
             'invite_formset': invite_formset
         }

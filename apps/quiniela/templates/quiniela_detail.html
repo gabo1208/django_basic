@@ -42,12 +42,14 @@
         <form role="form" method="post" id="formsets">
         {% csrf_token %}
           <div class="invite-form-container" style="display: none">
-                {{ invite_formset.management_form }}
-                <table>
-                    {{ invite_formset }}
-                </table>
-                <button type="button" class="btn btn-danger" onclick="submit_form('formsets')">Invite Users</button>
-            Introduce one or more users usernames or emails separated by ';' to invite them! (test;test@testmail.com)
+              {{ invite_formset.management_form }}
+              <table>
+                  {{ invite_formset }}
+              </table>
+              Introduce one or more users usernames or emails separated by ';' to invite them! (test;test@testmail.com)<br>
+              <button type="button" class="btn" onclick="show_invite_form()">
+                <i class="fa fa-plus"></i> Invite
+              </button><br>
           </div>
           <hr>
 
@@ -73,7 +75,10 @@
                     <div class="row">
                       <div class="col-xs-12">
                         {% for leader in leaders %}
-                        {{ leader }} - {% get_score leader quiniela.score_type %}<br>
+                          {{ leader }} - {% get_score leader quiniela.score_type %}<br>
+                        {% endfor %}
+                        {% for pending in pendings %}
+                          {{ pending }} - pending<br>
                         {% endfor %}
                       </div>
                     </div>
@@ -239,6 +244,7 @@
 
 {% block jsblock %}
 <script type="text/javascript">
+  var inv = false;
   function quiniela_delete() {
     r = confirm("Are you sure?");
     if(r){
@@ -247,7 +253,12 @@
   }
 
   function show_invite_form(){
-    $(".invite-form-container").show();
+    if(!inv){
+      $(".invite-form-container").show();
+      inv = true;
+    }else{
+      submit_form('formsets')
+    }
   }
 
   function submit_form(frmId){
