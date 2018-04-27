@@ -153,8 +153,6 @@ def quiniela_details(request, quiniela_id):
     pendings = []
 
     for user in quiniela.members.all():
-        print(user)
-        print(leaders.filter(user=user))
         if not leaders.filter(user=user):
             pendings.append(user)
 
