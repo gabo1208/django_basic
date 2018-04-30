@@ -18,8 +18,8 @@ class Team(models.Model):
 
 
 class Game(models.Model):
-    home_team = models.ForeignKey('Team', on_delete=models.CASCADE, related_name='home_team')
-    away_team = models.ForeignKey('Team', on_delete=models.CASCADE, related_name='away_team')
+    home_team = models.ForeignKey('Team', on_delete=models.CASCADE, related_name='home_team', blank=True)
+    away_team = models.ForeignKey('Team', on_delete=models.CASCADE, related_name='away_team', blank=True)
     tournament = models.ForeignKey('Tournament', on_delete=models.CASCADE)
     score_set = models.BooleanField(default=False)
     score_home = models.IntegerField(default=0)
@@ -27,7 +27,10 @@ class Game(models.Model):
     match_datetime = models.DateTimeField(null=True, blank=True)
 
     def __str__(self):
-        return str(self.home_team) + ' - ' + str(self.away_team) + ' ' + str(self.match_datetime)
+        return (
+            str(self.home_team) + ' - ' + str(self.away_team) + ' ' + str(self.match_datetime) +
+            ' - ' + str(self.tournament)
+        )
 
 
 class GameResult(TimeStampedModel):
@@ -73,7 +76,7 @@ class Group(models.Model):
         unique_together = ('name', 'tournament')
 
     def __str__(self):
-        return 'Group ' + self.name
+        return 'Group ' + self.name + ' - ' + str(self.tournament)
 
     def get_teams(self):
         return GroupTeam.objects.filter(group=self).order_by('score')
@@ -102,6 +105,7 @@ class Tournament(models.Model):
 class MemberFixture(TimeStampedModel):
     user = models.ForeignKey(Profile, on_delete=models.CASCADE)
     tournament = models.ForeignKey('Tournament', on_delete=models.CASCADE)
+    quiniela = models.ForeignKey('Quiniela', on_delete=models.CASCADE)
     results = models.ManyToManyField('GameResult', related_name='member_fixture_game_results')
     games_checked = models.IntegerField(default=0)
     score = models.IntegerField(default=0)

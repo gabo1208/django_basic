@@ -318,5 +318,25 @@
     "score": 0,
     "games_checked": 0
   }
+},
+{
+  "model": "quiniela.groupteam",
+  "pk": 34,
+  "fields": {
+    "team": 1,
+    "group": 9,
+    "score": 0,
+    "games_checked": 0
+  }
+},
+{
+  "model": "quiniela.groupteam",
+  "pk": 35,
+  "fields": {
+    "team": 1,
+    "group": 10,
+    "score": 0,
+    "games_checked": 0
+  }
 }
 ]

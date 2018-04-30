@@ -62,5 +62,21 @@
     "name": "H",
     "tournament": 2
   }
+},
+{
+  "model": "quiniela.group",
+  "pk": 9,
+  "fields": {
+    "name": "Group A",
+    "tournament": 4
+  }
+},
+{
+  "model": "quiniela.group",
+  "pk": 10,
+  "fields": {
+    "name": "Group B",
+    "tournament": 4
+  }
 }
 ]
