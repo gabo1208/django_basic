@@ -12,11 +12,11 @@ urlpatterns = [
     re_path('^sign_up/$', views.sign_up, name='user_sign_up'),
 
     # User related views
-    re_path('^$', views.user_index, name='user_index'),
+    #re_path('^$', views.user_index, name='user_index'),
 
     # Social related views
-    path('profiles/@<str:username>', views.user_profile, name='user_profile'),
+    #path('profiles/@<str:username>', views.user_profile, name='user_profile'),
 
     # Include user member-its urls
-    re_path('^', include('apps.memberits.urls', namespace='member-it')),
+    #re_path('^', include('apps.memberits.urls', namespace='member-it')),
 ]

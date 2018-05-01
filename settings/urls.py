@@ -12,13 +12,13 @@ urlpatterns = [
     # User Urls
     re_path('^user/', include('apps.users.urls', namespace='users')),
     # Chat Urls
-    re_path('^chat/', include('apps.chat.urls', namespace='chat')),
+    #re_path('^chat/', include('apps.chat.urls', namespace='chat')),
     # Quiniela Urls
     re_path('^user/quinielas/', include('apps.quiniela.urls', namespace='quiniela')),
     # Api Urls
-    re_path('^api/', include('apps.api.urls', namespace='api')),
+    #re_path('^api/', include('apps.api.urls', namespace='api')),
     # Oauth2 Urls
-    re_path('^o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
+    #re_path('^o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
     # Main Urls
     re_path('^', include('apps.main.urls')),
 

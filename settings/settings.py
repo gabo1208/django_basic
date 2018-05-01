@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Django-channels for websockets/server pushs
-    'channels',
+    #'channels',
 
     # Extension packages
     'django_extensions',
@@ -85,18 +85,18 @@ MIDDLEWARE = [
     'oauth2_provider.middleware.OAuth2TokenMiddleware',
 ]
 
-redis_host = os.environ.get('REDIS_HOST', 'localhost')
+#redis_host = os.environ.get('REDIS_HOST', 'localhost')
 
-ASGI_APPLICATION = 'settings.routing.application'
+#ASGI_APPLICATION = 'settings.routing.application'
 
-CHANNEL_LAYERS = {
-    'default': {
-        'BACKEND': 'channels_redis.core.RedisChannelLayer',
-        'CONFIG': {
-            'hosts': [(redis_host, 6379)],
-        },
-    },
-}
+#CHANNEL_LAYERS = {
+#    'default': {
+#        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+#        'CONFIG': {
+#            'hosts': [(redis_host, 6379)],
+#        },
+#    },
+#}
 
 ROOT_URLCONF = 'settings.urls'
 
@@ -186,4 +186,4 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 LOGIN_URL = '/user/login/'
 
-LOGIN_REDIRECT_URL = '/user/'
+LOGIN_REDIRECT_URL = '/user/quinielas/'
