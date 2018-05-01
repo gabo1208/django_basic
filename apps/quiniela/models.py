@@ -18,12 +18,12 @@ class Team(models.Model):
 
 
 class Game(models.Model):
-    home_team = models.ForeignKey('Team', on_delete=models.CASCADE, related_name='home_team', blank=True)
-    away_team = models.ForeignKey('Team', on_delete=models.CASCADE, related_name='away_team', blank=True)
+    home_team = models.ForeignKey('Team', on_delete=models.CASCADE, related_name='home_team', blank=True, null=True)
+    away_team = models.ForeignKey('Team', on_delete=models.CASCADE, related_name='away_team', blank=True, null=True)
     tournament = models.ForeignKey('Tournament', on_delete=models.CASCADE)
     score_set = models.BooleanField(default=False)
-    score_home = models.IntegerField(default=0)
-    score_away = models.IntegerField(default=0)
+    score_home = models.CharField(default='0', max_length=5)
+    score_away = models.CharField(default='0', max_length=5)
     match_datetime = models.DateTimeField(null=True, blank=True)
 
     def __str__(self):
@@ -32,12 +32,28 @@ class Game(models.Model):
             ' - ' + str(self.tournament)
         )
 
+    def get_winner(self):
+        if self.score_set:
+            if self.score_home > self.score_away:
+                return self.home_team
+            elif self.score_home < self.score_away:
+                return self.away_team
+        return None
+
+    def get_loser(self):
+        if self.score_set:
+            if self.score_home > self.score_away:
+                return self.away_team
+            elif self.score_home < self.score_away:
+                return self.home_team
+        return None
+
 
 class GameResult(TimeStampedModel):
     game = models.ForeignKey('Game', on_delete=models.CASCADE)
     user = models.ForeignKey(Profile, on_delete=models.CASCADE)
-    score_home = models.IntegerField(default=0)
-    score_away = models.IntegerField(default=0)
+    score_home = models.CharField(default='0', max_length=5)
+    score_away = models.CharField(default='0', max_length=5)
 
     def __str__(self):
         return(
@@ -59,8 +75,40 @@ class GroupTeam(models.Model):
         return str(self.group) + ' - ' + str(self.team) + ' - ' + str(self.score)
 
     def get_score(self):
-        games = Game.objects.filter(tournament=self.group.tournament, home_team=self.team)
-        return 0
+        if self.games_checked < 3:
+            self.games_checked = 0
+            score = 0
+            games_home = Game.objects.filter(
+                tournament=self.group.tournament,
+                home_team=self.team,
+                match_datetime__lte=datetime.datetime(2018, 6, 29),
+                score_set=True
+            )
+            games_away = games = Game.objects.filter(
+                tournament=self.group.tournament,
+                away_team=self.team,
+                match_datetime__lte=datetime.datetime(2018, 6, 29),
+                score_set=True
+            )
+
+            for game in games_home:
+                self.games_checked += 1
+                if game.score_home > game.score_away:
+                    score += 3
+                elif game.score_home == game.score_away:
+                    score += 1
+
+            for game in games_away:
+                self.games_checked += 1
+                if game.score_home < game.score_away:
+                    score += 3
+                elif game.score_home == game.score_away:
+                    score += 1
+
+            self.score = score
+            self.save()
+
+        return self.score
 
 
 class Group(models.Model):
