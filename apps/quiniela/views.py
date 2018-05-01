@@ -174,7 +174,7 @@ def quiniela_details(request, quiniela_id):
     elif datetime.datetime.now() <= datetime.datetime(2018, 7, 14, 12):
         active += 8
         phase += 5
-        if quiniela_games[62].home_team == None and quiniela_games[61].score_set:
+        if quiniela_games[63].home_team == None and quiniela_games[61].score_set:
             # Champion
             game = Game.objects.get(id=quiniela_games[63].id)
             game.home_team = quiniela_games[60].get_winner()
