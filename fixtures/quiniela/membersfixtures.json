@@ -83,18 +83,18 @@
   "pk": 7,
   "fields": {
     "created": "2018-04-26T03:28:19.861Z",
-    "modified": "2018-04-30T02:28:36.021Z",
+    "modified": "2018-05-01T04:52:50.182Z",
     "user": 1,
     "tournament": 4,
     "quiniela": 4,
     "games_checked": 4,
     "score": 7,
     "results": [
-      29,
-      31,
-      30,
-      32,
-      66
+      83,
+      84,
+      85,
+      86,
+      87
     ]
   }
 }

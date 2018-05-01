@@ -4,7 +4,7 @@
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$100000$pYXCRfGPcpzC$ts43gJYT8ioY4I5KMAaLF2WcsjBsKbF7R7Sl3PblYdI=",
-    "last_login": "2018-04-24T16:42:45.861Z",
+    "last_login": "2018-05-01T14:11:05.489Z",
     "is_superuser": true,
     "username": "admin",
     "first_name": "",
@@ -36,6 +36,24 @@
   }
 },
 {
+  "model": "users.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$100000$ZmyU1ShH4eGW$uFsKpYGiwWMQjadY7ZFHcd5rpG+ec0lzscj3aRk0fcc=",
+    "last_login": "2018-05-01T14:09:48.063Z",
+    "is_superuser": false,
+    "username": "gabo123",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2018-05-01T14:09:47.744Z",
+    "email": "gabo_h_d@hotmail.com",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
   "model": "users.profilepreferences",
   "pk": 1,
   "fields": {
@@ -45,6 +63,13 @@
 {
   "model": "users.profilepreferences",
   "pk": 2,
+  "fields": {
+    "option1": true
+  }
+},
+{
+  "model": "users.profilepreferences",
+  "pk": 3,
   "fields": {
     "option1": true
   }
@@ -110,6 +135,35 @@
     "verified": false,
     "active": true,
     "preferences": 2,
+    "role": "NU",
+    "following": [],
+    "followers": [],
+    "friends": [],
+    "interests": [],
+    "requests": [],
+    "events": [],
+    "groups": [],
+    "message_history": []
+  }
+},
+{
+  "model": "users.profile",
+  "pk": 3,
+  "fields": {
+    "created": "2018-05-01T14:09:47.919Z",
+    "modified": "2018-05-01T14:09:47.920Z",
+    "user": 3,
+    "country": null,
+    "city": null,
+    "location": null,
+    "phone": null,
+    "mail": null,
+    "image": "",
+    "reputation": "0.00",
+    "description": null,
+    "verified": false,
+    "active": true,
+    "preferences": 3,
     "role": "NU",
     "following": [],
     "followers": [],

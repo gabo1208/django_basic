@@ -325,8 +325,8 @@
   "fields": {
     "team": 1,
     "group": 9,
-    "score": 0,
-    "games_checked": 0
+    "score": 10,
+    "games_checked": 8
   }
 },
 {
@@ -335,8 +335,8 @@
   "fields": {
     "team": 1,
     "group": 10,
-    "score": 0,
-    "games_checked": 0
+    "score": 10,
+    "games_checked": 8
   }
 }
 ]
