@@ -149,7 +149,7 @@ def quiniela_details(request, quiniela_id):
     elif datetime.datetime.now() <= datetime.datetime(2018, 7, 11, 15):
         active += 6
         phase += 3
-        if quiniela_games[56].home_team == None and quiniela_games[55].score_set:
+        if quiniela_games[60].home_team == None and quiniela_games[59].score_set:
             # QF1 vs QF2
             game = Game.objects.get(id=quiniela_games[60].id)
             game.home_team = quiniela_games[56].get_winner()
@@ -161,20 +161,20 @@ def quiniela_details(request, quiniela_id):
             game.away_team = quiniela_games[58].get_winner()
             game.save()
     # 3rd Place
-    elif datetime.datetime.now() <= datetime.datetime(2018, 7, 14, 12):
+    elif datetime.datetime.now() <= datetime.datetime(2018, 7, 13, 12):
         active += 7
         phase += 4
-        if quiniela_games[60].home_team == None and quiniela_games[59].score_set:
+        if quiniela_games[62].home_team == None and quiniela_games[61].score_set:
             # Third Place
             game = Game.objects.get(id=quiniela_games[62].id)
             game.home_team = quiniela_games[60].get_loser()
             game.away_team = quiniela_games[61].get_loser()
             game.save()
     # Final
-    elif datetime.datetime.now() <= datetime.datetime(2018, 7, 15, 12):
+    elif datetime.datetime.now() <= datetime.datetime(2018, 7, 14, 12):
         active += 8
         phase += 5
-        if quiniela_games[60].home_team == None and quiniela_games[59].score_set:
+        if quiniela_games[62].home_team == None and quiniela_games[61].score_set:
             # Champion
             game = Game.objects.get(id=quiniela_games[63].id)
             game.home_team = quiniela_games[60].get_winner()
