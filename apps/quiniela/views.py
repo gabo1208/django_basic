@@ -330,6 +330,7 @@ def quiniela_details(request, quiniela_id):
         init = 0
         end = phases_limit
         count = 0
+        prefix = 0
         for game in quiniela_games:
             if count % phases_limit == 0:
                 group_forms = []
