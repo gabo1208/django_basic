@@ -159,7 +159,7 @@ class MemberFixture(TimeStampedModel):
     score = models.IntegerField(default=0)
 
     class Meta:
-        unique_together=(('user', 'tournament'),)
+        unique_together=(('user', 'tournament', 'quiniela'),)
 
     def __str__(self):
         return self.user.user.username + '(' + self.user.user.email + ') - ' + self.tournament.name

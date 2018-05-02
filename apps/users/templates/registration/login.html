@@ -10,7 +10,7 @@
 {# Display django.contrib.messages as Bootstrap alerts #}
 
 {% block content %}
-    <div class="sign-up-form">
+    <div class="col-sm-6">
         {% bootstrap_messages %}
         <form method="post" action="{% url 'users:login' %}">
         {% csrf_token %}
@@ -22,6 +22,7 @@
         </form>
 
         {# Assumes you setup the password_reset view in your URLconf #}
-        <p><a href="{% url 'main:home' %}">Lost password?</a></p>
+        <p><a href="{% url 'users:user_sign_up' %}">Register </a></p>
+        <p><a href="{% url 'main:home' %}"> Lost password? </a></p>
     </div>
 {% endblock %}
