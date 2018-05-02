@@ -40,7 +40,13 @@
         {% endif  %}
         {% if is_member %}
         <button type="button" class="btn btn-success" onclick="show_invite_form()">
-          <i class="fa fa-plus"></i> Invite User/s
+            <i class="fa fa-plus"></i> Invite User/s
+        </button>
+        <button type="button" class="btn btn-success">
+            <a href="https://web.whatsapp.com/send?text={{request.build_absolute_uri}} Unete a mi quiniela {{ quiniela.name }} =)!"
+                    data-action="share/whatsapp/share" style="color: white">
+                <i class="fa fa-whatsapp"></i> Share via Whatsapp!
+            </a>
         </button><br><br>
         {% else %}
         <button type="button" class="btn btn-success">
