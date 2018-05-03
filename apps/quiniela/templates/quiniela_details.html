@@ -315,6 +315,14 @@
 {% block jsblock %}
 <script type="text/javascript">
   var inv = false;
+  $(document).ready(function(){
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        $('#whatsapp-share-button').attr('href', 'whatsapp://send?text={{request.build_absolute_uri}} Unete a mi quiniela {{ quiniela.name }} =)!')
+    }else{
+        $('#whatsapp-share-button').attr('href', 'https://web.whatsapp.com/send?text={{request.build_absolute_uri}} Unete a mi quiniela {{ quiniela.name }} =)!')
+    }
+  })
+
   function quiniela_delete() {
     r = confirm("Are you sure?");
     if(r){
