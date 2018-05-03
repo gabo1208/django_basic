@@ -22,7 +22,9 @@
         </form>
 
         {# Assumes you setup the password_reset view in your URLconf #}
-        <p><a href="{% url 'users:user_sign_up' %}">Register </a></p>
-        <p><a href="{% url 'main:home' %}"> Lost password? </a></p>
+        <p>
+            <a href="{% url 'users:user_sign_up' %}">Register and Create your Own Quiniela!</a> - 
+            <a href="{% url 'main:home' %}"> Lost password? </a>
+        </p>
     </div>
 {% endblock %}

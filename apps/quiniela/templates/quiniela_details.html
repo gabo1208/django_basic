@@ -41,6 +41,11 @@
         {% if is_member %}
         <button type="button" class="btn btn-success" onclick="show_invite_form()">
           <i class="fa fa-plus"></i> Invite User/s
+        </button>
+        <button type="button" class="btn btn-success">
+          <a id="whatsapp-share-button" href="#" data-action="share/whatsapp/share" style="color: white">
+            <i class="fa fa-whatsapp"></i> Share via Whatsapp!
+          </a>
         </button><br><br>
         {% else %}
         <button type="button" class="btn btn-success">
@@ -77,165 +82,175 @@
           <div class="tab-content">
               <br>
               <div id="leaderboard" class="row container-fluid tab-pane fade in {% if active == 0 %}active{% endif %}">
-                  <div class="col-sm-4" align="center">
-                    {% if quiniela.image %}
-                        <img src="{{quiniela.image.url}}" width="48px" height="auto">
-                    {% endif %}
-                    <b>{{ quiniela.name }} - LeaderBoard:</b><br><br>
-                    <div class="row">
-                      <div class="col-xs-12">
-                        {% for leader in leaders %}
-                          {{ leader }} - {% get_score leader quiniela.score_type %}<br>
-                        {% endfor %}
-                        {% for pending in pendings %}
-                          {{ pending }} - pending<br>
-                        {% endfor %}
-                        <br>
-                        {% if invite_notifications %}
-                          <div class="alert alert-success-special">
-                          {% for note in invite_notifications %}
-                            <strong>{{ note }}</strong><br>
-                          {% endfor %}
-                          </div>
+                <div class="row">
+                  <div class="col-lg-4" align="center">
+                    <div class="box">
+                      <div class="box-header with-border">
+                        {% if quiniela.image %}
+                            <img src="{{quiniela.image.url}}" width="48px" height="auto">
                         {% endif %}
-                        {% if invite_errors %}
-                          <div class="alert alert-danger-special">
-                          {% for error in invite_errors %}
-                            <strong>{{ error }}</strong><br>
+                        <b>{{ quiniela.name }} - LeaderBoard:</b><br><br>
+                      </div>
+                      <div class="row">
+                        <div class="col-xs-12">
+                          {% for leader in leaders %}
+                            {{ leader }} - {% get_score leader quiniela.score_type %}<br>
                           {% endfor %}
-                          </div>
-                        {% endif %}
+                          {% for pending in pendings %}
+                            {{ pending }} - pending<br>
+                          {% endfor %}
+                          <br>
+                          {% if invite_notifications %}
+                            <div class="alert alert-success-special">
+                            {% for note in invite_notifications %}
+                              <strong>{{ note }}</strong><br>
+                            {% endfor %}
+                            </div>
+                          {% endif %}
+                          {% if invite_errors %}
+                            <div class="alert alert-danger-special">
+                            {% for error in invite_errors %}
+                              <strong>{{ error }}</strong><br>
+                            {% endfor %}
+                            </div>
+                          {% endif %}
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <div class="col-sm-8">
-                    <div align="center">
-                      {% if quiniela.tournament.image %}
-                          <img src="{{quiniela.tournament.image.url}}" width="48px" height="auto">
-                      {% endif %}
-                      <b>{{ quiniela.tournament.name }} - Groups Table</b>
-                    </div>
-                    <div class="row">
-                      {% for group in groups %}
-                      <div class="col-xs-6">
-                        <div class="row">
-                          <div class="col-xs-12" align="center"> <b>Group {{ group.name }}</b></div>
-                        </div>
-                        {% for team in group.get_teams %}
-                        <div class="row">
-                          <div class="col-xs-6 col-xs-offset-2">
-                            <img src="{{ team.team.image.url }}" width="46" height="32">{{ team.team.name }}
+                  <div class="col-lg-8">
+                    <div class="box">
+                      <div align="center" class="box-header with-border">
+                        {% if quiniela.tournament.image %}
+                            <img src="{{quiniela.tournament.image.url}}" width="48px" height="auto">
+                        {% endif %}
+                        <b>{{ quiniela.tournament.name }} - Groups Table</b>
+                      </div>
+                      <div class="row">
+                        {% for group in groups %}
+                        <div class="col-xs-6">
+                          <div class="row">
+                            <div class="col-xs-12" align="center"> <b>Group {{ group.name }}</b></div>
                           </div>
-                          <div class="col-xs-4" align="center">
-                            {{ team.get_score }}
+                          {% for team in group.get_teams %}
+                          <div class="row">
+                            <div class="col-xs-6 col-xs-offset-2">
+                              <img src="{{ team.team.image.url }}" width="46" height="32">{{ team.team.name }}
+                            </div>
+                            <div class="col-xs-4" align="center">
+                              {{ team.get_score }}
+                            </div>
                           </div>
+                          {% endfor %}
+                          <br>
                         </div>
                         {% endfor %}
-                        <br>
                       </div>
-                      {% endfor %}
                     </div>
                   </div>
+                </div>
               </div>
 
               {% for group_matchday_pair in group_predictions %}
               <div id="group{{ forloop.counter }}" class="row container-fluid tab-pane fade in {% if active == forloop.counter %}active{% endif %}">
-                <div class="col-sm-6">
-                  {% if is_member %}
-                  <div align="center"><b>Your Predictions - 
-                    {% if forloop.counter <= 3 %}
-                      Group Matchday {{ forloop.counter }}
-                    {% elif forloop.counter == 4 %}
-                      Eigths Finals
-                    {% elif forloop.counter == 5 %}
-                      Quarter Finals
-                    {% elif forloop.counter == 6 %}
-                      SemiFinals
-                    {% elif forloop.counter == 7 %}
-                      Third Place
-                    {% elif forloop.counter == 8 %}
-                      Final
-                    {% endif %}
-                  </b></div><br><br>
-                  {{ group_matchday_pair.1 }}
-                  {% if forloop.counter <= phase %}
-                  {% for pair in group_matchday_pair.0 %}
-                      {% if forloop.counter0|divisibleby:2 %}
-                      <div class="row">
-                      {% endif %}
-                        <div class="col-sm-6">
-                          {% bootstrap_messages %}
-                          {{ pair.1.errors }}
-                          {% for hidden_field in pair.1.hidden_fields %}
-                              {{ hidden_field }}
-                          {% endfor %}
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="box">
+                      {% if is_member %}
+                      <div align="center" class="box-header with-border"><b>Your Predictions - 
+                        {% if forloop.counter <= 3 %}
+                          Group Matchday {{ forloop.counter }}
+                        {% elif forloop.counter == 4 %}
+                          Eigths Finals
+                        {% elif forloop.counter == 5 %}
+                          Quarter Finals
+                        {% elif forloop.counter == 6 %}
+                          SemiFinals
+                        {% elif forloop.counter == 7 %}
+                          Third Place
+                        {% elif forloop.counter == 8 %}
+                          Final
+                        {% endif %}
+                      </b></div><br><br>
+                      {{ group_matchday_pair.1 }}
+                      {% if forloop.counter <= phase %}
+                      {% for pair in group_matchday_pair.0 %}
+                          {% if forloop.counter0|divisibleby:2 %}
                           <div class="row">
-                              <div class="col-xs-6 no-padding-right">
-                                  <div class="col-xs-6 no-padding-right" align="right">
-                                    {% if pair.0.home_team.image %}
-                                      <img src="{{ pair.0.home_team.image.url }}" width="46px" height="32x">
-                                    {% else %}
-                                      <img src="{% static 'no_flag.svg' %}" width="46px" height="32x">
-                                    {% endif %}
-                                  </div>
-                                  <div class="col-xs-6">
-                                      {% bootstrap_field pair.1.score_home size='sm' label=pair.0.home_team.name layout='inline' %}
-                                  </div>
-                              </div>
-                              <div class="col-xs-6 no-padding-left">
-                                  <div class="col-xs-6">
-                                      {% bootstrap_field pair.1.score_away size='sm' label=pair.0.away_team.name layout='inline' %}
+                          {% endif %}
+                            <div class="col-lg-6">
+                              {% bootstrap_messages %}
+                              {{ pair.1.errors }}
+                              {% for hidden_field in pair.1.hidden_fields %}
+                                  {{ hidden_field }}
+                              {% endfor %}
+                              <div class="row">
+                                  <div class="col-xs-6 no-padding-right">
+                                      <div class="col-xs-6 no-padding-right" align="right">
+                                        {% if pair.0.home_team.image %}
+                                          <img src="{{ pair.0.home_team.image.url }}" width="46px" height="32x">
+                                        {% else %}
+                                          <img src="{% static 'no_flag.svg' %}" width="46px" height="32x">
+                                        {% endif %}
+                                      </div>
+                                      <div class="col-xs-6">
+                                          {% bootstrap_field pair.1.score_home size='sm' label=pair.0.home_team.name layout='inline' %}
+                                      </div>
                                   </div>
                                   <div class="col-xs-6 no-padding-left">
-                                    {% if pair.0.away_team.image %}
-                                      <img src="{{ pair.0.away_team.image.url }}" width="46px" height="32px">
-                                    {% else %}
-                                      <img src="{% static 'no_flag.svg' %}" width="46px" height="32x">
-                                    {% endif %}
+                                      <div class="col-xs-6">
+                                          {% bootstrap_field pair.1.score_away size='sm' label=pair.0.away_team.name layout='inline' %}
+                                      </div>
+                                      <div class="col-xs-6 no-padding-left">
+                                        {% if pair.0.away_team.image %}
+                                          <img src="{{ pair.0.away_team.image.url }}" width="46px" height="32px">
+                                        {% else %}
+                                          <img src="{% static 'no_flag.svg' %}" width="46px" height="32x">
+                                        {% endif %}
+                                      </div>
+                                  </div>
+                                  <div class="col-xs-12" align="center">
+                                      {% if not pair.0.score_set %}
+                                        <b>?</b>
+                                      {% else %}
+                                        {% if pair.1.score_home.value == pair.0.score_home and pair.1.score_away.value == pair.0.score_away %}
+                                          <i class="fa fa-check" style="color:green"></i>
+                                        {% elif pair.1.score_home.value == pair.0.score_home %}
+                                        <i class="fa fa-check" style="color:green"></i> <i class="fa fa-close" style="color:red"></i>
+                                        {% elif pair.1.score_away.value == pair.0.score_away %}
+                                        <i class="fa fa-close" style="color:red"></i> <i class="fa fa-check" style="color:green"></i>
+                                        {% else %}
+                                          <i class="fa fa-close" style="color:red"></i>
+                                        {% endif %}
+                                      {% endif %}
                                   </div>
                               </div>
-                              <div class="col-xs-12" align="center">
-                                  {% if not pair.0.score_set %}
-                                    <b>?</b>
-                                  {% else %}
-                                    {% if pair.1.score_home.value == pair.0.score_home and pair.1.score_away.value == pair.0.score_away %}
-                                      <i class="fa fa-check" style="color:green"></i>
-                                    {% elif pair.1.score_home.value == pair.0.score_home %}
-                                    <i class="fa fa-check" style="color:green"></i> <i class="fa fa-close" style="color:red"></i>
-                                    {% elif pair.1.score_away.value == pair.0.score_away %}
-                                    <i class="fa fa-close" style="color:red"></i> <i class="fa fa-check" style="color:green"></i>
-                                    {% else %}
-                                      <i class="fa fa-close" style="color:red"></i>
-                                    {% endif %}
-                                  {% endif %}
-                              </div>
+                            </div>
+                        {% if not forloop.counter0|divisibleby:2 %}
                           </div>
-                        </div>
-                    {% if not forloop.counter0|divisibleby:2 %}
-                      </div>
-                      <br>
-                    {% endif %}
-                  {% endfor %}
-                  {% if not group_matchday_pair.0|length|divisibleby:2 %}
-                      <br>
-                      </div>
-                  {% endif %}
-                      <div class="col-xs-12">
+                          <br>
+                        {% endif %}
+                      {% endfor %}
+                      {% if not group_matchday_pair.0|length|divisibleby:2 %}
+                          <br>
+                          </div>
+                      {% endif %}
                           <div class="col-xs-12">
                               <div class="col-xs-12">
-                                <button type="button" class="btn" onclick="submit_form('formsets')">
-                                  Send
-                                </button>
+                                  <div class="col-xs-12">
+                                    <button type="button" class="btn" onclick="submit_form('formsets')">
+                                      Send
+                                    </button>
+                                  </div>
                               </div>
                           </div>
-                      </div>
-                  {% else %}
-                    <div align="center">
-                      <img src="https://orig00.deviantart.net/6da4/f/2013/092/f/0/yoda_icon_by_slamiticon-d605vp9.png" width="240px" height="auto"> 
-                      <br><br>Predict this phase results, you can Not... Yet! Wait... You must, Young Padawan.
-                    </div>
-                  {% endif %}
-                {% else %}
+                      {% else %}
+                        <div align="center">
+                          <img src="https://orig00.deviantart.net/6da4/f/2013/092/f/0/yoda_icon_by_slamiticon-d605vp9.png" width="240px" height="auto"> 
+                          <br><br>Predict this phase results, you can Not... Yet! Wait... You must, Young Padawan.<br><br><br><br>
+                        </div>
+                      {% endif %}
+                    {% else %}
                       <br>
                       <div align="center">
                         <b>Join this Quiniela! </b><br><br>
@@ -245,10 +260,12 @@
                           </a>
                         </button>
                       </div><br><br>
-                {% endif %}
+                    {% endif %}
+                    </div>
                   </div>
-                  <div class="col-sm-6">
-                      <div align="center">
+                  <div class="col-lg-6">
+                    <div class="box">
+                      <div align="center" class="box-header with-border">
                         <b>Official Results - 
                         {% if forloop.counter <= 3 %}
                           Group Matchday {{ forloop.counter }}
@@ -266,39 +283,41 @@
                         </b>
                       </div><br><br>
                       {% for pair in group_matchday_pair.0 %}
-                          {% if forloop.counter0|divisibleby:2 %}
-                          <div class="row">
-                          {% endif %}
-                              <div class="col-sm-6" align="center">                        
-                                  {{ pair.0.home_team.name }} 
-                                  {% if pair.0.home_team.image %}
-                                    <img src="{{ pair.0.home_team.image.url }}" width="46px" height="32px">
-                                  {% else %}
-                                    <img src="{% static 'no_flag.svg' %}" width="46px" height="32x">
-                                  {% endif %}
-                                  {% if pair.0.score_set %} {{ pair.0.score_home }} {% endif %} -  
-                                  {% if pair.0.score_set %} {{ pair.0.score_away }} {% endif %}
-                                  {% if pair.0.away_team.image %}
-                                    <img src="{{ pair.0.away_team.image.url }}" width="46px" height="32px">
-                                  {% else %}
-                                    <img src="{% static 'no_flag.svg' %}" width="46px" height="32x">
-                                  {% endif %}
-                                  {{ pair.0.away_team.name }}<br>
-                                  {{ pair.0.match_datetime|date:"D d M" }} {{ pair.0.match_datetime|time:"H:i" }}
-                                  {% get_current_timezone as TIME_ZONE %} ({{ TIME_ZONE }})
-                              </div>
-
-                          {% if not forloop.counter0|divisibleby:2 %}
+                        {% if forloop.counter0|divisibleby:2 %}
+                        <div class="row">
+                        {% endif %}
+                          <div class="col-lg-6" align="center">                        
+                            {{ pair.0.home_team.name }} 
+                            {% if pair.0.home_team.image %}
+                              <img src="{{ pair.0.home_team.image.url }}" width="46px" height="32px">
+                            {% else %}
+                              <img src="{% static 'no_flag.svg' %}" width="46px" height="32x">
+                            {% endif %}
+                            {% if pair.0.score_set %} {{ pair.0.score_home }} {% endif %} -  
+                            {% if pair.0.score_set %} {{ pair.0.score_away }} {% endif %}
+                            {% if pair.0.away_team.image %}
+                              <img src="{{ pair.0.away_team.image.url }}" width="46px" height="32px">
+                            {% else %}
+                              <img src="{% static 'no_flag.svg' %}" width="46px" height="32x">
+                            {% endif %}
+                            {{ pair.0.away_team.name }}<br>
+                            {{ pair.0.match_datetime|date:"D d M" }} {{ pair.0.match_datetime|time:"H:i" }}
+                            {% get_current_timezone as TIME_ZONE %} ({{ TIME_ZONE }})
                           </div>
-                          <br>
-                          {% endif %}
-                      {% endfor %}
-                      {% if not group_matchday_pair.0|length|divisibleby:2 %}
-                      </div>
-                      {% endif %}
+
+                        {% if not forloop.counter0|divisibleby:2 %}
+                        </div>
+                        <br>
+                        {% endif %}
+                    {% endfor %}
+                    {% if not group_matchday_pair.0|length|divisibleby:2 %}
+                    </div>
+                    {% endif %}
                   </div>
+                </div>
               </div>
-              {% endfor %}
+            </div>
+            {% endfor %}
           </div>
         </form>
       {% else %}
@@ -329,6 +348,14 @@
     my_form = document.getElementById(frmId);
     my_form.submit();
   }
+
+  $(document).ready(function(){
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+      $('#whatsapp-share-button').attr('href', 'whatsapp://send?text={{request.build_absolute_uri}} Unete a mi quiniela {{ quiniela.name }} =)!')
+    }else{
+      $('#whatsapp-share-button').attr('href', 'https://web.whatsapp.com/send?text={{request.build_absolute_uri}} Unete a mi quiniela {{ quiniela.name }} =)!')
+    }
+  })
 
   {% if not invite_notifications and not invite_errors and not inviting %}
   if(window.location.href.split("&").length > 1){
