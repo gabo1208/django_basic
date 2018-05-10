@@ -27,7 +27,7 @@ SECRET_KEY = '0u@n$)$nxozp2(npz&ew=m6ue!=hex4%3r#i1wrp*75@56+ixu'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['gabo1208.pythonanywhere.com']
+ALLOWED_HOSTS = ['gabo1208.pythonanywhere.com', '127.0.0.1']
 
 # Application definition
 INSTALLED_APPS = [
