@@ -5,6 +5,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 -->
 {% load staticfiles %}
 {% load static %}
+{% load quiniela_tournamenttags %}
 
 <html>
 <head>
@@ -42,6 +43,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
   -->
   <script src="{% static 'vue/vue.js' %}"></script>
   <script src="{% static 'channels/js/websocketbridge.js' %}"></script>
+
+  <link rel="icon" type="image/png" href="{% static 'icon.png' %}" />
 
 </head>
 <!--
@@ -83,12 +86,7 @@ desired effect
     {% if not user.is_authenticated %}
     <ul class="nav navbar-nav">
       <li>
-        <a href="{% url 'main:home' %}" class="pages-header">
-          <b>Home</b>
-        </a>
-      </li>
-      <li>
-        <a href="{% url 'quiniela:users_quinielas' %}" class="pages-header">
+        <a href="{% url 'quiniela:user_quinielas' %}" class="pages-header">
           <b>Quinielas</b>
         </a>
       </li>
@@ -120,12 +118,7 @@ desired effect
       </a>
       <ul class="nav navbar-nav">
         <li>
-          <a href="{% url 'main:home' %}" class="pages-header">
-            <b>Home</b>
-          </a>
-        </li>
-        <li>
-          <a href="{% url 'quiniela:users_quinielas' %}" class="pages-header">
+          <a href="{% url 'quiniela:user_quinielas' %}" class="pages-header">
             <b>Quinielas</b>
           </a>
         </li>
@@ -133,17 +126,20 @@ desired effect
       <!-- Navbar Right Menu -->
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
+          <li>
+            <a href="#">Oscarcoin: {% get_oscarcoin %},00bsf</a>
+          </li>
           
           <!-- Messages: style can be found in dropdown.less-->
           <li class="dropdown messages-menu">
             <!-- Menu toggle button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-envelope-o"></i>
-              <span class="label label-success">{[ messages ]}</span>
+              <span class="label label-success">0</span>
             </a>
             <ul class="dropdown-menu">
               
-              <li class="header">You have {[ messages ]} messages</li>
+              <li class="header">You have 0 messages</li>
               <li>
                 <!-- inner menu: contains the messages -->
                 <ul class="menu">
@@ -180,10 +176,10 @@ desired effect
             <!-- Menu toggle button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-bell-o"></i>
-              <span class="label label-warning">{[ notifications ]}</span>
+              <span class="label label-warning">0</span>
             </a>
             <ul class="dropdown-menu">
-              <li class="header">You have {[ notifications ]} notifications</li>
+              <li class="header">You have 0 notifications</li>
               <li>
                 <!-- Inner Menu: contains the notifications -->
                 <ul class="menu">
@@ -205,10 +201,10 @@ desired effect
             <!-- Menu Toggle Button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-flag-o"></i>
-              <span class="label label-danger">{[ memberits ]}</span>
+              <span class="label label-danger">0</span>
             </a>
             <ul class="dropdown-menu">
-              <li class="header">You have {[ memberits ]} memberIts!</li>
+              <li class="header">You have 0 memberIts!</li>
               <li>
                 <!-- Inner menu: contains the tasks -->
                 <ul class="menu">
@@ -473,7 +469,7 @@ desired effect
   {% endif %}
     <!-- To the right -->
     <div class="pull-right hidden-xs">
-      Made with love <3
+      Made with love gabohd@gmail.com<3
     </div>
     <!-- Default to the left -->
     <strong>Copyright &copy; 2017 <a href="#">Member It Team</a>.</strong> All rights reserved.
@@ -568,134 +564,6 @@ desired effect
 <script src="{% static 'bower_components/bootstrap/dist/js/bootstrap.min.js' %}"></script>
 <!-- AdminLTE App -->
 <script src="{% static 'dist/js/adminlte.min.js' %}"></script>
-
-{% csrf_token %}
-<script type="text/javascript">
-$(document).ready(function() {
-    function getCookie(name) {
-        var cookieValue = null;
-        if (document.cookie && document.cookie !== '') {
-            var cookies = document.cookie.split(';');
-            for (var i = 0; i < cookies.length; i++) {
-                var cookie = jQuery.trim(cookies[i]);
-                // Does this cookie string begin with the name we want?
-                if (cookie.substring(0, name.length + 1) === (name + '=')) {
-                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                    break;
-                }
-            }
-        }
-        return cookieValue;
-    }
-
-    var csrftoken = getCookie('csrftoken');
-    var reason = 'FR';
-
-    function csrfSafeMethod(method) {
-        // these HTTP methods do not require CSRF protection
-        return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
-    }
-
-    function user_2_user_request(reason, target_div){
-        $.ajax({
-            type:"POST",
-            url:"{% url 'api:user_2_user_request' %}",
-            data: {
-                'username': '{{ userprofile.username }}',
-                'request_type': reason
-            }
-        }).done(function(data){
-            alert(JSON.stringify(data));
-            if(reason == 'FR'){
-                $(target_div).text("Request Sent")
-            }else{
-                $(target_div).text("Follow Request Sent")
-            }
-        }).fail(function(data){
-            alert(JSON.stringify(data) + ' status:' + data.status)
-        })
-    }
-
-    function user_request_confirm(reason, from_user, target_div){
-        $.ajax({
-            type:"POST",
-            url:"{% url 'api:user_request_confirm' %}",
-            data: {
-                'username': from_user,
-                'request_type': reason
-            }
-        }).done(function(data){
-            alert(JSON.stringify(data));
-            if(reason == 'FR'){
-                $(target_div).text("Now Friends!")
-            }else{
-                $(target_div).text("Now Follows you!")
-            }
-        }).fail(function(data){
-            alert(JSON.stringify(data) + ' status:' + data.status)
-        })
-    }
-
-    $.ajaxSetup({
-        beforeSend: function(xhr, settings) {
-            if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
-                xhr.setRequestHeader("X-CSRFToken", csrftoken);
-            }
-        }
-    });
-
-    $(".user_request").click(function(event){
-        reason = $(this).data("reason");
-        user_2_user_request(reason, this);
-    });
-
-    $(".user_request_confirm").click(function(event){
-        reason = $(this).data("reason");
-        from_user = $(this).data("user");
-        user_request_confirm(reason, from_user, this);
-    });
-
-});
-</script>
-
-{% if user.is_authenticated %}
-<script>
-  s_key = "{{ request.session.session_key }}" | "";
-  var base_controller = new Vue({
-    delimiters: ["{[", "]}"],
-    el: '.navbar-custom-menu',
-    data: {
-        messages: 0,
-        notifications: {{ user.profile.get_pending_requests|length }},
-        memberits: 0,
-    }
-  })
-
-  base_webSocketBridge = new channels.WebSocketBridge();
-  base_webSocketBridge.connect("ws://" + window.location.host + "/ws/notifications/");
-  base_webSocketBridge.listen();
-  base_webSocketBridge.socket.addEventListener('message', function(e) {
-      alert("websb base " + e.data);
-      base_controller.notifications += 1;
-  })
-
-  base_webSocketBridge.socket.addEventListener('open', function() {
-      console.log("Connected to WebSocket from base");
-      base_webSocketBridge.send("nooo from base");
-  })
-
-  base_socket = new WebSocket("ws://" + window.location.host + "/ws/notifications/");
-  base_socket.onmessage = function(e) {
-    base_controller.notifications += 1;
-    alert("tabmein base" + e.data)
-  }
-  base_socket.onopen = function() {
-    base_socket.send("hello world2");
-  }
-  // Call onopen directly if socket is already open
-if (base_socket.readyState == WebSocket.OPEN) base_socket.onopen();
-</script>
-{% endif %}
 
 {% block jsblock %}
 {% endblock %}

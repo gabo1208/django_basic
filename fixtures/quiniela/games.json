@@ -1,0 +1,899 @@
+[
+{
+  "model": "quiniela.game",
+  "pk": 3,
+  "fields": {
+    "home_team": 1,
+    "away_team": 2,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-06-14T15:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 6,
+  "fields": {
+    "home_team": 3,
+    "away_team": 4,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-06-15T12:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 7,
+  "fields": {
+    "home_team": 5,
+    "away_team": 6,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-06-15T15:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 8,
+  "fields": {
+    "home_team": 8,
+    "away_team": 7,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-06-15T18:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 9,
+  "fields": {
+    "home_team": 9,
+    "away_team": 10,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-06-16T10:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 10,
+  "fields": {
+    "home_team": 11,
+    "away_team": 12,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-06-16T13:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 11,
+  "fields": {
+    "home_team": 13,
+    "away_team": 14,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-06-16T16:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 12,
+  "fields": {
+    "home_team": 17,
+    "away_team": 18,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-06-17T12:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 13,
+  "fields": {
+    "home_team": 19,
+    "away_team": 20,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-06-17T15:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 14,
+  "fields": {
+    "home_team": 21,
+    "away_team": 22,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-06-17T18:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 15,
+  "fields": {
+    "home_team": 23,
+    "away_team": 24,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-06-18T12:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 16,
+  "fields": {
+    "home_team": 25,
+    "away_team": 26,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-06-18T15:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 17,
+  "fields": {
+    "home_team": 27,
+    "away_team": 28,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-06-18T18:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 18,
+  "fields": {
+    "home_team": 29,
+    "away_team": 30,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-06-19T12:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 19,
+  "fields": {
+    "home_team": 31,
+    "away_team": 32,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-06-19T15:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 20,
+  "fields": {
+    "home_team": 15,
+    "away_team": 16,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-06-16T19:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 23,
+  "fields": {
+    "home_team": 1,
+    "away_team": 1,
+    "tournament": 4,
+    "score_set": true,
+    "score_home": "3",
+    "score_away": "0",
+    "match_datetime": "2018-04-25T03:27:43Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 24,
+  "fields": {
+    "home_team": 1,
+    "away_team": 1,
+    "tournament": 4,
+    "score_set": true,
+    "score_home": "2",
+    "score_away": "0",
+    "match_datetime": "2018-04-25T03:28:08Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 25,
+  "fields": {
+    "home_team": 1,
+    "away_team": 1,
+    "tournament": 4,
+    "score_set": true,
+    "score_home": "1",
+    "score_away": "1",
+    "match_datetime": "2018-04-25T03:38:01Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 26,
+  "fields": {
+    "home_team": 1,
+    "away_team": 1,
+    "tournament": 4,
+    "score_set": true,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-04-27T16:56:39Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 27,
+  "fields": {
+    "home_team": 1,
+    "away_team": 3,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-06-19T18:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 28,
+  "fields": {
+    "home_team": 8,
+    "away_team": 5,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-06-20T12:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 29,
+  "fields": {
+    "home_team": 4,
+    "away_team": 2,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-06-20T15:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 30,
+  "fields": {
+    "home_team": 6,
+    "away_team": 7,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-06-20T18:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 31,
+  "fields": {
+    "home_team": 14,
+    "away_team": 10,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-06-21T12:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 32,
+  "fields": {
+    "home_team": 9,
+    "away_team": 13,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-06-21T15:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 33,
+  "fields": {
+    "home_team": 11,
+    "away_team": 15,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-06-21T18:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 34,
+  "fields": {
+    "home_team": 21,
+    "away_team": 17,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-06-22T12:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 35,
+  "fields": {
+    "home_team": 16,
+    "away_team": 12,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-06-22T15:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 36,
+  "fields": {
+    "home_team": 18,
+    "away_team": 22,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-06-22T18:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 37,
+  "fields": {
+    "home_team": 25,
+    "away_team": 27,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-06-23T12:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 38,
+  "fields": {
+    "home_team": 24,
+    "away_team": 20,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-06-23T15:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 39,
+  "fields": {
+    "home_team": 19,
+    "away_team": 23,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-06-23T18:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 40,
+  "fields": {
+    "home_team": 28,
+    "away_team": 26,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-06-24T12:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 41,
+  "fields": {
+    "home_team": 30,
+    "away_team": 32,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-06-24T15:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 42,
+  "fields": {
+    "home_team": 31,
+    "away_team": 29,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-06-24T18:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 43,
+  "fields": {
+    "home_team": 2,
+    "away_team": 3,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-06-25T14:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 44,
+  "fields": {
+    "home_team": 4,
+    "away_team": 1,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-06-25T14:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 45,
+  "fields": {
+    "home_team": 6,
+    "away_team": 8,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-06-25T18:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 46,
+  "fields": {
+    "home_team": 7,
+    "away_team": 5,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-06-25T18:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 47,
+  "fields": {
+    "home_team": 10,
+    "away_team": 13,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-06-26T14:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 48,
+  "fields": {
+    "home_team": 14,
+    "away_team": 9,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-06-26T14:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 49,
+  "fields": {
+    "home_team": 16,
+    "away_team": 11,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-06-26T18:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 50,
+  "fields": {
+    "home_team": 12,
+    "away_team": 15,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-06-26T18:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 51,
+  "fields": {
+    "home_team": 24,
+    "away_team": 19,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-06-27T14:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 52,
+  "fields": {
+    "home_team": 20,
+    "away_team": 23,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-06-27T14:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 53,
+  "fields": {
+    "home_team": 22,
+    "away_team": 17,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-06-27T18:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 54,
+  "fields": {
+    "home_team": 18,
+    "away_team": 21,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-06-27T18:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 55,
+  "fields": {
+    "home_team": 32,
+    "away_team": 29,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-06-28T14:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 56,
+  "fields": {
+    "home_team": 30,
+    "away_team": 31,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-06-28T14:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 58,
+  "fields": {
+    "home_team": 25,
+    "away_team": 28,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-06-28T18:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 59,
+  "fields": {
+    "home_team": 26,
+    "away_team": 27,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-06-28T18:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 60,
+  "fields": {
+    "home_team": 1,
+    "away_team": 1,
+    "tournament": 4,
+    "score_set": false,
+    "score_home": "3",
+    "score_away": "0",
+    "match_datetime": "2018-04-30T03:28:27Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 62,
+  "fields": {
+    "home_team": null,
+    "away_team": null,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-06-30T14:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 63,
+  "fields": {
+    "home_team": null,
+    "away_team": null,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-06-30T18:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 64,
+  "fields": {
+    "home_team": null,
+    "away_team": null,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-07-01T14:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 65,
+  "fields": {
+    "home_team": null,
+    "away_team": null,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-07-01T18:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 66,
+  "fields": {
+    "home_team": null,
+    "away_team": null,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-07-02T14:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 67,
+  "fields": {
+    "home_team": null,
+    "away_team": null,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-07-02T18:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 68,
+  "fields": {
+    "home_team": null,
+    "away_team": null,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-07-03T14:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 69,
+  "fields": {
+    "home_team": null,
+    "away_team": null,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-07-03T18:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 70,
+  "fields": {
+    "home_team": null,
+    "away_team": null,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-07-06T14:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 71,
+  "fields": {
+    "home_team": null,
+    "away_team": null,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-07-06T18:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 72,
+  "fields": {
+    "home_team": null,
+    "away_team": null,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-07-07T14:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 73,
+  "fields": {
+    "home_team": null,
+    "away_team": null,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-07-07T18:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 74,
+  "fields": {
+    "home_team": null,
+    "away_team": null,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-07-10T18:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 75,
+  "fields": {
+    "home_team": null,
+    "away_team": null,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-07-11T18:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 76,
+  "fields": {
+    "home_team": null,
+    "away_team": null,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-07-14T14:00:00Z"
+  }
+},
+{
+  "model": "quiniela.game",
+  "pk": 77,
+  "fields": {
+    "home_team": null,
+    "away_team": null,
+    "tournament": 2,
+    "score_set": false,
+    "score_home": "0",
+    "score_away": "0",
+    "match_datetime": "2018-07-15T15:00:00Z"
+  }
+}
+]

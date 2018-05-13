@@ -1,0 +1,82 @@
+[
+{
+  "model": "quiniela.group",
+  "pk": 1,
+  "fields": {
+    "name": "A",
+    "tournament": 2
+  }
+},
+{
+  "model": "quiniela.group",
+  "pk": 2,
+  "fields": {
+    "name": "B",
+    "tournament": 2
+  }
+},
+{
+  "model": "quiniela.group",
+  "pk": 3,
+  "fields": {
+    "name": "C",
+    "tournament": 2
+  }
+},
+{
+  "model": "quiniela.group",
+  "pk": 4,
+  "fields": {
+    "name": "D",
+    "tournament": 2
+  }
+},
+{
+  "model": "quiniela.group",
+  "pk": 5,
+  "fields": {
+    "name": "E",
+    "tournament": 2
+  }
+},
+{
+  "model": "quiniela.group",
+  "pk": 6,
+  "fields": {
+    "name": "F",
+    "tournament": 2
+  }
+},
+{
+  "model": "quiniela.group",
+  "pk": 7,
+  "fields": {
+    "name": "G",
+    "tournament": 2
+  }
+},
+{
+  "model": "quiniela.group",
+  "pk": 8,
+  "fields": {
+    "name": "H",
+    "tournament": 2
+  }
+},
+{
+  "model": "quiniela.group",
+  "pk": 9,
+  "fields": {
+    "name": "Group A",
+    "tournament": 4
+  }
+},
+{
+  "model": "quiniela.group",
+  "pk": 10,
+  "fields": {
+    "name": "Group B",
+    "tournament": 4
+  }
+}
+]

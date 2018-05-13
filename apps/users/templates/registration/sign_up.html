@@ -10,7 +10,7 @@
 
     {# Display django.contrib.messages as Bootstrap alerts #}
     {% bootstrap_messages %}
-    <div class="sign-up-form">
+    <div class="col-sm-6">
         <form method="post">
         {% csrf_token %}
         {% bootstrap_form form %}

@@ -38,7 +38,7 @@ class ApiLogin(View):
             'client_id': 'vdix4xPAt4HVU9SfMKoVV8DoLysiWMMoADYMCP3A',
             'client_secret': 'KVyVBeL2JGTqc177b5pw7GJWHsdcju4fWcYUGOYAE8sfJ5ZEeiL6azuoMylbAl1a9Gh4CWkCzZUzHfD23GPxASPmzFk2Oi5fjLQK3Y7iCU8OARiusQHYPusNfTseaeu1'
         }
-        r = requests.post("http://localhost:8000/o/token/", data=data)
+        r = requests.post('http://localhost:8000/o/token/', data=data)
 
         return JsonResponse(r.json(), status=r.status_code)
 
@@ -89,9 +89,9 @@ class User2UserRequest(View):
                 cl = get_channel_layer()
                 # alert receiver user websockets so they can update the notifications number
                 async_to_sync(cl.group_send)(
-                    "notifications-" + to_user.username,
+                    'notifications-' + to_user.username,
                     {
-                        "notifications": len(request.user.profile.requests.filter(status=1))
+                        'notifications': len(request.user.profile.requests.filter(status=1))
                     },
                 )
                 to_user.profile.requests.add(p_request)

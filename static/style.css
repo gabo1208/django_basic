@@ -23,10 +23,6 @@ body{
     color: white;
 }
 
-.content{
-	margin-top: 40px;
-}
-
 .code_snippet{
     background: grey;
     color: white;
@@ -42,7 +38,59 @@ body{
     margin-right: 10%;
 }
 
-.sign-up-form{
-    width: 25%;
-    margin-left: 5%;
+.form-group{
+    margin: 0;
+}
+
+.form-group input{
+    padding: 5px 2px 5px 7px;
+}
+
+.no-padding-left{
+    padding-left: 0;
+}
+
+.no-padding-right{
+    padding-right: 0;
+}
+
+.alert.alert-danger-special{
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+
+.alert.alert-success-special{
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.nav.navbar-nav{
+    display: none;
+}
+
+/* Extra small devices (portrait phones, less than 576px)
+/ No media query since this is the default in Bootstrap */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .nav.navbar-nav{
+        display: initial;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    
 }

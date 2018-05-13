@@ -8,11 +8,14 @@ from django.contrib.auth.models import AbstractUser
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from model_utils.models import TimeStampedModel
-from django.dispatch import receiver
 
 
 class User(AbstractUser):
     email = models.EmailField(unique=True)
+
+    def __str__(self):
+        return self.username + ' - ' + self.email
+
 
 class ProfilePreferences(models.Model):
     option1 = models.BooleanField(default=True)
@@ -21,10 +24,16 @@ class ProfilePreferences(models.Model):
 class InterestTag(models.Model):
     name = models.CharField(max_length=50, unique=True)
 
+    def __str__(self):
+        return self.name
+
 
 class ProfileInterest(models.Model):
     name = models.CharField(max_length=50, unique=True)
-    tags = models.ManyToManyField(InterestTag, related_name="interest_tag", blank=True)
+    tags = models.ManyToManyField(InterestTag, related_name='interest_tag', blank=True)
+
+    def __str__(self):
+        return self.name
 
 
 class Group(TimeStampedModel):
@@ -32,8 +41,11 @@ class Group(TimeStampedModel):
     title = models.CharField(max_length=30)
     image = models.ImageField(null=True)
     created_by = models.ForeignKey('Profile', on_delete=models.CASCADE, null=True, blank=True)
-    admins = models.ManyToManyField('Profile', blank=True, related_name="group_admins")
-    members = models.ManyToManyField('Profile', blank=True, related_name="group_members")
+    admins = models.ManyToManyField('Profile', blank=True, related_name='group_admins')
+    members = models.ManyToManyField('Profile', blank=True, related_name='group_members')
+
+    def __str__(self):
+        return self.name + " " + self.title
 
 
 class Event(TimeStampedModel):
@@ -45,12 +57,12 @@ class Event(TimeStampedModel):
     organizers = models.ManyToManyField(
         'Profile',
         blank=True,
-        related_name="event_organizers"
+        related_name='event_organizers'
     )
     invited = models.ManyToManyField(
         'ProfileRequest',
         blank=True,
-        related_name="event_invited"
+        related_name='event_invited'
     )
 
     date = models.DateField(null=True, blank=True)
@@ -62,7 +74,10 @@ class Event(TimeStampedModel):
     #score
     #colaborators
     #aliances
-    tags = models.ManyToManyField(InterestTag, related_name="event_tag", blank=True)
+    tags = models.ManyToManyField(InterestTag, related_name='event_tag', blank=True)
+
+    def __str__(self):
+        return self.name + " " + self.title
 
 
 class ProfileRequest(TimeStampedModel):
@@ -95,21 +110,21 @@ class ProfileRequest(TimeStampedModel):
     from_user = models.ForeignKey('Profile', on_delete=models.DO_NOTHING)
     sugested_user = models.ForeignKey(
         'Profile',
-        related_name="request_user_sugested",
+        related_name='request_user_sugested',
         blank=True,
         null=True,
         on_delete=models.DO_NOTHING
     )
     sugested_event = models.ForeignKey(
         Event,
-        related_name="request_event_sugested",
+        related_name='request_event_sugested',
         blank=True,
         null=True,
         on_delete=models.DO_NOTHING
     )
     sugested_group = models.ForeignKey(
         Group,
-        related_name="request_group_sugested",
+        related_name='request_group_sugested',
         blank=True,
         null=True,
         on_delete=models.DO_NOTHING
@@ -131,6 +146,9 @@ class ProfileRequest(TimeStampedModel):
     class Meta:
         unique_together = ('from_user', 'sugested_user', 'reason')
 
+    def __str__(self):
+        return self.from_user.name + " to " + self.sugested_user.name + " reason: " + self.reason + " " + self.status
+
 
 class ProfileMessage(TimeStampedModel):
     created_by = models.ForeignKey('Profile', on_delete=models.CASCADE, null=True, blank=True)
@@ -141,16 +159,16 @@ class ProfileMessage(TimeStampedModel):
 class ProfileMessageHistory(models.Model):
     profile1 = models.ForeignKey(
         'Profile',
-        related_name="profile1",
+        related_name='profile1',
         on_delete=models.DO_NOTHING
     )
     profile2 = models.ForeignKey('Profile',
-        related_name="profile2",
+        related_name='profile2',
         on_delete=models.DO_NOTHING
     )
     message_history = models.ManyToManyField(
         ProfileMessage,
-        related_name="profile_messages_history_messages"
+        related_name='profile_messages_history_messages'
     )
 
     class Meta:
@@ -210,50 +228,53 @@ class Profile(TimeStampedModel):
     following = models.ManyToManyField(
         'self',
         blank=True,
-        related_name="profile_folowing"
+        related_name='profile_folowing'
     )
     # Profiles following by self profile
     followers = models.ManyToManyField(
         'self',
         blank=True,
-        related_name="profile_folowers"
+        related_name='profile_folowers'
     )
     # Profiles friends of self profile
     friends = models.ManyToManyField(
         'self',
         blank=True,
-        related_name="profile_friends"
+        related_name='profile_friends'
     )
     # Profile interests
     interests = models.ManyToManyField(
         ProfileInterest,
         blank=True,
-        related_name="profile_interests"
+        related_name='profile_interests'
     )
     # Request sent to profile
     requests = models.ManyToManyField(
         ProfileRequest,
         blank=True,
-        related_name="profile_requests"
+        related_name='profile_requests'
     )
     # Events accepted by profile
     events = models.ManyToManyField(
         Event,
         blank=True,
-        related_name="profile_events"
+        related_name='profile_events'
     )
     # Profile accepted Groups
     groups = models.ManyToManyField(
         Group,
         blank=True,
-        related_name="profile_groups"
+        related_name='profile_groups'
     )
     # TODO: groups message history
     message_history = models.ManyToManyField(
         ProfileMessageHistory,
         blank=True,
-        related_name="profile_message_history"
+        related_name='profile_message_history'
     )
+
+    def __str__(self):
+        return str(self.user)
 
     def check_if_friends(self, user):
         return user in self.friends.all()
@@ -288,6 +309,9 @@ class Profile(TimeStampedModel):
             self.messages.filter(profile1=user) |
             self.messages.filter(profile2=user)
         )
+
+    def __str__(self):
+        return self.user.username + ' - ' + self.user.email
 
 
 ##################### SIGNALS ########################

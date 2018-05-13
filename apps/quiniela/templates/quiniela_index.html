@@ -19,20 +19,29 @@
 {% block content %}
     {% if quinielas %}
     <h3> Quinielas en las que estas participando</h3>
-    <hr>
         {% for quiniela in quinielas %}
-            <a href="{% url 'quiniela:quiniela_details' quiniela.id %}">{{ quiniela.name }}</a>
+            <h4><a href="{% url 'quiniela:quiniela_details' quiniela.id %}">
+                {% if quiniela.image %}
+                    <img src="{{quiniela.image.url}}" width="50px" height="auto">
+                {% endif %}
+                {{ quiniela.name }} - 
+                {% if quiniela.tournament.image %}
+                    <img src="{{quiniela.tournament.image.url}}" width="50px" height="auto">
+                {% endif %}
+                {{ quiniela.tournament.name }}
+            </a></h4>
         {% endfor %}
+    <hr>
     {% else %}
-    <h3>No estas participando en ninguna quiniela =(.</h3>
+    <h3>No estas participando en ninguna quiniela =(</h3>
     <hr>
     {% endif %}
-
+    <h4>Crear Quiniela:</h4>
     {% bootstrap_messages %}
     <form method="post">
     {% csrf_token %}
     {% bootstrap_form form %}
-        {% buttons %}
+    {% buttons %}
         <button type="submit">Crear Nueva Quiniela</button>
     {% endbuttons %}
     </form>
