@@ -66,7 +66,40 @@ body{
     border-color: #c3e6cb;
 }
 
-.nav.navbar-nav{
+.content-wrapper {
+	border-radius: 4px;
+    padding: 0 10%;
+}
+
+.oscarcoin-marquee {
+	color: white;
+}
+
+/* Overrides of Bootstrap styles*/
+.container {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+/* Overrides to AdminLTE styles */
+.navbar-custom-menu.no-user {
+	margin-right: 0;
+}
+
+
+.skin-blue .main-header {
+	background-color: #3c8dbc;
+}
+
+.content-wrapper, .main-footer {
+	margin-left: 0;
+}
+
+.main-header {
+    max-height: initial;
+}
+
+.show-xs{
     display: none;
 }
 
@@ -74,14 +107,55 @@ body{
 / No media query since this is the default in Bootstrap */
 
 /* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
+@media (max-width: 768px) {
+	.nav.navbar-nav > li {
+		text-align: center;
+	}
 
+	.main-header .navbar-custom-menu {
+		text-align: center;
+		margin-right: 0;
+	}
+
+	.navbar-custom-menu > .navbar-nav {
+		display: inline-block;
+	}
+
+	.main-header .navbar-custom-menu,
+	.navbar-custom-menu > .navbar-nav {
+		float: initial;
+	}
+
+	.navbar-custom-menu > .navbar-nav > li {
+		display: inline-block;
+	}
+
+    .content-wrapper {
+        padding: 0 2%;
+    }
+
+    .nav.navbar-nav{
+        display: none;
+    }
+
+    .navbar-custom-menu .nav.navbar-nav{
+        display: initial;
+        float: right;
+    }
+
+    .hide-xs{
+        display: none;
+    }
+
+    .show-xs{
+        display: flex;
+    }
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-    .nav.navbar-nav{
-        display: initial;
+    .content-wrapper {
+        padding: 0 6%;
     }
 }
 
@@ -92,5 +166,5 @@ body{
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-    
+
 }

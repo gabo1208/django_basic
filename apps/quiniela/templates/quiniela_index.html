@@ -13,7 +13,7 @@
         <li><a href="{% url 'main:home' %}">Home</a></li>
         <li class="active">Quinielas</li>
     </ol>
-    <h1> {{ user.username }} </h1>
+    Hi {{ user.username }}
 {% endblock %}
 
 {% block content %}
@@ -24,7 +24,7 @@
                 {% if quiniela.image %}
                     <img src="{{quiniela.image.url}}" width="50px" height="auto">
                 {% endif %}
-                {{ quiniela.name }} - 
+                {{ quiniela.name }} -
                 {% if quiniela.tournament.image %}
                     <img src="{{quiniela.tournament.image.url}}" width="50px" height="auto">
                 {% endif %}

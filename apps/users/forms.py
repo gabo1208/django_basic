@@ -53,8 +53,13 @@ class UserCreationForm(forms.ModelForm):
         return user
 
 class UserLoginForm(forms.Form):
-    username = forms.CharField(label=_("Username/Email"), max_length=25)
-    password = forms.CharField(label=_("Password"), widget=forms.PasswordInput)
+    username = forms.CharField(label=_("Username/Email"),
+                               max_length=25,
+                               required=True)
+    password = forms.CharField(label=_("Password"),
+                               strip=False,
+                               widget=forms.PasswordInput,
+                               required=True)
 
     error_messages = {
         'invalid_login': _("Please enter a correct %(username)s and password. "
@@ -67,11 +72,11 @@ class UserLoginForm(forms.Form):
         password = self.cleaned_data.get('password')
 
         if username and password:
-            if User.objects.filter(username=username):
+            if User.objects.filter(username=username).exists():
                 self.user_cache = authenticate(username=username, password=password)
             else:
                 user = User.objects.filter(email=username)
-                if user:
+                if user.exists():
                 	self.user_cache = authenticate(username=user[0].username, password=password)
                 else:
                 	self.user_cache = None
@@ -80,7 +85,7 @@ class UserLoginForm(forms.Form):
                 raise forms.ValidationError(
                     self.error_messages['invalid_login'],
                     code='invalid_login',
-                    params={'username': 'username'},
+                    params={'username': 'username/email'},
                 )
             else:
                 self.confirm_login_allowed(self.user_cache)
