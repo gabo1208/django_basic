@@ -6,8 +6,8 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.forms import modelformset_factory, formset_factory
 
-from .models import Quiniela, MemberFixture, GameResult, Group, MemberFixture
-from .forms import QuinielaForm, GameResultForm, BlockedGameResultForm, InviteUsersForm, Game
+from .models import Quiniela, MemberFixture, GameResult, Group, MemberFixture, OscarCoin
+from .forms import QuinielaForm, GameResultForm, BlockedGameResultForm, InviteUsersForm, Game, OscarCoinForm
 from apps.users.models import Profile
 
 
@@ -395,6 +395,23 @@ def quiniela_delete(request, quiniela_id):
     quiniela = get_object_or_404(Quiniela, id=quiniela_id)
     quiniela.delete()
     return redirect('quiniela:user_quinielas')
+
+
+@login_required
+def oscarcoin_update(request):
+    ocoin = OscarCoin.objects.all()
+    if ocoin:
+        ocoin = ocoin[0]
+    else:
+        ocoin = OscarCoin()
+        ocoin.save()
+    
+    form = OscarCoinForm(request.POST or None, instance=ocoin)
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+    
+    return render(request, 'oscarcoin_update.html', context={ 'form': form })
 
 
 def phasesLimit(init, end, phases_limit):

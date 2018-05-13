@@ -1,0 +1,22 @@
+{% extends "base_main.html" %}
+
+{% block content %}
+    {# Load the tag library #}
+    {% load bootstrap3 %}
+
+    {# Load CSS and JavaScript #}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+    {# Display django.contrib.messages as Bootstrap alerts #}
+    {% bootstrap_messages %}
+    <div class="col-sm-6">
+        <form method="post">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+            {% buttons %}
+           <button type="submit">Update Oscarcoin</button>
+           {% endbuttons %}
+        </form>
+    </div>
+{% endblock %}

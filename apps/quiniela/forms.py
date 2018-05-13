@@ -1,7 +1,7 @@
 from django import forms
 from django.utils.translation import ugettext, ugettext_lazy as _
 
-from .models import Quiniela, Game, GameResult
+from .models import Quiniela, Game, GameResult, OscarCoin
 
 
 class QuinielaForm(forms.ModelForm):
@@ -33,3 +33,24 @@ class BlockedGameResultForm(forms.ModelForm):
 
 class InviteUsersForm(forms.Form):
     users = forms.CharField(max_length=50)
+
+
+class OscarCoinForm(forms.ModelForm):
+
+    error_messages = {
+        'password_mismatch': _("The Secret Phrase is not correct."),
+    }
+    secret_phrase = forms.CharField(label=_("Secret Phrase"), widget=forms.PasswordInput)
+
+    class Meta:
+        model = OscarCoin
+        fields = ['value', 'secret_phrase']
+
+    def clean_secret_phrase(self):
+        phrase = self.cleaned_data.get("secret_phrase")
+        if phrase and phrase != "merwebochico":
+            raise forms.ValidationError(
+                self.error_messages['password_mismatch'],
+                code='password_mismatch',
+            )
+        return phrase
