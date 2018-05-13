@@ -66,23 +66,46 @@ body{
     border-color: #c3e6cb;
 }
 
-.nav.navbar-nav{
-    display: none;
+
+/* Overrides to AdminLTE styles */
+.content-wrapper, .main-footer {
+	margin-left: 0;
+}
+
+.main-header {
+    max-height: initial;
 }
 
 /* Extra small devices (portrait phones, less than 576px)
 / No media query since this is the default in Bootstrap */
 
 /* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
+@media (max-width: 768px) {
+	.nav.navbar-nav > li {
+		text-align: center;
+	}
 
+	.main-header .navbar-custom-menu {
+		text-align: center;
+	}
+
+	.navbar-custom-menu > .navbar-nav {
+		display: inline-block;
+	}
+
+	.main-header .navbar-custom-menu,
+	.navbar-custom-menu > .navbar-nav {
+		float: initial;
+	}
+
+	.navbar-custom-menu > .navbar-nav > li {
+		display: inline-block;
+	}
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-    .nav.navbar-nav{
-        display: initial;
-    }
+
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -92,5 +115,5 @@ body{
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-    
+
 }
