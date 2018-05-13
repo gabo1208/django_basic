@@ -94,7 +94,11 @@
                       <div class="row">
                         <div class="col-xs-12">
                           {% for leader in leaders %}
-                            {{ leader }} - {% get_score leader quiniela.score_type %}<br>
+                            <h4>
+                              <a href="{% url 'quiniela:quiniela_from_user' quiniela_id=quiniela.id username=leader.user.user.username %}">
+                                {{ leader }}
+                              </a> - {% get_score leader quiniela.score_type %}
+                            </h4>
                           {% endfor %}
                           {% for pending in pendings %}
                             {{ pending }} - pending<br>

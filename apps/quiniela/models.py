@@ -162,7 +162,7 @@ class MemberFixture(TimeStampedModel):
         unique_together=(('user', 'tournament', 'quiniela'),)
 
     def __str__(self):
-        return self.user.user.username + '(' + self.user.user.email + ') - ' + self.tournament.name
+        return self.user.user.username + '(' + self.user.user.email + ')'
 
     def get_score(self, score_type):
         flag = False
