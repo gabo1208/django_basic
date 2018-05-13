@@ -4,9 +4,27 @@
 {% load static %}
 {% load bootstrap3 %}
 
+{% block extra-style %}
+@media (min-width: 768px){
+    .container {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px){
+    .container {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px){
+    .container {
+        width: 1170px;
+    }
+}
+{% endblock %}
 
 {# Display django.contrib.messages as Bootstrap alerts #}
-
 {% block content %}
     <div class="col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
         <img class="img-responsive" src="{% static 'icon.png' %}" alt="Fifa World Cup logo" style="margin: 15px auto; max-height: 200px;">

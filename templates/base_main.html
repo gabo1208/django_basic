@@ -38,9 +38,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
-
-
   <link rel="icon" type="image/png" href="{% static 'icon.png' %}" />
+  <style type="text/css">
+    .content-container {
+      width: 100%;
+    }
+    {% block extra-style %}
+    {% endblock %}
+  </style>
 
 </head>
 <!--
@@ -81,9 +86,11 @@ desired effect
             </div>
         </header>
     {% if user.is_authenticated %}
-    <MARQUEE class="oscarcoin-marquee" bgcolor=#222d32 WIDTH=100% HEIGHT=35 ALIGN=MIDDLE><FONT FACE=Mono COLOR=#216C2A SIZE=5>Oscarcoin: {% get_oscarcoin %},00 bsf</FONT></MARQUEE>
+    <marquee class="oscarcoin-marquee" bgcolor=#222d32 WIDTH=100% HEIGHT=35 ALIGN=MIDDLE>
+      <font FACE=Mono COLOR=#216C2A SIZE=5>Oscarcoin: {% get_oscarcoin %},00 bsf/Pp: Oscarcoin - 20%</font>
+    </marquee>
     {% endif %}
-    <div class="container" style="padding: 0;{% if user.is_authenticated %}margin-bottom: 35px;{%endif%}">
+    <div class="container content-container" style="padding: 0;">
         <!-- Content Wrapper. Contains page content -->
         {% if not user.is_authenticated %}
         <div class="content-wrapper full">
@@ -119,12 +126,15 @@ desired effect
         <footer class="main-footer">
         {% endif %}
           <div class="container">
-          <!-- To the right -->
-          <div class="pull-right hidden-xs">
-            Made with love gabohd@gmail.com &lt;3
-          </div>
           <!-- Default to the left -->
           <strong>Copyright &copy; 2017 <a href="#">Member It Team</a>.</strong> All rights reserved.
+          <!-- To the right -->
+          <div class="pull-right hide-xs">
+            Made with love gabohd@gmail.com &lt;3
+          </div>
+          <div class="show-xs" align="center">
+            Made with love gabohd@gmail.com &lt;3
+          </div>
           </div>
         </footer>
 
