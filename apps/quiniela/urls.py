@@ -11,4 +11,7 @@ urlpatterns = [
     path('<int:quiniela_id>', views.quiniela_details, name='quiniela_details'),
     path('<int:quiniela_id>/join', views.quiniela_join, name='quiniela_join'),
     path('<int:quiniela_id>/delete', views.quiniela_delete, name='quiniela_delete'),
+    path('<int:quiniela_id>/@<str:username>', views.quiniela_from_user, name='quiniela_from_user'),
+    # Oscarcoin
+    path('oscarcoin/', views.oscarcoin_update, name='oscarcoin_uptade'),
 ]
