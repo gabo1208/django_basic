@@ -7,3 +7,4 @@ python manage.py dumpdata --settings settings.settings --indent 2 quiniela.group
 python manage.py dumpdata --settings settings.settings --indent 2 quiniela.memberfixture -o fixtures/quiniela/membersfixtures.json
 python manage.py dumpdata --settings settings.settings --indent 2 quiniela.tournament -o fixtures/quiniela/tournaments.json
 python manage.py dumpdata --settings settings.settings --indent 2 quiniela.quiniela -o fixtures/quiniela/quinielas.json
+python manage.py dumpdata --settings settings.settings --indent 2 quiniela.oscarcoin -o fixtures/quiniela/oscarcoin.json
