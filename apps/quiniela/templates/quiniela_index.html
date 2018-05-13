@@ -13,6 +13,7 @@
         <li><a href="{% url 'main:home' %}">Home</a></li>
         <li class="active">Quinielas</li>
     </ol>
+    Hi {{ user.username }}
 {% endblock %}
 
 {% block content %}
@@ -32,7 +33,7 @@
         {% endfor %}
     <hr>
     {% else %}
-    <h3>Actualmente no estas participando en ninguna quiniela =(</h3>
+    <h3>No estas participando en ninguna quiniela =(</h3>
     <hr>
     {% endif %}
     <h4>Crear Quiniela:</h4>

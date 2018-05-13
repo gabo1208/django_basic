@@ -27,7 +27,7 @@ SECRET_KEY = '0u@n$)$nxozp2(npz&ew=m6ue!=hex4%3r#i1wrp*75@56+ixu'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['gabo1208.pythonanywhere.com']
 
 # Application definition
 INSTALLED_APPS = [
@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Django-channels for websockets/server pushs
-    'channels',
+    #'channels',
 
     # Extension packages
     'django_extensions',
@@ -85,18 +85,18 @@ MIDDLEWARE = [
     'oauth2_provider.middleware.OAuth2TokenMiddleware',
 ]
 
-redis_host = os.environ.get('REDIS_HOST', 'localhost')
+#redis_host = os.environ.get('REDIS_HOST', 'localhost')
 
-ASGI_APPLICATION = 'settings.routing.application'
+#ASGI_APPLICATION = 'settings.routing.application'
 
-CHANNEL_LAYERS = {
-    "default": {
-        "BACKEND": "channels_redis.core.RedisChannelLayer",
-        "CONFIG": {
-            "hosts": [(redis_host, 6379)],
-        },
-    },
-}
+#CHANNEL_LAYERS = {
+#    "default": {
+#        "BACKEND": "channels_redis.core.RedisChannelLayer",
+#        "CONFIG": {
+#            "hosts": [(redis_host, 6379)],
+#        },
+#    },
+#}
 
 ROOT_URLCONF = 'settings.urls'
 
@@ -126,17 +126,22 @@ WSGI_APPLICATION = 'settings.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': 'django_test',
+#        'USER': 'postgres',
+#        'PASSWORD': 'postgres',
+#        'HOST': '127.0.0.1',
+#        'PORT': '5432',
+#    }
+#}
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'django_test',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(PROJECT_ROOT, 'django_quiniela.db'),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -162,7 +167,10 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Caracas'
+
+USE_TZ = True
+
 
 USE_I18N = True
 
@@ -173,6 +181,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
@@ -182,8 +191,6 @@ STATICFILES_DIRS = [
 
 CORS_ORIGIN_ALLOW_ALL = True
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
 LOGIN_URL = '/user/login/'
 
-LOGIN_REDIRECT_URL = '/user/'
+LOGIN_REDIRECT_URL = '/user/quinielas/'
