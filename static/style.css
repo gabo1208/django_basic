@@ -66,8 +66,22 @@ body{
     border-color: #c3e6cb;
 }
 
+/* Overrides of Bootstrap styles*/
+.container {
+	padding-right: 0;
+	padding-left: 0;
+}
 
 /* Overrides to AdminLTE styles */
+.navbar-custom-menu.no-user {
+	margin-right: 0;
+}
+
+
+.skin-blue .main-header {
+	background-color: #3c8dbc;
+}
+
 .content-wrapper, .main-footer {
 	margin-left: 0;
 }
@@ -87,6 +101,7 @@ body{
 
 	.main-header .navbar-custom-menu {
 		text-align: center;
+		margin-right: 0;
 	}
 
 	.navbar-custom-menu > .navbar-nav {
@@ -101,6 +116,8 @@ body{
 	.navbar-custom-menu > .navbar-nav > li {
 		display: inline-block;
 	}
+
+
 }
 
 /* Medium devices (tablets, 768px and up) */

@@ -37,11 +37,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
-  <!-- Vue.js
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-  -->
-  <script src="{% static 'vue/vue.js' %}"></script>
-  <script src="{% static 'channels/js/websocketbridge.js' %}"></script>
+
 
   <link rel="icon" type="image/png" href="{% static 'icon.png' %}" />
 
@@ -69,17 +65,19 @@ desired effect
 <body class="hold-transition skin-blue sidebar-mini">
 
 <div class="wrapper">
-    <div class="container" style="padding: 0;">
+
         <!-- Main Header -->
         <header class="main-header">
-            <!-- Logo -->
-            <a href="" class="logo">
-              <!-- mini logo for sidebar mini 50x50 pixels -->
-              <span class="logo-mini"><b>M-IT</b></span>
-              <!-- logo for regular state and mobile devices -->
-              <span class="logo-lg"><b>Member-IT</b></span>
-            </a>
-            {% include 'partials/nav.html' %}
+            <div class="container">
+                <!-- Logo -->
+                <a href="" class="logo">
+                  <!-- mini logo for sidebar mini 50x50 pixels -->
+                  <span class="logo-mini"><b>M-IT</b></span>
+                  <!-- logo for regular state and mobile devices -->
+                  <span class="logo-lg"><b>Member-IT</b></span>
+                </a>
+                {% include 'partials/nav.html' %}
+            </div>
         </header>
 
         {% if user.is_authenticated %}
@@ -87,7 +85,7 @@ desired effect
 
         {% endblock %}
         {% endif %}
-
+    <div class="container" style="padding: 0;">
         <!-- Content Wrapper. Contains page content -->
         {% if not user.is_authenticated %}
         <div class="content-wrapper full">
@@ -111,8 +109,10 @@ desired effect
 
           </section>
           <!-- /.content -->
-        </div>
-        <!-- /.content-wrapper -->
+      </div> <!-- /.content-wrapper -->
+
+    </div><!-- /.content-container -->
+
         {% if not user.is_authenticated %}
         <!-- Main Footer -->
         <footer class="main-footer full">
@@ -120,12 +120,14 @@ desired effect
         <!-- Main Footer -->
         <footer class="main-footer">
         {% endif %}
+          <div class="container">
           <!-- To the right -->
           <div class="pull-right hidden-xs">
-            Made with love gabohd@gmail.com<3
+            Made with love gabohd@gmail.com &lt;3
           </div>
           <!-- Default to the left -->
           <strong>Copyright &copy; 2017 <a href="#">Member It Team</a>.</strong> All rights reserved.
+          </div>
         </footer>
 
         {% block right-sidebar %}
@@ -205,7 +207,7 @@ desired effect
 
         {% endblock %}
 
-    </div>
+
   </div>
 <!-- ./wrapper -->
 
@@ -217,6 +219,12 @@ desired effect
 <script src="{% static 'bower_components/bootstrap/dist/js/bootstrap.min.js' %}"></script>
 <!-- AdminLTE App -->
 <script src="{% static 'dist/js/adminlte.min.js' %}"></script>
+
+<!-- Vue.js
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+-->
+<script src="{% static 'vue/vue.js' %}"></script>
+<script src="{% static 'channels/js/websocketbridge.js' %}"></script>
 
 {% block jsblock %}
 {% endblock %}

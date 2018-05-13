@@ -1,29 +1,30 @@
 {% extends "base_main.html" %}
 
 {# Load the tag library #}
+{% load static %}
 {% load bootstrap3 %}
 
-{# Load CSS and JavaScript #}
-{% bootstrap_css %}
-{% bootstrap_javascript %}
 
 {# Display django.contrib.messages as Bootstrap alerts #}
 
 {% block content %}
-    <div class="col-sm-6">
+    <div class="col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
+        <img class="img-responsive" src="{% static 'icon.png' %}" alt="Fifa World Cup logo" style="margin: 15px auto; max-height: 200px;">
+
         {% bootstrap_messages %}
         <form method="post" action="{% url 'users:login' %}">
         {% csrf_token %}
         {% bootstrap_form form %}
+            <br>
             {% buttons %}
-            <button type="submit">Login</button>
+            <button class="btn btn-primary btn-block" type="submit">Login</button>
             <input type="hidden" name="next" value="{{ next }}" />
             {% endbuttons %}
         </form>
 
         {# Assumes you setup the password_reset view in your URLconf #}
-        <p>
-            <a href="{% url 'users:user_sign_up' %}">Register and Create your Own Quiniela!</a> - 
+        <p class="text-center">
+            <a href="{% url 'users:user_sign_up' %}">Register and Create your Own Quiniela!</a> -
             <a href="{% url 'main:home' %}"> Lost password? </a>
         </p>
     </div>
