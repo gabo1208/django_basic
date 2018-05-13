@@ -66,11 +66,21 @@ body{
     border-color: #c3e6cb;
 }
 
+.content-wrapper {
+	border-radius: 4px;
+}
+
+.oscarcoin-marquee {
+	color: white;
+}
+
 /* Overrides of Bootstrap styles*/
 .container {
 	padding-right: 0;
 	padding-left: 0;
 }
+
+
 
 /* Overrides to AdminLTE styles */
 .navbar-custom-menu.no-user {

@@ -4,6 +4,7 @@ This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
 -->
 {% load static %}
+{% load quiniela_tournamenttags %}
 
 
 <html>
@@ -79,13 +80,10 @@ desired effect
                 {% include 'partials/nav.html' %}
             </div>
         </header>
-
-        {% if user.is_authenticated %}
-        {% block left-sidebar %}
-
-        {% endblock %}
-        {% endif %}
-    <div class="container" style="padding: 0;">
+    {% if user.is_authenticated %}
+    <MARQUEE class="oscarcoin-marquee" bgcolor=#222d32 WIDTH=100% HEIGHT=35 ALIGN=MIDDLE><FONT FACE=Mono COLOR=#216C2A SIZE=5>Oscarcoin: {% get_oscarcoin %},00 bsf</FONT></MARQUEE>
+    {% endif %}
+    <div class="container" style="padding: 0;{% if user.is_authenticated %}margin-bottom: 35px;{%endif%}">
         <!-- Content Wrapper. Contains page content -->
         {% if not user.is_authenticated %}
         <div class="content-wrapper full">
