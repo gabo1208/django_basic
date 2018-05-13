@@ -242,6 +242,10 @@ class Quiniela(TimeStampedModel):
         return self.name + ' - ' + str(self.tournament) + ' - owner: ' + self.admin.user.username
 
 
+class OscarCoin(TimeStampedModel):
+    value = models.IntegerField(default=0)
+
+
 ##################### SIGNALS ########################
 @receiver(pre_save, sender=Quiniela)
 def save_quiniela(sender, instance, **kwargs):
