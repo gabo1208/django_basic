@@ -417,6 +417,7 @@ def oscarcoin_update(request):
 def quiniela_from_user(request, quiniela_id, username):
     is_member = True
     inviting = False
+    visiting = True
     user = get_object_or_404(Profile, user__username=username).user
     active = 0
     phase = 3
@@ -673,6 +674,7 @@ def quiniela_from_user(request, quiniela_id, username):
             'invite_formset': invite_formset,
             'invite_errors': invite_errors,
             'invite_notifications': invite_notifications,
+            'visiting': visiting,
         }
     )
 
