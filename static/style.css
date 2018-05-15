@@ -30,6 +30,10 @@ body{
     padding: 10px;
 }
 
+.box h4, .box h5, .box h3{
+    padding: 10px;
+}
+
 .content-wrapper.full, .main-footer.full{
     margin-left: 0;
 }
