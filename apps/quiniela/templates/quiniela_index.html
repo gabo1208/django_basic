@@ -20,16 +20,22 @@
     {% if quinielas %}
     <h3> Quinielas en las que estas participando</h3>
         {% for quiniela in quinielas %}
-            <h4><a href="{% url 'quiniela:quiniela_details' quiniela.id %}">
-                {% if quiniela.image %}
-                    <img src="{{quiniela.image.url}}" width="50px" height="auto">
-                {% endif %}
-                {{ quiniela.name }} -
-                {% if quiniela.tournament.image %}
-                    <img src="{{quiniela.tournament.image.url}}" width="50px" height="auto">
-                {% endif %}
-                {{ quiniela.tournament.name }}
-            </a></h4>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="box">
+                        <h5><a href="{% url 'quiniela:quiniela_details' quiniela.id %}">
+                            {% if quiniela.image %}
+                                <img src="{{quiniela.image.url}}" width="50px" height="auto">
+                            {% endif %}
+                            {{ quiniela.name }} -
+                            {% if quiniela.tournament.image %}
+                                <img src="{{quiniela.tournament.image.url}}" width="50px" height="auto">
+                            {% endif %}
+                            {{ quiniela.tournament.name }}
+                        </a></h5>
+                    </div>
+                </div>
+            </div>
         {% endfor %}
     <hr>
     {% else %}

@@ -94,11 +94,11 @@
                       <div class="row">
                         <div class="col-xs-12">
                           {% for leader in leaders %}
-                            <h4>
+                            <h5>
                               <a href="{% url 'quiniela:quiniela_from_user' quiniela_id=quiniela.id username=leader.user.user.username %}">
                                 {{ leader }}
                               </a> - {% get_score leader quiniela.score_type %}
-                            </h4>
+                            </h5>
                           {% endfor %}
                           {% for pending in pendings %}
                             {{ pending }} - pending<br>
@@ -130,8 +130,10 @@
                         {% endif %}
                         <b>{{ quiniela.tournament.name }} - Groups Table</b>
                       </div>
+                      {% for group in groups %}
+                      {% if forloop.counter0|divisibleby:2 %}
                       <div class="row">
-                        {% for group in groups %}
+                      {% endif %}
                         <div class="col-xs-6">
                           <div class="row">
                             <div class="col-xs-12" align="center"> <b>Group {{ group.name }}</b></div>
@@ -148,8 +150,10 @@
                           {% endfor %}
                           <br>
                         </div>
-                        {% endfor %}
+                      {% if forloop.counter|divisibleby:2 %}
                       </div>
+                      {% endif %}
+                      {% endfor %}
                     </div>
                   </div>
                 </div>
