@@ -17,3 +17,14 @@ def get_oscarcoin():
 		ocoin = OscarCoin()
 		ocoin.save()
 	return ocoin.value
+
+
+@register.simple_tag
+def get_oscarcoin_date():
+        ocoin = OscarCoin.objects.all()
+        if ocoin:
+                ocoin = ocoin[0]
+        else:
+                ocoin = OscarCoin()
+                ocoin.save()
+        return ocoin.modified.split('.')[0]
