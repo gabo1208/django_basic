@@ -27,4 +27,4 @@ def get_oscarcoin_date():
         else:
                 ocoin = OscarCoin()
                 ocoin.save()
-        return ocoin.modified.split('.')[0]
+        return str(ocoin.modified).split('.')[0]
