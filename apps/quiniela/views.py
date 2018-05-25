@@ -28,7 +28,8 @@ def quiniela_index(request):
         request,
         'quiniela_index.html',
         context={
-            'quinielas':Quiniela.objects.filter(members=request.user.profile),
+            'quinielas': Quiniela.objects.filter(members=request.user.profile),
+            'public_quinielas': Quiniela.objects.filter(public=True),
             'form': form,
         }
     )
