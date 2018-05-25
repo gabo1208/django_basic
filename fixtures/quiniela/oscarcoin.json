@@ -1,0 +1,11 @@
+[
+{
+  "model": "quiniela.oscarcoin",
+  "pk": 1,
+  "fields": {
+    "created": "2018-05-13T00:37:57.044Z",
+    "modified": "2018-05-24T18:08:11.504Z",
+    "value": 1100
+  }
+}
+]
