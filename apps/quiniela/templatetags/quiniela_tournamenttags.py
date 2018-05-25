@@ -1,3 +1,5 @@
+import requests
+
 from django import template
 
 from apps.quiniela.models import OscarCoin
@@ -28,3 +30,9 @@ def get_oscarcoin_date():
                 ocoin = OscarCoin()
                 ocoin.save()
         return str(ocoin.modified).split('.')[0]
+
+
+@register.simple_tag
+def get_btc():
+    btc = requests.get('https://api.coinmarketcap.com/v1/ticker/bitcoin/').json()[0]
+    return str(btc['price_usd']) + ' ' + str(btc['percent_change_1h']) + '% last hour'

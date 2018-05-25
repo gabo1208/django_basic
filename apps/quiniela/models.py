@@ -218,6 +218,7 @@ class Quiniela(TimeStampedModel):
     description = models.CharField(max_length=150, default='')
     members = models.ManyToManyField(Profile, related_name='quiniela_members')
     tournament = models.ForeignKey('Tournament', on_delete=models.CASCADE, blank=True, null=True)
+    public = models.BooleanField(default=True)
     score_type = models.CharField(
         max_length=2,
         choices=TOURNAMENT_SCORE_CHOICES,
