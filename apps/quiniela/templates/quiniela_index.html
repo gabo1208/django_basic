@@ -27,11 +27,11 @@
                         <div class="box">
                             <h5><a href="{% url 'quiniela:quiniela_details' quiniela.id %}">
                                 {% if quiniela.image %}
-                                    <img src="{{quiniela.image.url}}" width="50px" height="auto">
+                                    <img src="{{quiniela.image.url}}" width="55px" height="55px">
                                 {% endif %}
                                 {{ quiniela.name }} -
                                 {% if quiniela.tournament.image %}
-                                    <img src="{{quiniela.tournament.image.url}}" width="50px" height="auto">
+                                    <img src="{{quiniela.tournament.image.url}}" width="55px" height="55px">
                                 {% endif %}
                                 {{ quiniela.tournament.name }}
                             </a></h5>
@@ -49,11 +49,11 @@
                     <div class="box">
                         <h5><a href="{% url 'quiniela:quiniela_details' quiniela.id %}">
                             {% if quiniela.image %}
-                                <img src="{{quiniela.image.url}}" width="50px" height="auto">
+                                <img src="{{quiniela.image.url}}" width="55px" height="55px">
                             {% endif %}
                             {{ quiniela.name }} -
                             {% if quiniela.tournament.image %}
-                                <img src="{{quiniela.tournament.image.url}}" width="50px" height="auto">
+                                <img src="{{quiniela.tournament.image.url}}" width="55px" height="55px">
                             {% endif %}
                             {{ quiniela.tournament.name }}
                         </a></h5>
