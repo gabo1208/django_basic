@@ -1,6 +1,5 @@
 import datetime
 
-from django.utils import timezone
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
@@ -223,7 +222,7 @@ def quiniela_details(request, quiniela_id):
             # Check Games passed by now
             count = 0
             for game in quiniela_games:
-                if quiniela_games[count].match_datetime <= timezone.now() - datetime.timedelta(hours=4):
+                if quiniela_games[count].match_datetime <= datetime.datetime.now() - datetime.timedelta(hours=4):
                     count += 1
 
             for prefix in phases_prefixes:
@@ -233,7 +232,7 @@ def quiniela_details(request, quiniela_id):
                 if formset.is_valid():
                     for form in formset:
                         if form.is_valid():
-                            if quiniela_games[count].match_datetime > timezone.now() - datetime.timedelta(hours=4):
+                            if quiniela_games[count].match_datetime > datetime.datetime.now() - datetime.timedelta(hours=4):
                                 form.save()
                         else:
                             print(form.errors)
@@ -270,7 +269,7 @@ def quiniela_details(request, quiniela_id):
         # Initialize passed games results with blocked gameforms
         for game in quiniela_games:
             aux = qset.filter(game=game)
-            if game.match_datetime <= timezone.now() - datetime.timedelta(hours=4):
+            if game.match_datetime <= datetime.datetime.now() - datetime.timedelta(hours=4):
                 init += 1
                 # Phase limit border cases
                 if init == end:
@@ -375,7 +374,6 @@ def quiniela_details(request, quiniela_id):
             'invite_formset': invite_formset,
             'invite_errors': invite_errors,
             'invite_notifications': invite_notifications,
-            'test': str(timezone.now()) + ' datetime: ' + str(datetime.datetime.now()),
         }
     )
 
