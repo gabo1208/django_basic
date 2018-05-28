@@ -34,5 +34,10 @@ def get_oscarcoin_date():
 
 @register.simple_tag
 def get_btc():
-    btc = requests.get('https://api.coinmarketcap.com/v1/ticker/bitcoin/').json()[0]
-    return str(btc['price_usd']) + ' ' + str(btc['percent_change_1h']) + '% last hour'
+    try:
+        btc = requests.get('https://api.coinmarketcap.com/v1/ticker/bitcoin/').json()[0]
+        return(
+            str(btc['price_usd']) + ' ' + str(btc['percent_change_1h']) + '% last hour'
+        )
+    except:
+        return 'Cannot stablish conection.'

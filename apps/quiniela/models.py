@@ -167,7 +167,7 @@ class MemberFixture(TimeStampedModel):
     def get_score(self, score_type):
         flag = False
 
-        for result in (self.results.filter(game__match_datetime__gte=datetime.datetime.today()+ datetime.timedelta(hours=2)).
+        for result in (self.results.filter(game__match_datetime__lte=datetime.datetime.today()+ datetime.timedelta(hours=2)).
                 order_by('game__match_datetime')[self.games_checked:]):
 
             flag = True
