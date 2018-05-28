@@ -348,6 +348,7 @@ def quiniela_details(request, quiniela_id):
 
         if count % phases_limit != 0:
             groups_formsets.append((group_forms, None, phases_prefixes[prefix]))
+            
     # Request and request.user independant code and initializations
     invite_formset = invite_fs(prefix='invite_users')
     leaders = MemberFixture.objects.filter(
