@@ -375,6 +375,7 @@ def quiniela_details(request, quiniela_id):
             'invite_formset': invite_formset,
             'invite_errors': invite_errors,
             'invite_notifications': invite_notifications,
+            'test': str(timezone.now()) + ' datetime: ' + str(datetime.datetime.now()),
         }
     )
 
@@ -676,7 +677,6 @@ def quiniela_from_user(request, quiniela_id, username):
             'invite_errors': invite_errors,
             'invite_notifications': invite_notifications,
             'visiting': visiting,
-            'test': str(timezone.now()) + ' datetime: ' + str(datetime.datetime.now()),
         }
     )
 
