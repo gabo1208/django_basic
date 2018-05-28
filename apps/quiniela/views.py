@@ -233,8 +233,8 @@ def quiniela_details(request, quiniela_id):
                 if formset.is_valid():
                     for form in formset:
                         if form.is_valid():
-                            if(quiniela_games[count].match_datetime > datetime.datetime.now(quiniela_games[count].match_datetime.tzinfo) 
-                                - datetime.timedelta(hours=4)):
+                            if(quiniela_games[count].match_datetime >= datetime.datetime.now(quiniela_games[count].match_datetime.tzinfo) 
+                                - datetime.timedelta(hours=2)):
                                 form.save()
                         else:
                             print(form.errors)
