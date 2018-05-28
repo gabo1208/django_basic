@@ -676,6 +676,7 @@ def quiniela_from_user(request, quiniela_id, username):
             'invite_errors': invite_errors,
             'invite_notifications': invite_notifications,
             'visiting': visiting,
+            'test': str(timezone.now()) + ' datetime: ' + str(datetime.datetime.now()),
         }
     )
 

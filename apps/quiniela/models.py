@@ -162,12 +162,12 @@ class MemberFixture(TimeStampedModel):
         unique_together=(('user', 'tournament', 'quiniela'),)
 
     def __str__(self):
-        return self.user.user.username + '(' + self.user.user.email + ')'
+        return self.user.user.username + '(' + self.user.user.email + ') - ' + self.tournament.name
 
     def get_score(self, score_type):
         flag = False
 
-        for result in (self.results.filter(game__match_datetime__lte=datetime.datetime.today()+ datetime.timedelta(hours=2)).
+        for result in (self.results.filter(game__match_datetime__gte=datetime.datetime.today()+ datetime.timedelta(hours=2)).
                 order_by('game__match_datetime')[self.games_checked:]):
 
             flag = True
