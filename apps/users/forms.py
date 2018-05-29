@@ -124,7 +124,7 @@ class CustomPasswordResetForm(PasswordResetForm):
         subject = ''.join(subject.splitlines())
         body = loader.render_to_string(email_template_name, context)
 
-        email_message = EmailMultiAlternatives(subject, body, from_email, [to_email])
+        email_message = EmailMultiAlternatives(subject, body, 'admin@memberit.com', [to_email])
         # New line introduce
         email_message.attach_alternative(body, 'text/html')
 
