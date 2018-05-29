@@ -32,6 +32,8 @@ ALLOWED_HOSTS = ['gabo1208.pythonanywhere.com']
 # Application definition
 INSTALLED_APPS = [
     # Django Default packages
+    'apps.users',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -55,7 +57,7 @@ INSTALLED_APPS = [
 
     # Custom Written apps #
     'apps.main',
-    'apps.users',
+
     'apps.memberits',
     'apps.chat',
     'apps.quiniela',

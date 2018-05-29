@@ -43,7 +43,7 @@
         {# Assumes you setup the password_reset view in your URLconf #}
         <p class="text-center">
             <a href="{% url 'users:user_sign_up' %}">Register and Create your Own Quiniela!</a> -
-            <a href="{% url 'main:home' %}"> Lost password? </a>
+            <a href="{% url 'users:password_reset' %}"> Lost password? </a>
         </p>
     </div>
 {% endblock %}
