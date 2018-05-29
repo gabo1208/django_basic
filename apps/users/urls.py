@@ -4,6 +4,7 @@ from django.contrib.auth import views as auth_views
 from django.urls import re_path, include, reverse_lazy
 
 from . import views
+from .forms import CustomPasswordResetForm
 
 app_name = 'users'
 urlpatterns = [
@@ -22,8 +23,10 @@ urlpatterns = [
         auth_views.password_reset,
         {
             'post_reset_redirect': reverse_lazy('users:password_reset_done'),
+            'password_reset_form': CustomPasswordResetForm,
         },
         name='password_reset'),
+
     re_path(
         r'^reset/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
         auth_views.password_reset_confirm,
@@ -31,6 +34,7 @@ urlpatterns = [
             'post_reset_redirect': reverse_lazy('users:password_reset_complete'),
         },
         name='password_reset_confirm'),
+
     re_path('', include('django.contrib.auth.urls')),
 
 
