@@ -196,3 +196,9 @@ CORS_ORIGIN_ALLOW_ALL = True
 LOGIN_URL = '/user/login/'
 
 LOGIN_REDIRECT_URL = '/user/quinielas/'
+
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'memberit'
+EMAIL_HOST_PASSWORD = '..asdf1234'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
