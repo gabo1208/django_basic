@@ -197,8 +197,8 @@ LOGIN_URL = '/user/login/'
 
 LOGIN_REDIRECT_URL = '/user/quinielas/'
 
+EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_PORT = 587
 EMAIL_HOST_USER = 'memberit'
 EMAIL_HOST_PASSWORD = '..asdf1234'
-EMAIL_PORT = 465
-EMAIL_USE_SSL = True
