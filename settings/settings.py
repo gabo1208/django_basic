@@ -197,8 +197,7 @@ LOGIN_URL = '/user/login/'
 
 LOGIN_REDIRECT_URL = '/user/quinielas/'
 
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.sendgrid.net'
+SENDGRID_API_KEY = "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"
+EMAIL_BACKEND = "sgbackend.SendGridBackend"
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'memberit'
-EMAIL_HOST_PASSWORD = '..asdf1234'
+EMAIL_USE_TLS = True
