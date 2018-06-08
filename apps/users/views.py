@@ -13,14 +13,16 @@ from .models import User
 # Login for user mail or username
 def user_login(request):
     if request.user.is_authenticated:
-        return redirect('users:user_index')
+        #return redirect('users:user_index')
+        return redirect('quiniela:user_quinielas')
     else:
         if request.method == 'POST':
             form = UserLoginForm(request.POST)
             if form.is_valid():
                 user = form.get_user()
                 login(request, user)
-                return redirect('users:user_index')
+                #return redirect('users:user_index')
+                return redirect('quiniela:user_quinielas')
         else:
             form = UserLoginForm()
 
@@ -59,7 +61,8 @@ def sign_up(request):
 
             # Authenticate the user and redirect it to home view
             login(request, user)
-            return redirect('users:user_index')
+            #return redirect('users:user_index')
+            return redirect('quiniela:user_quinielas')
     else:
         form = UserCreationForm()
     return render(request, 'registration/sign_up.html', context={"form": form})

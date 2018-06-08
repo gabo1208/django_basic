@@ -1,3 +1,5 @@
+import requests
+
 from django import template
 
 from apps.quiniela.models import OscarCoin
@@ -16,4 +18,30 @@ def get_oscarcoin():
 	else:
 		ocoin = OscarCoin()
 		ocoin.save()
+<<<<<<< HEAD
 	return ocoin.value
+=======
+	return ocoin.value
+
+
+@register.simple_tag
+def get_oscarcoin_date():
+        ocoin = OscarCoin.objects.all()
+        if ocoin:
+                ocoin = ocoin[0]
+        else:
+                ocoin = OscarCoin()
+                ocoin.save()
+        return str(ocoin.modified).split('.')[0]
+
+
+@register.simple_tag
+def get_btc():
+    try:
+        btc = requests.get('https://api.coinmarketcap.com/v1/ticker/bitcoin/').json()[0]
+        return(
+            str(btc['price_usd']) + ' ' + str(btc['percent_change_1h']) + '% last hour'
+        )
+    except:
+        return 'Cannot stablish conection.'
+>>>>>>> just_quiniela

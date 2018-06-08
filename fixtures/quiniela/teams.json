@@ -354,5 +354,25 @@
     "history": "Seleccion Nacional de Senegal",
     "tags": []
   }
+},
+{
+  "model": "quiniela.team",
+  "pk": 33,
+  "fields": {
+    "name": "Real Madrid",
+    "image": "real_madrid_shield.png",
+    "history": "Best Club Ever!",
+    "tags": []
+  }
+},
+{
+  "model": "quiniela.team",
+  "pk": 34,
+  "fields": {
+    "name": "Liverpool FC",
+    "image": "liverpool_shield.png",
+    "history": "Mochos",
+    "tags": []
+  }
 }
 ]

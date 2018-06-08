@@ -1,30 +1,59 @@
 {% extends "base_main.html" %}
 
 {# Load the tag library #}
+{% load static %}
 {% load bootstrap3 %}
 
-{# Load CSS and JavaScript #}
-{% bootstrap_css %}
-{% bootstrap_javascript %}
+{% block extra-style %}
+@media (min-width: 768px){
+    .container {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px){
+    .container {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px){
+    .container {
+        width: 1170px;
+    }
+}
+{% endblock %}
 
 {# Display django.contrib.messages as Bootstrap alerts #}
-
 {% block content %}
+<<<<<<< HEAD
     <div class="col-sm-6">
+=======
+    <div class="col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
+        <img class="img-responsive" src="{% static 'icon.png' %}" alt="Fifa World Cup logo" style="margin: 15px auto; max-height: 200px;">
+
+>>>>>>> just_quiniela
         {% bootstrap_messages %}
         <form method="post" action="{% url 'users:login' %}">
         {% csrf_token %}
         {% bootstrap_form form %}
+            <br>
             {% buttons %}
-            <button type="submit">Login</button>
+            <button class="btn btn-primary btn-block" type="submit">Login</button>
             <input type="hidden" name="next" value="{{ next }}" />
             {% endbuttons %}
         </form>
 
         {# Assumes you setup the password_reset view in your URLconf #}
+<<<<<<< HEAD
         <p>
             <a href="{% url 'users:user_sign_up' %}">Register and Create your Own Quiniela!</a> - 
             <a href="{% url 'main:home' %}"> Lost password? </a>
+=======
+        <p class="text-center">
+            <a href="{% url 'users:user_sign_up' %}">Register and Create your Own Quiniela!</a> -
+            <a href="{% url 'users:password_reset' %}"> Lost password? </a>
+>>>>>>> just_quiniela
         </p>
     </div>
 {% endblock %}

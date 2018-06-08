@@ -3,8 +3,9 @@
 This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
 -->
-{% load staticfiles %}
 {% load static %}
+{% load quiniela_tournamenttags %}
+
 
 <html>
 <head>
@@ -37,13 +38,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
-  <!-- Vue.js
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-  -->
-  <script src="{% static 'vue/vue.js' %}"></script>
-  <script src="{% static 'channels/js/websocketbridge.js' %}"></script>
-
   <link rel="icon" type="image/png" href="{% static 'icon.png' %}" />
+  <style type="text/css">
+    .content-container {
+      width: 100%;
+    }
+    {% block extra-style %}
+    {% endblock %}
+  </style>
 
 </head>
 <!--
@@ -67,499 +69,154 @@ desired effect
 |---------------------------------------------------------|
 -->
 <body class="hold-transition skin-blue sidebar-mini">
+
 <div class="wrapper">
 
-  <!-- Main Header -->
-  <header class="main-header">
-
-    <!-- Logo -->
-    <a href="" class="logo">
-      <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>M-IT</b></span>
-      <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Member-IT</b></span>
-    </a>
-
-    <!-- Header Navbar -->
-    <nav class="navbar navbar-static-top" role="navigation">
-    {% if not user.is_authenticated %}
-    <ul class="nav navbar-nav">
-      <li>
-        <a href="{% url 'main:home' %}" class="pages-header">
-          <b>Home</b>
-        </a>
-      </li>
-      <li>
-        <a href="{% url 'quiniela:user_quinielas' %}" class="pages-header">
-          <b>Quinielas</b>
-        </a>
-      </li>
-    </ul>
-
-    <!-- Navbar Right Menu -->
-      <div class="navbar-custom-menu no-user">
-        <ul class="nav navbar-nav">
-          
-          <!-- Login and Sign in icons-->
-          <li>
-            <a href="{% url 'users:login' %}?next=/user/" class="login-header">
-              <b>Login</b> 
-              <i class="fa fa-user-circle"></i>
-            </a>
-          </li>
-          <li>
-            <!-- Menu toggle button -->
-            <a href="{% url 'users:user_sign_up' %}" class="sign-up-header">
-              <b>Sign Up</b> 
-              <i class="fa fa-check-square-o"></i>
-            </a>
-          </li>
-    {% else %}
-      {% block header %}
-      <!-- Sidebar toggle button-->
-      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-        <span class="sr-only">Toggle navigation</span>
-      </a>
-      <ul class="nav navbar-nav">
-        <li>
-          <a href="{% url 'main:home' %}" class="pages-header">
-            <b>Home</b>
-          </a>
-        </li>
-        <li>
-          <a href="{% url 'quiniela:user_quinielas' %}" class="pages-header">
-            <b>Quinielas</b>
-          </a>
-        </li>
-      </ul>
-      <!-- Navbar Right Menu -->
-      <div class="navbar-custom-menu">
-        <ul class="nav navbar-nav">
-          
-          <!-- Messages: style can be found in dropdown.less-->
-          <li class="dropdown messages-menu">
-            <!-- Menu toggle button -->
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-envelope-o"></i>
-              <span class="label label-success">{[ messages ]}</span>
-            </a>
-            <ul class="dropdown-menu">
-              
-              <li class="header">You have {[ messages ]} messages</li>
-              <li>
-                <!-- inner menu: contains the messages -->
-                <ul class="menu">
-                  <li><!-- start message -->
-                    <a href="#">
-                      <div class="pull-left">
-                        <!-- User Image -->
-                        {% if user.profile.image %}
-                          <img src="{{ user.profile.image.url }}" class="img-circle" alt="User Image">
-                        {% else %}
-                          <img src="{% static 'dist/img/generic-user-avatar.png' %}" class="img-circle" alt="User Image">
-                        {% endif %}
-                      </div>
-                      <!-- Message title and timestamp -->
-                      <h4>
-                        Support Team
-                        <small><i class="fa fa-clock-o"></i> 5 mins</small>
-                      </h4>
-                      <!-- The message -->
-                      <p>Why not buy a new awesome theme?</p>
-                    </a>
-                  </li>
-                  <!-- end message -->
-                </ul>
-                <!-- /.menu -->
-              </li>
-              <li class="footer"><a href="#">See All Messages</a></li>
-            </ul>
-          </li>
-          <!-- /.messages-menu -->
-
-          <!-- Notifications Menu -->
-          <li class="dropdown notifications-menu">
-            <!-- Menu toggle button -->
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-bell-o"></i>
-              <span class="label label-warning">{[ notifications ]}</span>
-            </a>
-            <ul class="dropdown-menu">
-              <li class="header">You have {[ notifications ]} notifications</li>
-              <li>
-                <!-- Inner Menu: contains the notifications -->
-                <ul class="menu">
-                  {% for request in user.profile.get_pending_requests %}
-                  <li class="user_request_confirm" data-user="{{ request.from_user.user.username }}" 
-                    data-reason="{{ request.reason }}"><!-- start notification -->
-                    <i class="fa fa-users text-aqua"></i> 
-                    {% include 'user_request.html' %}
-                  </li>
-                  {% endfor %}
-                  <!-- end notification -->
-                </ul>
-              </li>
-              <li class="footer"><a href="#">View all</a></li>
-            </ul>
-          </li>
-          <!-- Tasks Menu -->
-          <li class="dropdown tasks-menu">
-            <!-- Menu Toggle Button -->
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-flag-o"></i>
-              <span class="label label-danger">{[ memberits ]}</span>
-            </a>
-            <ul class="dropdown-menu">
-              <li class="header">You have {[ memberits ]} memberIts!</li>
-              <li>
-                <!-- Inner menu: contains the tasks -->
-                <ul class="menu">
-                  <li><!-- Task item -->
-                    <a href="#">
-                      <!-- Task title and progress text -->
-                      <h3>
-                        Design some buttons
-                        <small class="pull-right">20%</small>
-                      </h3>
-                      <!-- The progress bar -->
-                      <div class="progress xs">
-                        <!-- Change the css width attribute to simulate progress -->
-                        <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar"
-                             aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                          <span class="sr-only">20% Complete</span>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <!-- end task item -->
-                </ul>
-              </li>
-              <li class="footer">
-                <a href="#">View all memberIts</a>
-              </li>
-            </ul>
-          </li>
-          <!-- User Account Menu -->
-          <li class="dropdown user user-menu">
-            <!-- Menu Toggle Button -->
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <!-- The user image in the navbar-->
-              {% if user.profile.image %}
-                <img src="{{ user.profile.image.url }}" class="user-image" alt="User Image">
-              {% else %}
-                <img src="{% static 'dist/img/generic-user-avatar.png' %}" class="user-image" alt="User Image">
-              {% endif %}
-              <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs">Mm-It</span>
-            </a>
-            <ul class="dropdown-menu">
-              <!-- The user image in the menu -->
-              <li class="user-header">
-                {% if user.profile.image %}
-                  <img src="{{ user.profile.image.url }}" class="img-circle" alt="User Image">
-                {% else %}
-                  <img src="{% static 'dist/img/generic-user-avatar.png' %}" class="img-circle" alt="User Image">
-                {% endif %}
-                <p>
-                  {{msg}}
-                </p>
-              </li>
-              <!-- Menu Body -->
-              <li class="user-body">
-                <div class="row">
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Followers</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Sales</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Friends</a>
-                  </div>
-                </div>
-                <!-- /.row -->
-              </li>
-              <!-- Menu Footer-->
-              <li class="user-footer">
-                <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
-                </div>
-                <div class="pull-right">
-                  <a href="{% url 'users:logout' %}?next=/" class="btn btn-default btn-flat">Sign out</a>
-                </div>
-              </li>
-            </ul>
-          </li>
-
-          
-          <!-- Control Sidebar Toggle Button -->
-          <li>
-            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-          </li>
-        </ul>
-      </div>
-      {% endblock %}
+        <!-- Main Header -->
+        <header class="main-header">
+            <div class="container">
+                <!-- Logo -->
+                <a href="" class="logo">
+                  <!-- mini logo for sidebar mini 50x50 pixels -->
+                  <span class="logo-mini"><b>M-IT</b></span>
+                  <!-- logo for regular state and mobile devices -->
+                  <span class="logo-lg"><b>Member-IT</b></span>
+                </a>
+                {% include 'partials/nav.html' %}
+            </div>
+        </header>
+    {% if user.is_authenticated %}
+    <marquee class="oscarcoin-marquee" bgcolor=#222d32 WIDTH=100% HEIGHT=35 ALIGN=MIDDLE>
+    <font FACE=Mono COLOR=#216C2A SIZE=5>BTC: {% get_btc %} /Oscarcoin: {% get_oscarcoin %},00 bsfS/Pypl: Oscarcoin - 20% /last update: {% get_oscarcoin_date %}</font>
+    </marquee>
     {% endif %}
-    </nav>
-  </header>
+    <div class="container content-container" style="padding: 0;">
+        <!-- Content Wrapper. Contains page content -->
+        {% if not user.is_authenticated %}
+        <div class="content-wrapper full">
+        {% else %}
+        <div class="content-wrapper">
+        {% endif %}
+          <!-- Content Header (Page header) -->
+          <section class="content-header">
+            {% block content-header %}
+            {% endblock %}
+          </section>
 
-  {% if user.is_authenticated %}
-  {% block left-sidebar %}
-    <!-- Left side column. contains the logo and sidebar -->
-    <aside class="main-sidebar">
+          <!-- Main content -->
+          <section class="content container-fluid">
 
-      <!-- sidebar: style can be found in sidebar.less -->
-      <section class="sidebar">
-        
-        <!-- Sidebar user panel (optional) -->
-        <div class="user-panel">
-          <div class="pull-left image">
-            {% if user.profile.image %}
-              <img src="{{ user.profile.image.url }}" class="img-circle" alt="User Image">
-            {% else %}
-              <img src="{% static 'dist/img/generic-user-avatar.png' %}" class="img-circle" alt="User Image">
-            {% endif %}
+            <!--------------------------
+              | Your Page Content Here |
+              -------------------------->
+              {% block content %}
+              {% endblock %}
+
+          </section>
+          <!-- /.content -->
+      </div> <!-- /.content-wrapper -->
+
+    </div><!-- /.content-container -->
+
+        {% if not user.is_authenticated %}
+        <!-- Main Footer -->
+        <footer class="main-footer full">
+        {% else %}
+        <!-- Main Footer -->
+        <footer class="main-footer">
+        {% endif %}
+          <div class="container">
+          <!-- Default to the left -->
+          <strong>Copyright &copy; 2017 <a href="#">Member It Team</a>.</strong> All rights reserved.
+          <!-- To the right -->
+          <div class="pull-right hide-xs">
+            Made with love gabohd@gmail.com &lt;3
           </div>
-          <div class="pull-left info">
-            <p>{{ user.username }}</p>
-            <!-- Status -->
-            <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+          <div class="show-xs" align="center">
+            Made with love gabohd@gmail.com &lt;3
           </div>
-        </div>
-
-        <!-- search form (Optional) -->
-        <form action="#" method="get" class="sidebar-form">
-          <div class="input-group">
-            <input type="text" name="q" class="form-control" placeholder="Search...">
-            <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                </button>
-              </span>
           </div>
-        </form>
-        <!-- /.search form -->
+        </footer>
 
-        <!-- Sidebar Menu -->
-        <ul class="sidebar-menu" data-widget="tree">
-          <li class="header">Menu</li>
-          <!-- Optionally, you can add icons to the links -->
-          <li class="treeview">
-            <a href="#"><i class="fa fa-link"></i> <span>Friends</span>
-              <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
-            </a>
-            <ul class="treeview-menu">
-              <li><a href="#">Link in level 2</a></li>
-              <li><a href="#">Link in level 2</a></li>
-            </ul>
-          </li>
-          <li class="treeview">
-            <a href="#"><i class="fa fa-link"></i> <span>Groups</span>
-              <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
-            </a>
-            <ul class="treeview-menu">
-              <li><a href="#">Link in level 2</a></li>
-              <li><a href="#">Link in level 2</a></li>
-            </ul>
-          </li>
-          <li class="treeview">
-            <a href="#"><i class="fa fa-link"></i> <span>Following</span>
-              <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
-            </a>
-            <ul class="treeview-menu">
-              <li><a href="#">Link in level 2</a></li>
-              <li><a href="#">Link in level 2</a></li>
-            </ul>
-          </li>
-          <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Movies</span></a></li>
-          <li><a href="#"><i class="fa fa-link"></i> <span>Books</span></a></li>
-          <li class="treeview">
-            <a href="#"><i class="fa fa-link"></i> <span>Artists/Bands</span>
-              <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
-            </a>
-            <ul class="treeview-menu">
-              <li><a href="#">Link in level 2</a></li>
-              <li><a href="#">Link in level 2</a></li>
-            </ul>
-          </li>
-          <li class="treeview">
-            <a href="#"><i class="fa fa-link"></i> <span>TODO</span>
-              <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
-            </a>
-            <ul class="treeview-menu">
-              <li><a href="#">Link in level 2</a></li>
-              <li><a href="#">Link in level 2</a></li>
-            </ul>
-          </li>
-          <li class="treeview">
-            <a href="#"><i class="fa fa-link"></i> <span>Events</span>
-              <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
-            </a>
-            <ul class="treeview-menu">
-              <li><a href="#">Link in level 2</a></li>
-              <li><a href="#">Link in level 2</a></li>
-            </ul>
-          </li>
-          <li class="treeview">
-            <a href="#"><i class="fa fa-link"></i> <span>Appoinments</span>
-              <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
-            </a>
-            <ul class="treeview-menu">
-              <li><a href="#">Link in level 2</a></li>
-              <li><a href="#">Link in level 2</a></li>
-            </ul>
-          </li>
-          <li class="treeview">
-            <a href="#"><i class="fa fa-link"></i> <span>Anything</span>
-              <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
-            </a>
-            <ul class="treeview-menu">
-              <li><a href="#">Link in level 2</a></li>
-              <li><a href="#">Link in level 2</a></li>
-            </ul>
-          </li>
-        </ul>
-        <!-- /.sidebar-menu -->
-      </section>
-      <!-- /.sidebar -->
-    </aside>
-    {% endblock %}
-  {% endif %}
-  
-  <!-- Content Wrapper. Contains page content -->
-  {% if not user.is_authenticated %}
-  <div class="content-wrapper full">
-  {% else %}
-  <div class="content-wrapper">
-  {% endif %}
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      {% block content-header %}
-      {% endblock %}
-    </section>
+        {% block right-sidebar %}
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+          <!-- Create the tabs -->
+          <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+            <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+            <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+          </ul>
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <!-- Home tab content -->
+            <div class="tab-pane active" id="control-sidebar-home-tab">
+              <h3 class="control-sidebar-heading">Recent Activity</h3>
+              <ul class="control-sidebar-menu">
+                <li>
+                  <a href="javascript:;">
+                    <i class="menu-icon fa fa-birthday-cake bg-red"></i>
 
-    <!-- Main content -->
-    <section class="content container-fluid">
+                    <div class="menu-info">
+                      <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
 
-      <!--------------------------
-        | Your Page Content Here |
-        -------------------------->
-        {% block content %}
+                      <p>Will be 23 on April 24th</p>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+              <!-- /.control-sidebar-menu -->
+
+              <h3 class="control-sidebar-heading">Tasks Progress</h3>
+              <ul class="control-sidebar-menu">
+                <li>
+                  <a href="javascript:;">
+                    <h4 class="control-sidebar-subheading">
+                      Custom Template Design
+                      <span class="pull-right-container">
+                          <span class="label label-danger pull-right">70%</span>
+                        </span>
+                    </h4>
+
+                    <div class="progress progress-xxs">
+                      <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+              <!-- /.control-sidebar-menu -->
+
+            </div>
+            <!-- /.tab-pane -->
+            <!-- Stats tab content -->
+            <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
+            <!-- /.tab-pane -->
+            <!-- Settings tab content -->
+            <div class="tab-pane" id="control-sidebar-settings-tab">
+              <form method="post">
+                <h3 class="control-sidebar-heading">General Settings</h3>
+
+                <div class="form-group">
+                  <label class="control-sidebar-subheading">
+                    Report panel usage
+                    <input type="checkbox" class="pull-right" checked>
+                  </label>
+
+                  <p>
+                    Some information about this general settings option
+                  </p>
+                </div>
+                <!-- /.form-group -->
+              </form>
+            </div>
+            <!-- /.tab-pane -->
+          </div>
+        </aside>
+        <!-- /.control-sidebar -->
+
         {% endblock %}
 
-    </section>
-    <!-- /.content -->
+
   </div>
-  <!-- /.content-wrapper -->
-  {% if not user.is_authenticated %}
-  <!-- Main Footer -->
-  <footer class="main-footer full">
-  {% else %}
-  <!-- Main Footer -->
-  <footer class="main-footer">
-  {% endif %}
-    <!-- To the right -->
-    <div class="pull-right hidden-xs">
-      Made with love gabohd@gmail.com<3
-    </div>
-    <!-- Default to the left -->
-    <strong>Copyright &copy; 2017 <a href="#">Member It Team</a>.</strong> All rights reserved.
-  </footer>
-
-  {% block right-sidebar %}
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Create the tabs -->
-    <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-      <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
-      <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
-    </ul>
-    <!-- Tab panes -->
-    <div class="tab-content">
-      <!-- Home tab content -->
-      <div class="tab-pane active" id="control-sidebar-home-tab">
-        <h3 class="control-sidebar-heading">Recent Activity</h3>
-        <ul class="control-sidebar-menu">
-          <li>
-            <a href="javascript:;">
-              <i class="menu-icon fa fa-birthday-cake bg-red"></i>
-
-              <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
-
-                <p>Will be 23 on April 24th</p>
-              </div>
-            </a>
-          </li>
-        </ul>
-        <!-- /.control-sidebar-menu -->
-
-        <h3 class="control-sidebar-heading">Tasks Progress</h3>
-        <ul class="control-sidebar-menu">
-          <li>
-            <a href="javascript:;">
-              <h4 class="control-sidebar-subheading">
-                Custom Template Design
-                <span class="pull-right-container">
-                    <span class="label label-danger pull-right">70%</span>
-                  </span>
-              </h4>
-
-              <div class="progress progress-xxs">
-                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-              </div>
-            </a>
-          </li>
-        </ul>
-        <!-- /.control-sidebar-menu -->
-
-      </div>
-      <!-- /.tab-pane -->
-      <!-- Stats tab content -->
-      <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
-      <!-- /.tab-pane -->
-      <!-- Settings tab content -->
-      <div class="tab-pane" id="control-sidebar-settings-tab">
-        <form method="post">
-          <h3 class="control-sidebar-heading">General Settings</h3>
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Report panel usage
-              <input type="checkbox" class="pull-right" checked>
-            </label>
-
-            <p>
-              Some information about this general settings option
-            </p>
-          </div>
-          <!-- /.form-group -->
-        </form>
-      </div>
-      <!-- /.tab-pane -->
-    </div>
-  </aside>
-  <!-- /.control-sidebar -->
-  <!-- Add the sidebar's background. This div must be placed
-  immediately after the control sidebar -->
-  <div class="control-sidebar-bg"></div>
-  {% endblock %}
-</div>
 <!-- ./wrapper -->
 
 <!-- REQUIRED JS SCRIPTS -->
@@ -571,133 +228,11 @@ desired effect
 <!-- AdminLTE App -->
 <script src="{% static 'dist/js/adminlte.min.js' %}"></script>
 
-{% csrf_token %}
-<script type="text/javascript">
-$(document).ready(function() {
-    function getCookie(name) {
-        var cookieValue = null;
-        if (document.cookie && document.cookie !== '') {
-            var cookies = document.cookie.split(';');
-            for (var i = 0; i < cookies.length; i++) {
-                var cookie = jQuery.trim(cookies[i]);
-                // Does this cookie string begin with the name we want?
-                if (cookie.substring(0, name.length + 1) === (name + '=')) {
-                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                    break;
-                }
-            }
-        }
-        return cookieValue;
-    }
-
-    var csrftoken = getCookie('csrftoken');
-    var reason = 'FR';
-
-    function csrfSafeMethod(method) {
-        // these HTTP methods do not require CSRF protection
-        return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
-    }
-
-    function user_2_user_request(reason, target_div){
-        $.ajax({
-            type:"POST",
-            url:"{% url 'api:user_2_user_request' %}",
-            data: {
-                'username': '{{ userprofile.username }}',
-                'request_type': reason
-            }
-        }).done(function(data){
-            alert(JSON.stringify(data));
-            if(reason == 'FR'){
-                $(target_div).text("Request Sent")
-            }else{
-                $(target_div).text("Follow Request Sent")
-            }
-        }).fail(function(data){
-            alert(JSON.stringify(data) + ' status:' + data.status)
-        })
-    }
-
-    function user_request_confirm(reason, from_user, target_div){
-        $.ajax({
-            type:"POST",
-            url:"{% url 'api:user_request_confirm' %}",
-            data: {
-                'username': from_user,
-                'request_type': reason
-            }
-        }).done(function(data){
-            alert(JSON.stringify(data));
-            if(reason == 'FR'){
-                $(target_div).text("Now Friends!")
-            }else{
-                $(target_div).text("Now Follows you!")
-            }
-        }).fail(function(data){
-            alert(JSON.stringify(data) + ' status:' + data.status)
-        })
-    }
-
-    $.ajaxSetup({
-        beforeSend: function(xhr, settings) {
-            if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
-                xhr.setRequestHeader("X-CSRFToken", csrftoken);
-            }
-        }
-    });
-
-    $(".user_request").click(function(event){
-        reason = $(this).data("reason");
-        user_2_user_request(reason, this);
-    });
-
-    $(".user_request_confirm").click(function(event){
-        reason = $(this).data("reason");
-        from_user = $(this).data("user");
-        user_request_confirm(reason, from_user, this);
-    });
-
-});
-</script>
-
-{% if user.is_authenticated %}
-<script>
-  s_key = "{{ request.session.session_key }}" | "";
-  var base_controller = new Vue({
-    delimiters: ["{[", "]}"],
-    el: '.navbar-custom-menu',
-    data: {
-        messages: 0,
-        notifications: {{ user.profile.get_pending_requests|length }},
-        memberits: 0,
-    }
-  })
-
-  base_webSocketBridge = new channels.WebSocketBridge();
-  base_webSocketBridge.connect("ws://" + window.location.host + "/ws/notifications/");
-  base_webSocketBridge.listen();
-  base_webSocketBridge.socket.addEventListener('message', function(e) {
-      alert("websb base " + e.data);
-      base_controller.notifications += 1;
-  })
-
-  base_webSocketBridge.socket.addEventListener('open', function() {
-      console.log("Connected to WebSocket from base");
-      base_webSocketBridge.send("nooo from base");
-  })
-
-  base_socket = new WebSocket("ws://" + window.location.host + "/ws/notifications/");
-  base_socket.onmessage = function(e) {
-    base_controller.notifications += 1;
-    alert("tabmein base" + e.data)
-  }
-  base_socket.onopen = function() {
-    base_socket.send("hello world2");
-  }
-  // Call onopen directly if socket is already open
-if (base_socket.readyState == WebSocket.OPEN) base_socket.onopen();
-</script>
-{% endif %}
+<!-- Vue.js
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+-->
+<script src="{% static 'vue/vue.js' %}"></script>
+<script src="{% static 'channels/js/websocketbridge.js' %}"></script>
 
 {% block jsblock %}
 {% endblock %}

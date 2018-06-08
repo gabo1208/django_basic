@@ -4,17 +4,26 @@
   "pk": 2,
   "fields": {
     "created": "2018-04-24T16:40:47.788Z",
-    "modified": "2018-05-01T02:06:10.316Z",
+    "modified": "2018-05-13T02:16:32.325Z",
     "admin": 1,
     "name": "Kinielakalakaua",
     "image": "",
     "description": "Kiniela de los Kalakaua",
     "tournament": 2,
+    "public": true,
     "score_type": "TO",
     "score_type_cache": "TO",
     "members": [
       1,
-      2
+      2,
+      4,
+      5,
+      6,
+      7,
+      9,
+      11,
+      13,
+      14
     ],
     "tags": [
       1,
@@ -24,20 +33,186 @@
 },
 {
   "model": "quiniela.quiniela",
-  "pk": 4,
+  "pk": 6,
   "fields": {
-    "created": "2018-04-26T03:28:14.411Z",
-    "modified": "2018-04-27T21:39:35.987Z",
-    "admin": 1,
-    "name": "TestNiela",
+    "created": "2018-05-01T18:37:36.842Z",
+    "modified": "2018-05-01T18:37:36.892Z",
+    "admin": 4,
+    "name": "Pa ve",
     "image": "",
-    "description": "test",
-    "tournament": 4,
+    "description": "Una quiniela pa ve",
+    "tournament": 2,
+    "public": true,
     "score_type": "EA",
     "score_type_cache": "EA",
     "members": [
+      4
+    ],
+    "tags": []
+  }
+},
+{
+  "model": "quiniela.quiniela",
+  "pk": 7,
+  "fields": {
+    "created": "2018-05-01T18:38:07.811Z",
+    "modified": "2018-05-01T18:38:07.828Z",
+    "admin": 5,
+    "name": "Kalakawua",
+    "image": "",
+    "description": "La vida mesma",
+    "tournament": 2,
+    "public": true,
+    "score_type": "TO",
+    "score_type_cache": "TO",
+    "members": [
       1,
-      2
+      2,
+      5
+    ],
+    "tags": []
+  }
+},
+{
+  "model": "quiniela.quiniela",
+  "pk": 8,
+  "fields": {
+    "created": "2018-05-01T18:47:42.410Z",
+    "modified": "2018-05-01T18:47:42.427Z",
+    "admin": 6,
+    "name": "Mundial",
+    "image": "",
+    "description": "Rusia",
+    "tournament": 2,
+    "public": true,
+    "score_type": "TO",
+    "score_type_cache": "TO",
+    "members": [
+      6
+    ],
+    "tags": []
+  }
+},
+{
+  "model": "quiniela.quiniela",
+  "pk": 9,
+  "fields": {
+    "created": "2018-05-02T03:00:57.217Z",
+    "modified": "2018-05-02T03:00:57.448Z",
+    "admin": 7,
+    "name": "Italia campe\u00f3n",
+    "image": "",
+    "description": "Ganar\u00e1 Italia el mundil",
+    "tournament": 2,
+    "public": true,
+    "score_type": "EA",
+    "score_type_cache": "EA",
+    "members": [
+      7
+    ],
+    "tags": []
+  }
+},
+{
+  "model": "quiniela.quiniela",
+  "pk": 10,
+  "fields": {
+    "created": "2018-05-10T00:01:59.581Z",
+    "modified": "2018-05-10T00:02:09.058Z",
+    "admin": 1,
+    "name": "Shempions",
+    "image": "",
+    "description": "shempions quiniela",
+    "tournament": 5,
+    "public": true,
+    "score_type": "TO",
+    "score_type_cache": "TO",
+    "members": [
+      1
+    ],
+    "tags": []
+  }
+},
+{
+  "model": "quiniela.quiniela",
+  "pk": 11,
+  "fields": {
+    "created": "2018-05-13T00:52:54.769Z",
+    "modified": "2018-05-13T02:15:07.098Z",
+    "admin": 12,
+    "name": "NoSeNadadeFutbol",
+    "image": "",
+    "description": "No s\u00e9 nada",
+    "tournament": 2,
+    "public": true,
+    "score_type": "TO",
+    "score_type_cache": "TO",
+    "members": [
+      1,
+      12
+    ],
+    "tags": []
+  }
+},
+{
+  "model": "quiniela.quiniela",
+  "pk": 12,
+  "fields": {
+    "created": "2018-05-13T20:21:50.293Z",
+    "modified": "2018-05-13T21:22:15.147Z",
+    "admin": 15,
+    "name": "Jorge25",
+    "image": "",
+    "description": "Q1",
+    "tournament": 2,
+    "public": true,
+    "score_type": "TO",
+    "score_type_cache": "TO",
+    "members": [
+      1,
+      2,
+      15
+    ],
+    "tags": []
+  }
+},
+{
+  "model": "quiniela.quiniela",
+  "pk": 13,
+  "fields": {
+    "created": "2018-05-14T03:48:52.438Z",
+    "modified": "2018-05-14T03:48:52.455Z",
+    "admin": 1,
+    "name": "FLA",
+    "image": "",
+    "description": "Quiniela FLA",
+    "tournament": 2,
+    "public": true,
+    "score_type": "TO",
+    "score_type_cache": "TO",
+    "members": [
+      1,
+      17
+    ],
+    "tags": []
+  }
+},
+{
+  "model": "quiniela.quiniela",
+  "pk": 14,
+  "fields": {
+    "created": "2018-05-24T19:37:17.757Z",
+    "modified": "2018-05-24T19:37:17.776Z",
+    "admin": 1,
+    "name": "USB",
+    "image": "",
+    "description": "Quiniela pa los lacras de la usb",
+    "tournament": 2,
+    "public": true,
+    "score_type": "TO",
+    "score_type_cache": "TO",
+    "members": [
+      1
     ],
     "tags": []
   }

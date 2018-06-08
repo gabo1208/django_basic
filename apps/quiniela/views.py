@@ -1,6 +1,5 @@
 import datetime
 
-from django.utils import timezone
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
@@ -28,7 +27,8 @@ def quiniela_index(request):
         request,
         'quiniela_index.html',
         context={
-            'quinielas':Quiniela.objects.filter(members=request.user.profile),
+            'quinielas': Quiniela.objects.filter(members=request.user.profile),
+            'public_quinielas': Quiniela.objects.filter(public=True),
             'form': form,
         }
     )
@@ -222,7 +222,8 @@ def quiniela_details(request, quiniela_id):
             # Check Games passed by now
             count = 0
             for game in quiniela_games:
-                if quiniela_games[count].match_datetime <= timezone.now() - datetime.timedelta(hours=4):
+                if(quiniela_games[count].match_datetime <= datetime.datetime.now(quiniela_games[count].match_datetime.tzinfo) 
+                    - datetime.timedelta(hours=4)):
                     count += 1
 
             for prefix in phases_prefixes:
@@ -232,7 +233,8 @@ def quiniela_details(request, quiniela_id):
                 if formset.is_valid():
                     for form in formset:
                         if form.is_valid():
-                            if quiniela_games[count].match_datetime > timezone.now() - datetime.timedelta(hours=4):
+                            if(quiniela_games[count].match_datetime >= datetime.datetime.now(quiniela_games[count].match_datetime.tzinfo) 
+                                - datetime.timedelta(hours=2)):
                                 form.save()
                         else:
                             print(form.errors)
@@ -269,7 +271,7 @@ def quiniela_details(request, quiniela_id):
         # Initialize passed games results with blocked gameforms
         for game in quiniela_games:
             aux = qset.filter(game=game)
-            if game.match_datetime <= timezone.now() - datetime.timedelta(hours=4):
+            if game.match_datetime <= datetime.datetime.now(game.match_datetime.tzinfo) - datetime.timedelta(hours=4):
                 init += 1
                 # Phase limit border cases
                 if init == end:
@@ -346,6 +348,7 @@ def quiniela_details(request, quiniela_id):
 
         if count % phases_limit != 0:
             groups_formsets.append((group_forms, None, phases_prefixes[prefix]))
+            
     # Request and request.user independant code and initializations
     invite_formset = invite_fs(prefix='invite_users')
     leaders = MemberFixture.objects.filter(
@@ -417,6 +420,10 @@ def oscarcoin_update(request):
 def quiniela_from_user(request, quiniela_id, username):
     is_member = True
     inviting = False
+<<<<<<< HEAD
+=======
+    visiting = True
+>>>>>>> just_quiniela
     user = get_object_or_404(Profile, user__username=username).user
     active = 0
     phase = 3
@@ -673,6 +680,10 @@ def quiniela_from_user(request, quiniela_id, username):
             'invite_formset': invite_formset,
             'invite_errors': invite_errors,
             'invite_notifications': invite_notifications,
+<<<<<<< HEAD
+=======
+            'visiting': visiting,
+>>>>>>> just_quiniela
         }
     )
 

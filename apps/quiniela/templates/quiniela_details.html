@@ -17,7 +17,7 @@
         <li><a href="{% url 'main:home' %}">Home</a></li>
         <li class="active">Quinielas</li>
     </ol>
-    <h1> {{ user.username }} </h1>
+    Hi {{ user.username }}
 {% endblock %}
 
 {% block content %}
@@ -94,11 +94,19 @@
                       <div class="row">
                         <div class="col-xs-12">
                           {% for leader in leaders %}
+<<<<<<< HEAD
                             <h4>
                               <a href="{% url 'quiniela:quiniela_from_user' quiniela_id=quiniela.id username=leader.user.user.username %}">
                                 {{ leader }}
                               </a> - {% get_score leader quiniela.score_type %}
                             </h4>
+=======
+                            <h5>
+                              <a href="{% url 'quiniela:quiniela_from_user' quiniela_id=quiniela.id username=leader.user.user.username %}">
+                                {{ leader }}
+                              </a> - {% get_score leader quiniela.score_type %}
+                            </h5>
+>>>>>>> just_quiniela
                           {% endfor %}
                           {% for pending in pendings %}
                             {{ pending }} - pending<br>
@@ -130,8 +138,15 @@
                         {% endif %}
                         <b>{{ quiniela.tournament.name }} - Groups Table</b>
                       </div>
+<<<<<<< HEAD
                       <div class="row">
                         {% for group in groups %}
+=======
+                      {% for group in groups %}
+                      {% if forloop.counter0|divisibleby:2 %}
+                      <div class="row">
+                      {% endif %}
+>>>>>>> just_quiniela
                         <div class="col-xs-6">
                           <div class="row">
                             <div class="col-xs-12" align="center"> <b>Group {{ group.name }}</b></div>
@@ -139,7 +154,11 @@
                           {% for team in group.get_teams %}
                           <div class="row">
                             <div class="col-xs-6 col-xs-offset-2">
+<<<<<<< HEAD
                               <img src="{{ team.team.image.url }}" width="46" height="32">{{ team.team.name }}
+=======
+                              <img src="{{ team.team.image.url }}" width="50px" height="40px">{{ team.team.name }}
+>>>>>>> just_quiniela
                             </div>
                             <div class="col-xs-4" align="center">
                               {{ team.get_score }}
@@ -148,8 +167,15 @@
                           {% endfor %}
                           <br>
                         </div>
+<<<<<<< HEAD
                         {% endfor %}
                       </div>
+=======
+                      {% if forloop.counter|divisibleby:2 %}
+                      </div>
+                      {% endif %}
+                      {% endfor %}
+>>>>>>> just_quiniela
                     </div>
                   </div>
                 </div>
@@ -192,9 +218,15 @@
                                   <div class="col-xs-6 no-padding-right">
                                       <div class="col-xs-6 no-padding-right" align="right">
                                         {% if pair.0.home_team.image %}
+<<<<<<< HEAD
                                           <img src="{{ pair.0.home_team.image.url }}" width="46px" height="32x">
                                         {% else %}
                                           <img src="{% static 'no_flag.svg' %}" width="46px" height="32x">
+=======
+                                          <img src="{{ pair.0.home_team.image.url }}" width="50px" height="40px">
+                                        {% else %}
+                                          <img src="{% static 'no_flag.svg' %}" width="50px" height="40px">
+>>>>>>> just_quiniela
                                         {% endif %}
                                       </div>
                                       <div class="col-xs-6">
@@ -207,9 +239,15 @@
                                       </div>
                                       <div class="col-xs-6 no-padding-left">
                                         {% if pair.0.away_team.image %}
+<<<<<<< HEAD
                                           <img src="{{ pair.0.away_team.image.url }}" width="46px" height="32px">
                                         {% else %}
                                           <img src="{% static 'no_flag.svg' %}" width="46px" height="32x">
+=======
+                                          <img src="{{ pair.0.away_team.image.url }}" width="50px" height="40px">
+                                        {% else %}
+                                          <img src="{% static 'no_flag.svg' %}" width="50px" height="40px">
+>>>>>>> just_quiniela
                                         {% endif %}
                                       </div>
                                   </div>
@@ -237,6 +275,7 @@
                       {% endfor %}
                       {% if not group_matchday_pair.0|length|divisibleby:2 %}
                           <br>
+<<<<<<< HEAD
                           </div>
                       {% endif %}
                           <div class="col-xs-12">
@@ -248,6 +287,19 @@
                                   </div>
                               </div>
                           </div>
+=======
+                          </div>
+                      {% endif %}
+                        {% if not visiting %}
+                          <div class="row">
+                                <div class="col-xs-12" align="center">
+                                  <button type="button" class="btn" onclick="submit_form('formsets')">
+                                    Send
+                                  </button>
+                              </div>
+                          </div><br>
+                        {% endif %}
+>>>>>>> just_quiniela
                       {% else %}
                         <div align="center">
                           <img src="https://orig00.deviantart.net/6da4/f/2013/092/f/0/yoda_icon_by_slamiticon-d605vp9.png" width="240px" height="auto"> 
@@ -293,16 +345,28 @@
                           <div class="col-lg-6" align="center">                        
                             {{ pair.0.home_team.name }} 
                             {% if pair.0.home_team.image %}
+<<<<<<< HEAD
                               <img src="{{ pair.0.home_team.image.url }}" width="46px" height="32px">
                             {% else %}
                               <img src="{% static 'no_flag.svg' %}" width="46px" height="32x">
+=======
+                              <img src="{{ pair.0.home_team.image.url }}" width="50px" height="40px">
+                            {% else %}
+                              <img src="{% static 'no_flag.svg' %}" width="50px" height="40px">
+>>>>>>> just_quiniela
                             {% endif %}
                             {% if pair.0.score_set %} {{ pair.0.score_home }} {% endif %} -  
                             {% if pair.0.score_set %} {{ pair.0.score_away }} {% endif %}
                             {% if pair.0.away_team.image %}
+<<<<<<< HEAD
                               <img src="{{ pair.0.away_team.image.url }}" width="46px" height="32px">
                             {% else %}
                               <img src="{% static 'no_flag.svg' %}" width="46px" height="32x">
+=======
+                              <img src="{{ pair.0.away_team.image.url }}" width="50px" height="40px">
+                            {% else %}
+                              <img src="{% static 'no_flag.svg' %}" width="50px" height="40px">
+>>>>>>> just_quiniela
                             {% endif %}
                             {{ pair.0.away_team.name }}<br>
                             {{ pair.0.match_datetime|date:"D d M" }} {{ pair.0.match_datetime|time:"H:i" }}
@@ -355,9 +419,15 @@
 
   $(document).ready(function(){
     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+<<<<<<< HEAD
       $('#whatsapp-share-button').attr('href', 'whatsapp://send?text={{request.build_absolute_uri}} Unete a mi quiniela {{ quiniela.name }} =)!')
     }else{
       $('#whatsapp-share-button').attr('href', 'https://web.whatsapp.com/send?text={{request.build_absolute_uri}} Unete a mi quiniela {{ quiniela.name }} =)!')
+=======
+      $('#whatsapp-share-button').attr('href', 'whatsapp://send?text={{request.build_absolute_uri}} Unete a mi quiniela del Mundial !! {{ quiniela.name }} =)!')
+    }else{
+      $('#whatsapp-share-button').attr('href', 'https://web.whatsapp.com/send?text={{request.build_absolute_uri}} Unete a mi quiniela del Mundial !! {{ quiniela.name }} =)!')
+>>>>>>> just_quiniela
     }
   })
 

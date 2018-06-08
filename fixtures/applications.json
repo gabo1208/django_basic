@@ -1,18 +1,2 @@
 [
-{
-  "model": "oauth2_provider.application",
-  "pk": 1,
-  "fields": {
-    "client_id": "vdix4xPAt4HVU9SfMKoVV8DoLysiWMMoADYMCP3A",
-    "user": 1,
-    "redirect_uris": "http://127.0.0.1:8000/",
-    "client_type": "confidential",
-    "authorization_grant_type": "authorization-code",
-    "client_secret": "KVyVBeL2JGTqc177b5pw7GJWHsdcju4fWcYUGOYAE8sfJ5ZEeiL6azuoMylbAl1a9Gh4CWkCzZUzHfD23GPxASPmzFk2Oi5fjLQK3Y7iCU8OARiusQHYPusNfTseaeu1",
-    "name": "MemberIT",
-    "skip_authorization": false,
-    "created": "2018-04-25T13:20:32.685Z",
-    "updated": "2018-04-25T13:27:58.729Z"
-  }
-}
 ]
