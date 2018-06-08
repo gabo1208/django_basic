@@ -88,11 +88,7 @@ class UserLoginForm(forms.Form):
                 raise forms.ValidationError(
                     self.error_messages['invalid_login'],
                     code='invalid_login',
-<<<<<<< HEAD
-                    params={'username': 'username'},
-=======
                     params={'username': 'username/email'},
->>>>>>> just_quiniela
                 )
             else:
                 self.confirm_login_allowed(self.user_cache)
