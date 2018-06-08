@@ -207,11 +207,18 @@ class MemberFixture(TimeStampedModel):
 class Quiniela(TimeStampedModel):
     TOTAL_SCORE = 'TO'
     EACH_SCORE = 'EA'
+    TOTAL_PREDICTION_QUINIELA = 'TQ'
+    PHASES_QUINIELA = 'PQ'
 
     TOURNAMENT_SCORE_CHOICES = (
         (TOTAL_SCORE, 'Game Result Points.'),
         (EACH_SCORE, 'Game Result and Teams Score Points.'),
     )
+    QUINIELA_TYPE_CHOICES = (
+        (TOTAL_PREDICTION_QUINIELA, 'Predict all games and scores.'),
+        (PHASES_QUINIELA, 'Predict just current phase games and scores.'),
+    )
+
     admin = models.ForeignKey(Profile, on_delete=models.CASCADE)
     name = models.CharField(max_length=50, unique=True)
     image = models.ImageField(null=True, blank=True)
@@ -230,6 +237,17 @@ class Quiniela(TimeStampedModel):
         default=TOTAL_SCORE,
         editable=False
     )
+    quiniela_type = models.CharField(
+        max_length=2,
+        choices=QUINIELA_TYPE_CHOICES,
+        default=EACH_SCORE
+    )
+    quiniela_type_cache = models.CharField(
+        max_length=2,
+        choices=QUINIELA_TYPE_CHOICES,
+        default=EACH_SCORE,
+        editable=False
+    )
     tags = models.ManyToManyField(InterestTag, related_name='quiniela_tag', blank=True)
 
     class Meta:
@@ -238,6 +256,7 @@ class Quiniela(TimeStampedModel):
     def __init__(self, *args, **kwargs):
         super(Quiniela, self).__init__(*args, **kwargs)
         self.score_type_cache = self.score_type
+        self.quiniela_type_cache = self.quiniela_type
 
     def __str__(self):
         return self.name + ' - ' + str(self.tournament) + ' - owner: ' + self.admin.user.username
@@ -250,7 +269,7 @@ class OscarCoin(TimeStampedModel):
 ##################### SIGNALS ########################
 @receiver(pre_save, sender=Quiniela)
 def save_quiniela(sender, instance, **kwargs):
-    if instance.score_type != instance.score_type_cache:
+    if instance.score_type != instance.score_type_cache or instance.quiniela_type != quiniela_type_cache:
         for memberfixture in MemberFixture.objects.filter(tournament=instance.tournament):
             memberfixture.score = 0
             memberfixture.games_checked = 0
