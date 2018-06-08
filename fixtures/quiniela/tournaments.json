@@ -79,20 +79,5 @@
       2
     ]
   }
-},
-{
-  "model": "quiniela.tournament",
-  "pk": 5,
-  "fields": {
-    "name": "UEFA Champions League",
-    "image": "uefa_champions_league_trophy.png",
-    "description": "Uefa Champions league 2017-2018",
-    "start_in": "2018-05-09",
-    "ends_in": "2018-05-26",
-    "fixture": [
-      78
-    ],
-    "tags": []
-  }
 }
 ]

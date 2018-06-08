@@ -830,18 +830,5 @@
     "score_away": "0",
     "match_datetime": "2018-07-15T15:00:00Z"
   }
-},
-{
-  "model": "quiniela.game",
-  "pk": 78,
-  "fields": {
-    "home_team": 33,
-    "away_team": 34,
-    "tournament": 5,
-    "score_set": false,
-    "score_home": "0",
-    "score_away": "0",
-    "match_datetime": "2018-05-26T18:45:00Z"
-  }
 }
 ]

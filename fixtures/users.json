@@ -4,7 +4,7 @@
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$100000$pYXCRfGPcpzC$ts43gJYT8ioY4I5KMAaLF2WcsjBsKbF7R7Sl3PblYdI=",
-    "last_login": "2018-05-22T18:20:58.825Z",
+    "last_login": "2018-06-08T13:39:14.610Z",
     "is_superuser": true,
     "username": "admin",
     "first_name": "",
@@ -21,8 +21,8 @@
   "model": "users.user",
   "pk": 2,
   "fields": {
-    "password": "pbkdf2_sha256$100000$HvQDRQTSLuJx$Fl7Ptvx0wrvVKSzsK6g6PX9PcjEntXCvzSJETK1KxXU=",
-    "last_login": "2018-05-01T19:08:55.338Z",
+    "password": "pbkdf2_sha256$100000$8D5f8s8DJ5QV$GkqHqNc+7aE538sGcUB5gF2JrqIyHV5C1zNfkDe10Kk=",
+    "last_login": "2018-06-03T02:23:23.963Z",
     "is_superuser": false,
     "username": "gabo1208",
     "first_name": "",
@@ -58,7 +58,7 @@
   "pk": 4,
   "fields": {
     "password": "pbkdf2_sha256$100000$8519lX0uK0Qv$yU6/sIVFSwGJG/8pFc9FStK8kpMpNqgqo8L4sOX54eE=",
-    "last_login": "2018-05-21T16:38:19.318Z",
+    "last_login": "2018-05-25T02:46:26.924Z",
     "is_superuser": false,
     "username": "erwebomio",
     "first_name": "",
@@ -130,7 +130,7 @@
   "pk": 8,
   "fields": {
     "password": "pbkdf2_sha256$100000$5NwljHrM3fJ9$jGmlP2A03J9zxWFq42nY14lxFFELWF4D20Wahiqnq1o=",
-    "last_login": "2018-05-02T11:51:20.875Z",
+    "last_login": "2018-05-31T14:40:20.122Z",
     "is_superuser": false,
     "username": "herklemm",
     "first_name": "",
@@ -148,7 +148,7 @@
   "pk": 9,
   "fields": {
     "password": "pbkdf2_sha256$100000$DmyMy2vgDQxq$WwdvsBel7vvBgfQ8HIs8dgfKBQ9vdEk0h4N5++X9Hro=",
-    "last_login": "2018-05-14T13:05:31.456Z",
+    "last_login": "2018-06-05T16:57:11.794Z",
     "is_superuser": false,
     "username": "muzerk20",
     "first_name": "",
@@ -306,6 +306,78 @@
   }
 },
 {
+  "model": "users.user",
+  "pk": 18,
+  "fields": {
+    "password": "pbkdf2_sha256$100000$JNfQxpkCOAW2$ySFr07SNd9u2oJuq9syTw/BWRZRkOQ1YekJaRgwPhJg=",
+    "last_login": "2018-05-26T11:22:36.150Z",
+    "is_superuser": false,
+    "username": "Guillermo",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2018-05-26T11:22:35.787Z",
+    "email": "sanjuanguillermo@gmail.com",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 19,
+  "fields": {
+    "password": "pbkdf2_sha256$100000$VL5dL9Bo2ZFB$OPnMh4ZPPBaMCeTdRKp0RgAMW5CMy2EZiI/0Exkghp0=",
+    "last_login": "2018-05-29T04:32:30.830Z",
+    "is_superuser": false,
+    "username": "admin1",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2018-05-29T04:32:30.334Z",
+    "email": "admin@email.com",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 20,
+  "fields": {
+    "password": "pbkdf2_sha256$100000$iy9cbm91xkXa$BMCgAdIIoAuVQUai22isM4f5hl04nw35c99UE54w6uk=",
+    "last_login": "2018-06-05T17:08:25.958Z",
+    "is_superuser": false,
+    "username": "rvirguez",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2018-06-05T17:08:25.610Z",
+    "email": "ricardovirguez@gmail.com",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 21,
+  "fields": {
+    "password": "pbkdf2_sha256$100000$3O4bJilxhyyy$mYkpTnQ7goUD0HmsrRqgZ8hZPmDq+9e8Sr6zSw8vSsE=",
+    "last_login": "2018-06-05T18:02:48.002Z",
+    "is_superuser": false,
+    "username": "josenriquevh",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2018-06-05T18:02:47.617Z",
+    "email": "josenriquev@gmail.com",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
   "model": "users.profilepreferences",
   "pk": 1,
   "fields": {
@@ -420,6 +492,34 @@
 {
   "model": "users.profilepreferences",
   "pk": 17,
+  "fields": {
+    "option1": true
+  }
+},
+{
+  "model": "users.profilepreferences",
+  "pk": 18,
+  "fields": {
+    "option1": true
+  }
+},
+{
+  "model": "users.profilepreferences",
+  "pk": 19,
+  "fields": {
+    "option1": true
+  }
+},
+{
+  "model": "users.profilepreferences",
+  "pk": 20,
+  "fields": {
+    "option1": true
+  }
+},
+{
+  "model": "users.profilepreferences",
+  "pk": 21,
   "fields": {
     "option1": true
   }
@@ -920,6 +1020,122 @@
     "verified": false,
     "active": true,
     "preferences": 17,
+    "role": "NU",
+    "following": [],
+    "followers": [],
+    "friends": [],
+    "interests": [],
+    "requests": [],
+    "events": [],
+    "groups": [],
+    "message_history": []
+  }
+},
+{
+  "model": "users.profile",
+  "pk": 18,
+  "fields": {
+    "created": "2018-05-26T11:22:35.981Z",
+    "modified": "2018-05-26T11:22:35.982Z",
+    "user": 18,
+    "country": null,
+    "city": null,
+    "location": null,
+    "phone": null,
+    "mail": null,
+    "image": "",
+    "reputation": "0.00",
+    "description": null,
+    "verified": false,
+    "active": true,
+    "preferences": 18,
+    "role": "NU",
+    "following": [],
+    "followers": [],
+    "friends": [],
+    "interests": [],
+    "requests": [],
+    "events": [],
+    "groups": [],
+    "message_history": []
+  }
+},
+{
+  "model": "users.profile",
+  "pk": 19,
+  "fields": {
+    "created": "2018-05-29T04:32:30.520Z",
+    "modified": "2018-05-29T04:32:30.521Z",
+    "user": 19,
+    "country": null,
+    "city": null,
+    "location": null,
+    "phone": null,
+    "mail": null,
+    "image": "",
+    "reputation": "0.00",
+    "description": null,
+    "verified": false,
+    "active": true,
+    "preferences": 19,
+    "role": "NU",
+    "following": [],
+    "followers": [],
+    "friends": [],
+    "interests": [],
+    "requests": [],
+    "events": [],
+    "groups": [],
+    "message_history": []
+  }
+},
+{
+  "model": "users.profile",
+  "pk": 20,
+  "fields": {
+    "created": "2018-06-05T17:08:25.785Z",
+    "modified": "2018-06-05T17:08:25.787Z",
+    "user": 20,
+    "country": null,
+    "city": null,
+    "location": null,
+    "phone": null,
+    "mail": null,
+    "image": "",
+    "reputation": "0.00",
+    "description": null,
+    "verified": false,
+    "active": true,
+    "preferences": 20,
+    "role": "NU",
+    "following": [],
+    "followers": [],
+    "friends": [],
+    "interests": [],
+    "requests": [],
+    "events": [],
+    "groups": [],
+    "message_history": []
+  }
+},
+{
+  "model": "users.profile",
+  "pk": 21,
+  "fields": {
+    "created": "2018-06-05T18:02:47.832Z",
+    "modified": "2018-06-05T18:02:47.833Z",
+    "user": 21,
+    "country": null,
+    "city": null,
+    "location": null,
+    "phone": null,
+    "mail": null,
+    "image": "",
+    "reputation": "0.00",
+    "description": null,
+    "verified": false,
+    "active": true,
+    "preferences": 21,
     "role": "NU",
     "following": [],
     "followers": [],
