@@ -2,7 +2,7 @@ import os
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
 
-users = User.objects.all()[1:]
+users = User.objects.all()[1:2]
 subject = 'Get ready to Russia 2018 World Cup!'
 from_email = 'admin@memberit.com'
 for user in users:
