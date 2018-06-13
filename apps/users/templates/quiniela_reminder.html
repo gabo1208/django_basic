@@ -1,0 +1,14 @@
+{% load static %}
+{% autoescape off %}
+<img src="{{ protocol }}://{{ domain }}/{% static 'icon.png' %}" width="200" alt="Fifa World Cup logo" style="margin: 15px auto; max-height: 200px;display: block;">
+<div class="container" style="width:70%; margin: 0 auto; background-color:#ffffff; color: rgb(41, 70, 97);">
+    <p style="font-size: 16px; font-weight: 300;">Don't Forget to fill your quinielas for this Coming Matchday tomorrow {{ user.get_username }} !</p>
+
+    <a href="{{ protocol }}://{{ domain }}{% url 'quiniela:user_quinielas' %}"
+       style="width: 40%; border-color:#348eda; font-weight:400; text-align: center; text-decoration:none; display:block; margin:0 auto; color:#ffffff; background-color:#348eda; border:solid 1px #348eda; border-radius:2px; font-size:14px; padding:12px 45px">Take Me to my Quinielas!</a>
+
+    <p style="font-size: 16px;font-weight: 300; margin-bottom:0;">Sincerely,</p>
+    <p style="font-size: 16px;font-weight: 300; margin-top: 0;">The Memberit Team</p>
+</div>
+
+{% endautoescape %}
