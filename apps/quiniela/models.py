@@ -269,7 +269,7 @@ class OscarCoin(TimeStampedModel):
 ##################### SIGNALS ########################
 @receiver(pre_save, sender=Quiniela)
 def save_quiniela(sender, instance, **kwargs):
-    if instance.score_type != instance.score_type_cache or instance.quiniela_type != quiniela_type_cache:
+    if instance.score_type != instance.score_type_cache or instance.quiniela_type != instance.quiniela_type_cache:
         for memberfixture in MemberFixture.objects.filter(tournament=instance.tournament):
             memberfixture.score = 0
             memberfixture.games_checked = 0
