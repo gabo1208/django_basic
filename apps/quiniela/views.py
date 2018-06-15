@@ -146,7 +146,7 @@ def quiniela_details(request, quiniela_id):
         # Initialize passed games results with blocked gameforms
         for game in quiniela_games:
             aux = qset.filter(game=game)
-            if game.match_datetime <= datetime.datetime.now(game.match_datetime.tzinfo) - datetime.timedelta(hours=4):
+            if game.match_datetime <= datetime.datetime.now(game.match_datetime.tzinfo):
                 init += 1
                 # Phase limit border cases
                 if init == end:
