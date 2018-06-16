@@ -228,20 +228,22 @@
                                             {% if pair.1.score_home.value == pair.0.score_home %}
                                             <i class="fa fa-check" style="color:green"></i>
                                             {% elif pair.1.score_home.value > pair.1.score_away.value and pair.0.score.home > pair.1.score_away.value %}
-                                            <i class="fa fa-check" style="color:green"></i> <i class="fa fa-close" style="color:red"></i>
-                                            <i class="fa fa-close" style="color:red"></i>
+                                            <i class="fa fa-check" style="color:green"></i>
                                             {% elif pair.1.score_home.value == pair.1.score_away.value and pair.0.score.home == pair.1.score_away.value %}
-                                            <i class="fa fa-check" style="color:green"></i> <i class="fa fa-close" style="color:red"></i>
-                                            <i class="fa fa-close" style="color:red"></i>
+                                            <i class="fa fa-check" style="color:green"></i>
+                                            {% elif pair.1.score_home.value < pair.1.score_away.value and pair.0.score.home < pair.1.score_away.value %}
+                                            <i class="fa fa-check" style="color:green"></i>
                                             {% else %}
+                                            <i class="fa fa-close" style="color:red"></i>
                                             {% endif %}
                                             {% if pair.1.score_away.value == pair.0.score_away %}
                                             <i class="fa fa-close" style="color:red"></i>
                                             {% elif pair.1.score_away.value > pair.1.score_home.value and pair.0.score.away > pair.1.score_home.value %}
-                                            <i class="fa fa-check" style="color:green"></i> <i class="fa fa-close" style="color:red"></i>
-                                            <i class="fa fa-close" style="color:red"></i>
-                                            {% else %}
-                                              <i class="fa fa-close" style="color:red"></i>
+                                            <i class="fa fa-check" style="color:green"></i>
+                                            {% elif pair.1.score_away.value == pair.1.score_home.value and pair.0.score.away == pair.1.score_home.value %}
+                                            <i class="fa fa-check" style="color:green"></i>
+                                            {% elif pair.1.score_away.value < pair.1.score_home.value and pair.0.score.away < pair.1.score_home.value %}
+                                            <i class="fa fa-check" style="color:green"></i>
                                             {% endif %}
                                           {% else %}
                                             <i class="fa fa-close" style="color:red"></i>
