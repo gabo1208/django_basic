@@ -56,7 +56,7 @@ class GameResult(TimeStampedModel):
     score_away = models.CharField(default='0', max_length=5)
 
     def get_winner(self):
-        if self.score_set:
+        if self.game.score_set:
             if self.score_home > self.score_away:
                 return self.home_team
             elif self.score_home < self.score_away:
