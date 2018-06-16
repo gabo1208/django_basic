@@ -30,6 +30,9 @@ class BlockedGameResultForm(forms.ModelForm):
         self.fields['score_home'].widget.attrs['readonly'] = True
         self.fields['score_away'].widget.attrs['readonly'] = True
 
+    def get_winner(self):
+        return self.instance.get_winner()
+
 
 class InviteUsersForm(forms.Form):
     users = forms.CharField(max_length=50)
