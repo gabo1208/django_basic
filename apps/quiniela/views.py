@@ -229,7 +229,7 @@ def quiniela_details(request, quiniela_id):
     leaders = MemberFixture.objects.filter(
                 tournament=quiniela.tournament,
                 quiniela=quiniela
-            ).order_by('score')
+            ).order_by('-score')
 
     pendings = []
     for user in quiniela.members.all():
