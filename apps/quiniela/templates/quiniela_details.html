@@ -219,12 +219,12 @@
                                   </div>
                                   <div class="col-xs-12" align="center">
                                       {% if not pair.0.score_set %}
-                                        <b>?</b>
+                                        <b>?</b> 
                                       {% else %}
                                         {% if pair.1.score_home.value == pair.0.score_home and pair.1.score_away.value == pair.0.score_away %}
                                           <i class="fa fa-check" style="color:green"></i>
                                         {% else %}
-                                          {% if quiniela.score_type != 'TO'}
+                                          {% if quiniela.score_type != "TO" %}
                                             {% if pair.1.score_home.value == pair.0.score_home %}
                                             <i class="fa fa-check" style="color:green"></i> <i class="fa fa-close" style="color:red"></i>
                                             {% elif pair.1.score_home.value > pair.1.score_away.value and pair.0.score.home > pair.1.score_away.value %}
