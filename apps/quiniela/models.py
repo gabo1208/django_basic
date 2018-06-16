@@ -127,7 +127,7 @@ class Group(models.Model):
         return 'Group ' + self.name + ' - ' + str(self.tournament)
 
     def get_teams(self):
-        return GroupTeam.objects.filter(group=self).order_by('score')
+        return GroupTeam.objects.filter(group=self).order_by('-score')
 
 
 class Tournament(models.Model):
@@ -162,7 +162,7 @@ class MemberFixture(TimeStampedModel):
         unique_together=(('user', 'tournament', 'quiniela'),)
 
     def __str__(self):
-        return self.user.user.username + '(' + self.user.user.email + ') - ' + self.tournament.name
+        return self.user.user.username + '(' + self.user.user.email + ') - ' + self.tournament.name + ' - ' + self.quiniela.name
 
     def get_score(self, score_type):
         flag = False
