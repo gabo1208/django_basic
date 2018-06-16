@@ -218,7 +218,7 @@
                                       </div>
                                   </div>
                                   <div class="col-xs-12" align="center">
-                                    {{ pair.1.score_home.value }} as {{ pair.0.score_home }}
+                                    {{ pair.1.get_winner }} as {{ pair.0.get_winner }}
                                       {% if not pair.0.score_set %}
                                         <b>?</b> 
                                       {% else %}
@@ -228,6 +228,8 @@
                                           {% if quiniela.score_type != "TO" %}
                                             {% if pair.1.score_home.value == pair.0.score_home %}
                                             <i class="fa fa-check" style="color:green"></i>
+                                            {% else %}
+                                            <i class="fa fa-close" style="color:red"></i>
                                             {% endif %}
 
                                             {% if pair.1.get_winner == pair.0.get_winner %}
@@ -238,6 +240,8 @@
 
                                             {% if pair.1.score_away.value == pair.0.score_away %}
                                             <i class="fa fa-check" style="color:green"></i>
+                                            {% else %}
+                                            <i class="fa fa-close" style="color:red"></i>
                                             {% endif %}
                                           {% else %}
                                             <i class="fa fa-close" style="color:red"></i>
