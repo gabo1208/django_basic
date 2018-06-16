@@ -46,27 +46,25 @@
         </div>
         <div class="col-lg-6">
         {% if public_quinielas %}
-            <div class="col-lg-6">
-                <h3> Quinielas Publicas</h3>
-                {% for quiniela in public_quinielas %}
-                <div class="row">
-                    <div class="col-xs-12 quiniela">
-                        <div class="box">
-                            <h5><a href="{% url 'quiniela:quiniela_details' quiniela.id %}">
-                                {% if quiniela.image %}
-                                    <img src="{{quiniela.image.url}}" width="55px" height="55px">
-                                {% endif %}
-                                {{ quiniela.name }} -
-                                {% if quiniela.tournament.image %}
-                                    <img src="{{quiniela.tournament.image.url}}" width="55px" height="55px">
-                                {% endif %}
-                                {{ quiniela.tournament.name }}
-                            </a></h5>
-                        </div>
+            <h3> Quinielas Publicas</h3>
+            {% for quiniela in public_quinielas %}
+            <div class="row">
+                <div class="col-xs-12 quiniela">
+                    <div class="box">
+                        <h5><a href="{% url 'quiniela:quiniela_details' quiniela.id %}">
+                            {% if quiniela.image %}
+                                <img src="{{quiniela.image.url}}" width="55px" height="55px">
+                            {% endif %}
+                            {{ quiniela.name }} -
+                            {% if quiniela.tournament.image %}
+                                <img src="{{quiniela.tournament.image.url}}" width="55px" height="55px">
+                            {% endif %}
+                            {{ quiniela.tournament.name }}
+                        </a></h5>
                     </div>
                 </div>
-                {% endfor %}
             </div>
+            {% endfor %}
         {% endif %}
     </div>
     <hr>
