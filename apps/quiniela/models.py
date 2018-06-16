@@ -55,6 +55,22 @@ class GameResult(TimeStampedModel):
     score_home = models.CharField(default='0', max_length=5)
     score_away = models.CharField(default='0', max_length=5)
 
+    def get_winner(self):
+        if self.score_set:
+            if self.score_home > self.score_away:
+                return self.home_team
+            elif self.score_home < self.score_away:
+                return self.away_team
+        return None
+
+    def get_loser(self):
+        if self.score_set:
+            if self.score_home > self.score_away:
+                return self.away_team
+            elif self.score_home < self.score_away:
+                return self.home_team
+        return None
+
     def __str__(self):
         return(
             str(self.game.home_team) + ' ' + str(self.score_home) + ' - ' + str(self.score_away) + ' ' +
