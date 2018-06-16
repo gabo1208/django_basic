@@ -58,17 +58,17 @@ class GameResult(TimeStampedModel):
     def get_winner(self):
         if self.game.score_set:
             if self.score_home > self.score_away:
-                return self.home_team
+                return self.game.home_team
             elif self.score_home < self.score_away:
-                return self.away_team
+                return self.game.away_team
         return None
 
     def get_loser(self):
-        if self.score_set:
+        if self.game.score_set:
             if self.score_home > self.score_away:
-                return self.away_team
+                return self.game.away_team
             elif self.score_home < self.score_away:
-                return self.home_team
+                return self.game.home_team
         return None
 
     def __str__(self):
