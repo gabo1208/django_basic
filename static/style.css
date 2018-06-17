@@ -78,6 +78,14 @@ body{
 	color: white;
 }
 
+.no-margin{
+    margin: 0;
+}
+
+.no-padding{
+    padding: 0 !important;
+}
+
 /* Overrides of Bootstrap styles*/
 .container {
 	padding-right: 0;

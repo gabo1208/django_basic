@@ -311,7 +311,7 @@
                         <div class="row">
                         {% endif %}
                           <div class="col-lg-6" align="center">
-                            <div class="col-xs-5" align="right">
+                            <div class="col-xs-5 no-padding" align="right">
                             {{ pair.0.home_team.name }} 
                             {% if pair.0.home_team.image %}
                               <img src="{{ pair.0.home_team.image.url }}" width="50px" height="40px">
@@ -319,11 +319,11 @@
                               <img src="{% static 'no_flag.svg' %}" width="50px" height="40px">
                             {% endif %}
                             </div>
-                            <div class="col-xs-2" style="margin-top: 12px; padding: 0;">
+                            <div class="col-xs-2 no-padding" style="margin-top: 12px;">
                             {% if pair.0.score_set %} {{ pair.0.score_home }} {% endif %} -  
                             {% if pair.0.score_set %} {{ pair.0.score_away }} {% endif %}
                             </div>
-                            <div class="col-xs-5" align="left">
+                            <div class="col-xs-5 no-padding" align="left">
                             {% if pair.0.away_team.image %}
                               <img src="{{ pair.0.away_team.image.url }}" width="50px" height="40px">
                             {% else %}
