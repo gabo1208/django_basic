@@ -310,23 +310,31 @@
                         {% if forloop.counter0|divisibleby:2 %}
                         <div class="row">
                         {% endif %}
-                          <div class="col-lg-6" align="center">                        
+                          <div class="col-lg-6" align="center">
+                            <div class="col-4">
                             {{ pair.0.home_team.name }} 
                             {% if pair.0.home_team.image %}
                               <img src="{{ pair.0.home_team.image.url }}" width="50px" height="40px">
                             {% else %}
                               <img src="{% static 'no_flag.svg' %}" width="50px" height="40px">
                             {% endif %}
+                            </div>
+                            <div class="col-4">
                             {% if pair.0.score_set %} {{ pair.0.score_home }} {% endif %} -  
                             {% if pair.0.score_set %} {{ pair.0.score_away }} {% endif %}
+                            </div>
+                            <div class="col-3">
                             {% if pair.0.away_team.image %}
                               <img src="{{ pair.0.away_team.image.url }}" width="50px" height="40px">
                             {% else %}
                               <img src="{% static 'no_flag.svg' %}" width="50px" height="40px">
                             {% endif %}
                             {{ pair.0.away_team.name }}<br>
+                            </div>
+                            <div class="col-12">
                             {{ pair.0.match_datetime|date:"D d M" }} {{ pair.0.match_datetime|time:"H:i" }}
                             {% get_current_timezone as TIME_ZONE %} ({{ TIME_ZONE }})
+                            </div>
                           </div>
 
                         {% if not forloop.counter0|divisibleby:2 %}
