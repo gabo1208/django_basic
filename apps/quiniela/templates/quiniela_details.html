@@ -42,17 +42,17 @@
         <button type="button" class="btn btn-success" onclick="show_invite_form()">
           <i class="fa fa-plus"></i> Invite User/s
         </button>
-        <button type="button" class="btn btn-success">
-          <a id="whatsapp-share-button" href="#" data-action="share/whatsapp/share" style="color: white">
+        <a id="whatsapp-share-button" href="#" data-action="share/whatsapp/share" style="color: white">
+          <button type="button" class="btn btn-success">
             <i class="fa fa-whatsapp"></i> Share via Whatsapp!
-          </a>
-        </button><br><br>
+          </button>
+        </a><br><br>
         {% else %}
-        <button type="button" class="btn btn-success">
-          <a href="{% url 'quiniela:quiniela_join' quiniela_id=quiniela.id %}" style="color: white">
+        <a href="{% url 'quiniela:quiniela_join' quiniela_id=quiniela.id %}" style="color: white">
+          <button type="button" class="btn btn-success">
             <i class="fa fa-plus"></i> Join Quiniela
-          </a>
-        </button><br><br>
+          </button>
+        </a><br><br>
         {% endif %}
         <form role="form" method="post" id="formsets">
         {% csrf_token %}
@@ -278,11 +278,11 @@
                       <br>
                       <div align="center">
                         <b>Join this Quiniela! </b><br><br>
-                        <button type="button" class="btn btn-success">
-                          <a href="{% url 'quiniela:quiniela_join' quiniela_id=quiniela.id %}" style="color: white">
+                        <a href="{% url 'quiniela:quiniela_join' quiniela_id=quiniela.id %}" style="color: white">
+                          <button type="button" class="btn btn-success">
                             <i class="fa fa-plus"></i> Join Quiniela
-                          </a>
-                        </button>
+                          </button>
+                        </a>
                       </div><br><br>
                     {% endif %}
                     </div>
