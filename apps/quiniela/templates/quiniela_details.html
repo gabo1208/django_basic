@@ -22,6 +22,9 @@
 
 {% block content %}
     {% if quiniela %}
+        {% if visiting %}
+        <a href="{% url 'quiniela:quiniela_details' quiniela_id=quiniela.id %}">
+        {% endif %}
         <h3> 
             {% if quiniela.image %}
                 <img src="{{quiniela.image.url}}" width="48px" height="auto">
@@ -32,6 +35,9 @@
             {% endif %}
             {{ quiniela.tournament.name }}
         </h3>
+        {% if visiting %}
+        </a>
+        {% endif %}
         <h5>{{ quiniela.description }}<br>
             {{ quiniela.tournament.description }}<br>
         </h5>
