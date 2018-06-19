@@ -124,7 +124,7 @@ class GroupTeam(models.Model):
                 score += 3
             elif game.score_home == game.score_away:
                 score += 1
-            goals_difference += game.score_home - game.score_away
+            goals_difference += int(game.score_home) - int(game.score_away)
             games_checked += 1
 
         for game in games_away:
@@ -136,7 +136,7 @@ class GroupTeam(models.Model):
             elif game.score_home == game.score_away:
                 score += 1
 
-            goals_difference += game.score_away - game.score_home
+            goals_difference += int(game.score_away) - int(game.score_home)
             games_checked += 1
 
         self.score = score
