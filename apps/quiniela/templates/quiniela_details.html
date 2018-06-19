@@ -150,7 +150,7 @@
                               <img src="{{ team.team.image.url }}" width="50px" height="40px">{{ team.team.name }}
                             </div>
                             <div class="col-xs-4" align="center">
-                              {{ team.get_score }}
+                              {{ team.get_score }} ({% if team.goals_difference > 0%} +{% endif %}{{ team.goals_difference }})
                             </div>
                           </div>
                           {% endfor %}
@@ -326,8 +326,15 @@
                             {% endif %}
                             </div>
                             <div class="col-xs-2 no-padding" style="margin-top: 12px;">
-                            {% if pair.0.score_set %} {{ pair.0.score_home }} {% endif %} -  
-                            {% if pair.0.score_set %} {{ pair.0.score_away }} {% endif %}
+                            {% if pair.0.score_set %} 
+                              {{ pair.0.score_home }} 
+                              {% if pair.0.penalties %} ({{ pair.0.penalties_home }}) {% endif %}
+                            {% endif %} 
+                              -  
+                            {% if pair.0.score_set %} 
+                              {{ pair.0.score_away }} 
+                              {% if pair.0.penalties %} ({{ pair.0.penalties_away }}) {% endif %}
+                            {% endif %}
                             </div>
                             <div class="col-xs-5 no-padding" align="left">
                             {% if pair.0.away_team.image %}
