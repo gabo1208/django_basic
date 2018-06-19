@@ -4,17 +4,17 @@
   "pk": 2,
   "fields": {
     "created": "2018-04-24T16:40:47.788Z",
-    "modified": "2018-05-13T02:16:32.325Z",
+    "modified": "2018-06-16T15:52:23.857Z",
     "admin": 1,
     "name": "Kinielakalakaua",
     "image": "",
     "description": "Kiniela de los Kalakaua",
     "tournament": 2,
     "public": true,
-    "score_type": "TO",
-    "score_type_cache": "TO",
-    "quiniela_type": "EA",
-    "quiniela_type_cache": "EA",
+    "score_type": "EA",
+    "score_type_cache": "EA",
+    "quiniela_type": "TQ",
+    "quiniela_type_cache": "TQ",
     "members": [
       1,
       2,
@@ -25,7 +25,9 @@
       9,
       11,
       13,
-      14
+      14,
+      23,
+      24
     ],
     "tags": [
       1,
@@ -103,28 +105,6 @@
 },
 {
   "model": "quiniela.quiniela",
-  "pk": 9,
-  "fields": {
-    "created": "2018-05-02T03:00:57.217Z",
-    "modified": "2018-05-25T01:13:47.390Z",
-    "admin": 7,
-    "name": "Italia campe\u00f3n",
-    "image": "",
-    "description": "Ganar\u00e1 Italia el mundil",
-    "tournament": 2,
-    "public": false,
-    "score_type": "EA",
-    "score_type_cache": "EA",
-    "quiniela_type": "EA",
-    "quiniela_type_cache": "EA",
-    "members": [
-      7
-    ],
-    "tags": []
-  }
-},
-{
-  "model": "quiniela.quiniela",
   "pk": 11,
   "fields": {
     "created": "2018-05-13T00:52:54.769Z",
@@ -188,6 +168,7 @@
     "quiniela_type_cache": "EA",
     "members": [
       1,
+      2,
       8,
       10,
       17,
@@ -238,6 +219,50 @@
     "members": [
       20,
       21
+    ],
+    "tags": []
+  }
+},
+{
+  "model": "quiniela.quiniela",
+  "pk": 16,
+  "fields": {
+    "created": "2018-06-15T17:21:40.811Z",
+    "modified": "2018-06-15T17:21:41.444Z",
+    "admin": 22,
+    "name": "Jose",
+    "image": "",
+    "description": "Nada",
+    "tournament": 2,
+    "public": true,
+    "score_type": "TO",
+    "score_type_cache": "TO",
+    "quiniela_type": "TQ",
+    "quiniela_type_cache": "TQ",
+    "members": [
+      22
+    ],
+    "tags": []
+  }
+},
+{
+  "model": "quiniela.quiniela",
+  "pk": 17,
+  "fields": {
+    "created": "2018-06-16T19:05:32.544Z",
+    "modified": "2018-06-16T19:05:33.066Z",
+    "admin": 23,
+    "name": "Quiniela",
+    "image": "",
+    "description": "Quiniela",
+    "tournament": 2,
+    "public": true,
+    "score_type": "EA",
+    "score_type_cache": "EA",
+    "quiniela_type": "TQ",
+    "quiniela_type_cache": "TQ",
+    "members": [
+      23
     ],
     "tags": []
   }
