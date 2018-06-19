@@ -25,6 +25,9 @@ class Game(models.Model):
     score_home = models.CharField(default='0', max_length=5)
     score_away = models.CharField(default='0', max_length=5)
     match_datetime = models.DateTimeField(null=True, blank=True)
+    penalties = models.BooleanField(default=False)
+    penalties_home = models.IntegerField(default=0)
+    penalties_away = models.IntegerField(default=0)
 
     def __str__(self):
         return (
@@ -38,14 +41,18 @@ class Game(models.Model):
                 return self.home_team
             elif self.score_home < self.score_away:
                 return self.away_team
+            elif self.penalties:
+                if self.penalties_home > self.penalties_away:
+                    return self.home_team
+                else:
+                    return self.away_team
         return None
 
     def get_loser(self):
-        if self.score_set:
-            if self.score_home > self.score_away:
-                return self.away_team
-            elif self.score_home < self.score_away:
-                return self.home_team
+        if self.get_winner() == self.home_team:
+            return self.away_team
+        else:
+            return self.home_team
         return None
 
 
@@ -83,6 +90,8 @@ class GroupTeam(models.Model):
     group = models.ForeignKey('Group', on_delete=models.CASCADE)
     score = models.IntegerField(default=0)
     games_checked = models.IntegerField(default=0)
+    goals_difference = models.IntegerField(default=0)
+    extra = models.IntegerField(default=0)
 
     class Meta:
         unique_together = ('team', 'group')
@@ -91,38 +100,48 @@ class GroupTeam(models.Model):
         return str(self.group) + ' - ' + str(self.team) + ' - ' + str(self.score)
 
     def get_score(self):
-        if self.games_checked < 3:
-            self.games_checked = 0
-            score = 0
-            games_home = Game.objects.filter(
-                tournament=self.group.tournament,
-                home_team=self.team,
-                match_datetime__lte=datetime.datetime(2018, 6, 29),
-                score_set=True
-            )
-            games_away = games = Game.objects.filter(
-                tournament=self.group.tournament,
-                away_team=self.team,
-                match_datetime__lte=datetime.datetime(2018, 6, 29),
-                score_set=True
-            )
+        games_checked = 0
+        score = 0
+        goals_difference = 0
+        games_home = Game.objects.filter(
+            tournament=self.group.tournament,
+            home_team=self.team,
+            match_datetime__lte=datetime.datetime(2018, 6, 29),
+            score_set=True
+        )
+        games_away = games = Game.objects.filter(
+            tournament=self.group.tournament,
+            away_team=self.team,
+            match_datetime__lte=datetime.datetime(2018, 6, 29),
+            score_set=True
+        )
 
-            for game in games_home:
-                self.games_checked += 1
-                if game.score_home > game.score_away:
-                    score += 3
-                elif game.score_home == game.score_away:
-                    score += 1
+        for game in games_home:
+            if games_checked >= 3:
+                break
 
-            for game in games_away:
-                self.games_checked += 1
-                if game.score_home < game.score_away:
-                    score += 3
-                elif game.score_home == game.score_away:
-                    score += 1
+            if game.score_home > game.score_away:
+                score += 3
+            elif game.score_home == game.score_away:
+                score += 1
+            goals_difference += game.score_home - game.score_away
+            games_checked += 1
 
-            self.score = score
-            self.save()
+        for game in games_away:
+            if games_checked >= 3:
+                break
+
+            if game.score_home < game.score_away:
+                score += 3
+            elif game.score_home == game.score_away:
+                score += 1
+
+            goals_difference += game.score_away - game.score_home
+            games_checked += 1
+
+        self.score = score
+        self.goals_difference = goals_difference
+        self.save()
 
         return self.score
 
@@ -143,7 +162,7 @@ class Group(models.Model):
         return 'Group ' + self.name + ' - ' + str(self.tournament)
 
     def get_teams(self):
-        return GroupTeam.objects.filter(group=self).order_by('-score')
+        return GroupTeam.objects.filter(group=self).order_by('-score', '-goals_difference', '-extra')
 
 
 class Tournament(models.Model):
