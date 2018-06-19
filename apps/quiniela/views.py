@@ -97,8 +97,7 @@ def quiniela_details(request, quiniela_id):
             # Check Games passed by now
             count = 0
             for game in quiniela_games:
-                if(quiniela_games[count].match_datetime <= datetime.datetime.now(quiniela_games[count].match_datetime.tzinfo) 
-                    - datetime.timedelta(hours=4)):
+                if(quiniela_games[count].match_datetime <= datetime.datetime.now(quiniela_games[count].match_datetime.tzinfo)):
                     count += 1
 
             for prefix in phases_prefixes:
@@ -108,8 +107,7 @@ def quiniela_details(request, quiniela_id):
                 if formset.is_valid():
                     for form in formset:
                         if form.is_valid():
-                            if(quiniela_games[count].match_datetime >= datetime.datetime.now(quiniela_games[count].match_datetime.tzinfo) 
-                                - datetime.timedelta(hours=2)):
+                            if(quiniela_games[count].match_datetime >= datetime.datetime.now(quiniela_games[count].match_datetime.tzinfo)):
                                 form.save()
                         else:
                             print(form.errors)
