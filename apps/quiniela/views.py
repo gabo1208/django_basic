@@ -94,12 +94,6 @@ def quiniela_details(request, quiniela_id):
             else:
                 print(invite_formset.errors)
 
-            # Check Games passed by now
-            count = 0
-            for game in quiniela_games:
-                if(quiniela_games[count].match_datetime <= datetime.datetime.now(quiniela_games[count].match_datetime.tzinfo)):
-                    count += 1
-
             for prefix in phases_prefixes[active-1:]:
                 formsets.append(results_formset(request.POST or None, prefix=prefix))
 
@@ -107,12 +101,10 @@ def quiniela_details(request, quiniela_id):
                 if formset and formset.is_valid():
                     for form in formset:
                         if form.is_valid():
-                            if(quiniela_games[count].match_datetime >= datetime.datetime.now(quiniela_games[count].match_datetime.tzinfo)):
+                            if(form.instance.game.match_datetime >= datetime.datetime.now(form.instance.game.match_datetime.tzinfo)):
                                 form.save()
                         else:
                             print(form.errors)
-                                
-                        count += 1
                 else:
                     print(formset.errors)
             formsets = []
