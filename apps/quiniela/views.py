@@ -100,11 +100,11 @@ def quiniela_details(request, quiniela_id):
                 if(quiniela_games[count].match_datetime <= datetime.datetime.now(quiniela_games[count].match_datetime.tzinfo)):
                     count += 1
 
-            for prefix in phases_prefixes:
+            for prefix in phases_prefixes[active-1:]:
                 formsets.append(results_formset(request.POST or None, prefix=prefix))
 
             for formset in formsets:
-                if formset.is_valid():
+                if formset and formset.is_valid():
                     for form in formset:
                         if form.is_valid():
                             if(quiniela_games[count].match_datetime >= datetime.datetime.now(quiniela_games[count].match_datetime.tzinfo)):
@@ -195,9 +195,6 @@ def quiniela_details(request, quiniela_id):
 
                 if count < 0:
                     break
-
-        if count % phases_limit != 0:
-            groups_formsets.append((group_forms, formset.management_form, phases_prefixes[prefix]))
 
     # If request.user is not in this quinielas members
     else:
