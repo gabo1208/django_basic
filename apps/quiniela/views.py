@@ -157,7 +157,8 @@ def quiniela_details(request, quiniela_id):
 
         # If the number of blocked results isn't round with a group number limit
         if init != end and init > 0:
-            formsets.append(blocked_results_formset(queryset=qset[end-phases_limit:init]))
+            if (end - phases_limit) != init:
+                formsets.append(blocked_results_formset(queryset=qset[end-phases_limit:init]))
 
         # Create and populate new formsets with the prediction data starting from the last BlockedGameResult
         for prefix in phases_prefixes[lim:]:
