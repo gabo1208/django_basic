@@ -97,7 +97,7 @@ class GroupTeam(models.Model):
         unique_together = ('team', 'group')
 
     def __str__(self):
-        return str(self.group) + ' - ' + str(self.team) + ' - ' + str(self.score) + '(' + self.goals_difference + ')'
+        return str(self.group) + ' - ' + str(self.team) + ' - ' + str(self.score) + '(' + str(self.goals_difference) + ')'
 
     def get_score(self):
         games_checked = 0
