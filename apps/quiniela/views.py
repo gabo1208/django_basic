@@ -453,118 +453,20 @@ def prepare_phases(active, phase, quiniela_games, groups):
     elif datetime.datetime.now() <= datetime.datetime(2018, 7, 3, 15):
         active += 4
         phase += 1
-        if quiniela_games[48].home_team == None and quiniela_games[47].score_set:
-            groupA_teams = groups[0].get_teams()[:2]
-            groupB_teams = groups[1].get_teams()[:2]
-            groupC_teams = groups[2].get_teams()[:2]
-            groupD_teams = groups[3].get_teams()[:2]
-            groupE_teams = groups[4].get_teams()[:2]
-            groupF_teams = groups[5].get_teams()[:2]
-            groupG_teams = groups[6].get_teams()[:2]
-            groupH_teams = groups[7].get_teams()[:2]
-
-            # First C vs Second D G1
-            game = Game.objects.get(id=quiniela_games[48].id)
-            game.home_team = groupC_teams[0].team
-            game.away_team = groupD_teams[1].team
-            game.save()
-            # First A vs Second B G2
-            game = Game.objects.get(id=quiniela_games[49].id)
-            game.home_team = groupA_teams[0].team
-            game.away_team = groupB_teams[1].team
-            game.save()
-            # First B vs Second A G3
-            game = Game.objects.get(id=quiniela_games[50].id)
-            game.home_team = groupB_teams[0].team
-            game.away_team = groupA_teams[1].team
-            game.save()
-            # First D vs Second C G4
-            game = Game.objects.get(id=quiniela_games[51].id)
-            game.home_team = groupD_teams[0].team
-            game.away_team = groupC_teams[1].team
-            game.save()
-            # First E vs Second F G5
-            game = Game.objects.get(id=quiniela_games[52].id)
-            game.home_team = groupE_teams[0].team
-            game.away_team = groupF_teams[1].team
-            game.save()
-            # First G vs Second H G6
-            game = Game.objects.get(id=quiniela_games[53].id)
-            game.home_team = groupG_teams[0].team
-            game.away_team = groupH_teams[1].team
-            game.save()
-            # First F vs Second E G7
-            game = Game.objects.get(id=quiniela_games[54].id)
-            game.home_team = groupF_teams[0].team
-            game.away_team = groupE_teams[1].team
-            game.save()
-            # First H vs Second G G8
-            game = Game.objects.get(id=quiniela_games[55].id)
-            game.home_team = groupH_teams[0].team
-            game.away_team = groupG_teams[1].team
-            game.save()
-
     # Quarters
     elif datetime.datetime.now() <= datetime.datetime(2018, 7, 7, 15):
         active += 5
         phase += 2
-        # Winners from 8ths
-        if quiniela_games[56].home_team == None and quiniela_games[55].score_set:
-            # G2 vs G1 QF1
-            game = Game.objects.get(id=quiniela_games[56].id)
-            game.home_team = quiniela_games[48].get_winner()
-            game.away_team = quiniela_games[49].get_winner()
-            game.save()
-            # G5 vs G6 QF2
-            game = Game.objects.get(id=quiniela_games[57].id)
-            game.home_team = quiniela_games[52].get_winner()
-            game.away_team = quiniela_games[53].get_winner()
-            game.save()
-            # G7 vs G8 QF3
-            game = Game.objects.get(id=quiniela_games[58].id)
-            game.home_team = quiniela_games[54].get_winner()
-            game.away_team = quiniela_games[55].get_winner()
-            game.save()
-            # G3 vs G4 QF4
-            game = Game.objects.get(id=quiniela_games[59].id)
-            game.home_team = quiniela_games[50].get_winner()
-            game.away_team = quiniela_games[51].get_winner()
-            game.save()
-
     # Semifinals
     elif datetime.datetime.now() <= datetime.datetime(2018, 7, 11, 15):
         active += 6
         phase += 3
-        if quiniela_games[60].home_team == None and quiniela_games[59].score_set:
-            # QF1 vs QF2
-            game = Game.objects.get(id=quiniela_games[60].id)
-            game.home_team = quiniela_games[56].get_winner()
-            game.away_team = quiniela_games[57].get_winner()
-            game.save()
-            # QF4 vs QF3
-            game = Game.objects.get(id=quiniela_games[61].id)
-            game.home_team = quiniela_games[59].get_winner()
-            game.away_team = quiniela_games[58].get_winner()
-            game.save()
     # 3rd Place
     elif datetime.datetime.now() <= datetime.datetime(2018, 7, 14, 12):
         active += 7
         phase += 4
-        if quiniela_games[62].home_team == None and quiniela_games[61].score_set:
-            # Third Place
-            game = Game.objects.get(id=quiniela_games[62].id)
-            game.home_team = quiniela_games[60].get_loser()
-            game.away_team = quiniela_games[61].get_loser()
-            game.save()
     # Final
     else:
         active += 8
         phase += 5
-        if quiniela_games[63].home_team == None and quiniela_games[61].score_set:
-            # Champion
-            game = Game.objects.get(id=quiniela_games[63].id)
-            game.home_team = quiniela_games[60].get_winner()
-            game.away_team = quiniela_games[61].get_winner()
-            game.save()
-
     return (active, phase)
