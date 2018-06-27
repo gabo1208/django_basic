@@ -7,7 +7,7 @@
     "group": 1,
     "score": 0,
     "games_checked": 1,
-    "goals_difference": -1,
+    "goals_difference": -4,
     "extra": 0
   }
 },
@@ -17,9 +17,9 @@
   "fields": {
     "team": 1,
     "group": 1,
-    "score": 3,
+    "score": 6,
     "games_checked": 1,
-    "goals_difference": 5,
+    "goals_difference": 4,
     "extra": 0
   }
 },
@@ -29,7 +29,7 @@
   "fields": {
     "team": 2,
     "group": 1,
-    "score": 0,
+    "score": 3,
     "games_checked": 1,
     "goals_difference": -5,
     "extra": 0
@@ -41,9 +41,9 @@
   "fields": {
     "team": 4,
     "group": 1,
-    "score": 3,
+    "score": 9,
     "games_checked": 1,
-    "goals_difference": 1,
+    "goals_difference": 5,
     "extra": 0
   }
 },
@@ -53,9 +53,9 @@
   "fields": {
     "team": 6,
     "group": 2,
-    "score": 3,
+    "score": 4,
     "games_checked": 1,
-    "goals_difference": 1,
+    "goals_difference": 0,
     "extra": 0
   }
 },
@@ -65,9 +65,9 @@
   "fields": {
     "team": 5,
     "group": 2,
-    "score": 0,
+    "score": 1,
     "games_checked": 1,
-    "goals_difference": -1,
+    "goals_difference": -2,
     "extra": 0
   }
 },
@@ -77,9 +77,9 @@
   "fields": {
     "team": 8,
     "group": 2,
-    "score": 1,
+    "score": 5,
     "games_checked": 1,
-    "goals_difference": 0,
+    "goals_difference": 1,
     "extra": 0
   }
 },
@@ -89,10 +89,10 @@
   "fields": {
     "team": 7,
     "group": 2,
-    "score": 1,
+    "score": 5,
     "games_checked": 1,
-    "goals_difference": 0,
-    "extra": 0
+    "goals_difference": 1,
+    "extra": 1
   }
 },
 {
@@ -101,9 +101,9 @@
   "fields": {
     "team": 10,
     "group": 3,
-    "score": 0,
+    "score": 1,
     "games_checked": 1,
-    "goals_difference": -1,
+    "goals_difference": -3,
     "extra": 0
   }
 },
@@ -113,7 +113,7 @@
   "fields": {
     "team": 14,
     "group": 3,
-    "score": 3,
+    "score": 5,
     "games_checked": 1,
     "goals_difference": 1,
     "extra": 0
@@ -125,9 +125,9 @@
   "fields": {
     "team": 9,
     "group": 3,
-    "score": 3,
+    "score": 7,
     "games_checked": 1,
-    "goals_difference": 1,
+    "goals_difference": 2,
     "extra": 0
   }
 },
@@ -137,9 +137,9 @@
   "fields": {
     "team": 13,
     "group": 3,
-    "score": 0,
+    "score": 3,
     "games_checked": 1,
-    "goals_difference": -1,
+    "goals_difference": 0,
     "extra": 0
   }
 },
@@ -149,9 +149,9 @@
   "fields": {
     "team": 11,
     "group": 4,
-    "score": 1,
+    "score": 4,
     "games_checked": 1,
-    "goals_difference": 0,
+    "goals_difference": -2,
     "extra": 0
   }
 },
@@ -161,9 +161,9 @@
   "fields": {
     "team": 15,
     "group": 4,
-    "score": 3,
+    "score": 9,
     "games_checked": 1,
-    "goals_difference": 2,
+    "goals_difference": 6,
     "extra": 0
   }
 },
@@ -175,7 +175,7 @@
     "group": 4,
     "score": 1,
     "games_checked": 1,
-    "goals_difference": 0,
+    "goals_difference": -3,
     "extra": 0
   }
 },
@@ -185,9 +185,9 @@
   "fields": {
     "team": 16,
     "group": 4,
-    "score": 0,
+    "score": 3,
     "games_checked": 1,
-    "goals_difference": -2,
+    "goals_difference": -1,
     "extra": 0
   }
 },
@@ -197,9 +197,9 @@
   "fields": {
     "team": 21,
     "group": 5,
-    "score": 1,
+    "score": 4,
     "games_checked": 1,
-    "goals_difference": 0,
+    "goals_difference": 2,
     "extra": 0
   }
 },
@@ -211,7 +211,7 @@
     "group": 5,
     "score": 0,
     "games_checked": 1,
-    "goals_difference": -1,
+    "goals_difference": -3,
     "extra": 0
   }
 },
@@ -221,9 +221,9 @@
   "fields": {
     "team": 22,
     "group": 5,
-    "score": 1,
+    "score": 4,
     "games_checked": 1,
-    "goals_difference": 0,
+    "goals_difference": 1,
     "extra": 0
   }
 },
@@ -235,7 +235,7 @@
     "group": 5,
     "score": 3,
     "games_checked": 1,
-    "goals_difference": 1,
+    "goals_difference": 0,
     "extra": 0
   }
 },
@@ -245,9 +245,9 @@
   "fields": {
     "team": 19,
     "group": 6,
-    "score": 0,
+    "score": 3,
     "games_checked": 1,
-    "goals_difference": -1,
+    "goals_difference": -2,
     "extra": 0
   }
 },
@@ -257,9 +257,9 @@
   "fields": {
     "team": 24,
     "group": 6,
-    "score": 0,
+    "score": 3,
     "games_checked": 1,
-    "goals_difference": -1,
+    "goals_difference": 0,
     "extra": 0
   }
 },
@@ -269,9 +269,9 @@
   "fields": {
     "team": 20,
     "group": 6,
-    "score": 3,
+    "score": 6,
     "games_checked": 1,
-    "goals_difference": 1,
+    "goals_difference": -1,
     "extra": 0
   }
 },
@@ -281,9 +281,9 @@
   "fields": {
     "team": 23,
     "group": 6,
-    "score": 3,
+    "score": 6,
     "games_checked": 1,
-    "goals_difference": 1,
+    "goals_difference": 3,
     "extra": 0
   }
 },
@@ -293,9 +293,9 @@
   "fields": {
     "team": 25,
     "group": 7,
-    "score": 3,
+    "score": 6,
     "games_checked": 1,
-    "goals_difference": 3,
+    "goals_difference": 6,
     "extra": 0
   }
 },
@@ -305,9 +305,9 @@
   "fields": {
     "team": 28,
     "group": 7,
-    "score": 3,
+    "score": 6,
     "games_checked": 1,
-    "goals_difference": 1,
+    "goals_difference": 6,
     "extra": 0
   }
 },
@@ -319,7 +319,7 @@
     "group": 7,
     "score": 0,
     "games_checked": 1,
-    "goals_difference": -3,
+    "goals_difference": -8,
     "extra": 0
   }
 },
@@ -331,7 +331,7 @@
     "group": 7,
     "score": 0,
     "games_checked": 1,
-    "goals_difference": -1,
+    "goals_difference": -4,
     "extra": 0
   }
 },
@@ -341,9 +341,9 @@
   "fields": {
     "team": 29,
     "group": 8,
-    "score": 0,
+    "score": 3,
     "games_checked": 0,
-    "goals_difference": -1,
+    "goals_difference": 2,
     "extra": 0
   }
 },
@@ -353,7 +353,7 @@
   "fields": {
     "team": 30,
     "group": 8,
-    "score": 3,
+    "score": 4,
     "games_checked": 0,
     "goals_difference": 1,
     "extra": 0
@@ -367,7 +367,7 @@
     "group": 8,
     "score": 0,
     "games_checked": 0,
-    "goals_difference": -1,
+    "goals_difference": -4,
     "extra": 0
   }
 },
@@ -377,7 +377,7 @@
   "fields": {
     "team": 32,
     "group": 8,
-    "score": 3,
+    "score": 4,
     "games_checked": 0,
     "goals_difference": 1,
     "extra": 0
