@@ -532,7 +532,7 @@
   "pk": 61,
   "fields": {
     "created": "2018-04-28T02:56:22.767Z",
-    "modified": "2018-06-26T20:01:56.724Z",
+    "modified": "2018-06-27T19:56:27.358Z",
     "game": 55,
     "user": 1,
     "score_home": "0",
@@ -544,7 +544,7 @@
   "pk": 62,
   "fields": {
     "created": "2018-04-28T02:56:22.779Z",
-    "modified": "2018-06-26T20:01:56.747Z",
+    "modified": "2018-06-27T19:56:27.383Z",
     "game": 56,
     "user": 1,
     "score_home": "2",
@@ -556,11 +556,11 @@
   "pk": 64,
   "fields": {
     "created": "2018-04-28T02:59:20.984Z",
-    "modified": "2018-06-26T20:01:56.771Z",
+    "modified": "2018-06-27T19:56:27.411Z",
     "game": 58,
     "user": 1,
     "score_home": "2",
-    "score_away": "0"
+    "score_away": "1"
   }
 },
 {
@@ -568,7 +568,7 @@
   "pk": 65,
   "fields": {
     "created": "2018-04-28T03:02:13.342Z",
-    "modified": "2018-06-26T20:01:56.792Z",
+    "modified": "2018-06-27T19:56:27.433Z",
     "game": 59,
     "user": 1,
     "score_home": "1",
@@ -580,11 +580,11 @@
   "pk": 67,
   "fields": {
     "created": "2018-04-30T23:30:40.162Z",
-    "modified": "2018-04-30T23:30:40.162Z",
+    "modified": "2018-06-28T19:59:23.778Z",
     "game": 62,
     "user": 1,
-    "score_home": "0",
-    "score_away": "0"
+    "score_home": "3",
+    "score_away": "1"
   }
 },
 {
@@ -592,11 +592,11 @@
   "pk": 68,
   "fields": {
     "created": "2018-04-30T23:43:23.682Z",
-    "modified": "2018-04-30T23:43:23.683Z",
+    "modified": "2018-06-28T19:59:23.808Z",
     "game": 63,
     "user": 1,
     "score_home": "0",
-    "score_away": "0"
+    "score_away": "2"
   }
 },
 {
@@ -604,10 +604,10 @@
   "pk": 69,
   "fields": {
     "created": "2018-04-30T23:58:31.043Z",
-    "modified": "2018-04-30T23:58:31.043Z",
+    "modified": "2018-06-28T19:59:23.834Z",
     "game": 64,
     "user": 1,
-    "score_home": "0",
+    "score_home": "3",
     "score_away": "0"
   }
 },
@@ -616,10 +616,10 @@
   "pk": 70,
   "fields": {
     "created": "2018-04-30T23:58:31.053Z",
-    "modified": "2018-04-30T23:58:31.054Z",
+    "modified": "2018-06-28T19:59:23.858Z",
     "game": 65,
     "user": 1,
-    "score_home": "0",
+    "score_home": "3",
     "score_away": "0"
   }
 },
@@ -628,11 +628,11 @@
   "pk": 71,
   "fields": {
     "created": "2018-04-30T23:58:31.062Z",
-    "modified": "2018-04-30T23:58:31.062Z",
+    "modified": "2018-07-01T21:33:14.463Z",
     "game": 66,
     "user": 1,
-    "score_home": "0",
-    "score_away": "0"
+    "score_home": "3",
+    "score_away": "2"
   }
 },
 {
@@ -640,11 +640,11 @@
   "pk": 72,
   "fields": {
     "created": "2018-04-30T23:58:31.071Z",
-    "modified": "2018-04-30T23:58:31.071Z",
+    "modified": "2018-07-01T21:33:14.492Z",
     "game": 67,
     "user": 1,
-    "score_home": "0",
-    "score_away": "0"
+    "score_home": "3",
+    "score_away": "1"
   }
 },
 {
@@ -652,11 +652,11 @@
   "pk": 73,
   "fields": {
     "created": "2018-04-30T23:58:31.081Z",
-    "modified": "2018-04-30T23:58:31.081Z",
+    "modified": "2018-07-01T21:33:14.513Z",
     "game": 68,
     "user": 1,
-    "score_home": "0",
-    "score_away": "0"
+    "score_home": "1",
+    "score_away": "2"
   }
 },
 {
@@ -664,11 +664,11 @@
   "pk": 74,
   "fields": {
     "created": "2018-04-30T23:58:31.090Z",
-    "modified": "2018-04-30T23:58:31.090Z",
+    "modified": "2018-07-01T21:33:14.532Z",
     "game": 69,
     "user": 1,
-    "score_home": "0",
-    "score_away": "0"
+    "score_home": "2",
+    "score_away": "1"
   }
 },
 {
@@ -676,10 +676,10 @@
   "pk": 75,
   "fields": {
     "created": "2018-05-01T02:06:12.661Z",
-    "modified": "2018-05-01T02:06:12.662Z",
+    "modified": "2018-07-03T20:58:59.114Z",
     "game": 70,
     "user": 1,
-    "score_home": "0",
+    "score_home": "1",
     "score_away": "0"
   }
 },
@@ -688,11 +688,11 @@
   "pk": 76,
   "fields": {
     "created": "2018-05-01T02:06:12.674Z",
-    "modified": "2018-05-01T02:06:12.675Z",
+    "modified": "2018-07-03T20:58:59.149Z",
     "game": 71,
     "user": 1,
-    "score_home": "0",
-    "score_away": "0"
+    "score_home": "2",
+    "score_away": "3"
   }
 },
 {
@@ -700,11 +700,11 @@
   "pk": 77,
   "fields": {
     "created": "2018-05-01T02:06:12.685Z",
-    "modified": "2018-05-01T02:06:12.686Z",
+    "modified": "2018-07-03T20:58:59.180Z",
     "game": 72,
     "user": 1,
     "score_home": "0",
-    "score_away": "0"
+    "score_away": "3"
   }
 },
 {
@@ -712,11 +712,11 @@
   "pk": 78,
   "fields": {
     "created": "2018-05-01T02:06:12.699Z",
-    "modified": "2018-05-01T02:06:12.699Z",
+    "modified": "2018-07-03T20:58:59.226Z",
     "game": 73,
     "user": 1,
-    "score_home": "0",
-    "score_away": "0"
+    "score_home": "1",
+    "score_away": "2"
   }
 },
 {
@@ -724,11 +724,11 @@
   "pk": 79,
   "fields": {
     "created": "2018-05-01T02:06:12.713Z",
-    "modified": "2018-05-01T02:06:12.713Z",
+    "modified": "2018-07-10T14:56:03.326Z",
     "game": 74,
     "user": 1,
-    "score_home": "0",
-    "score_away": "0"
+    "score_home": "2",
+    "score_away": "3"
   }
 },
 {
@@ -736,11 +736,11 @@
   "pk": 80,
   "fields": {
     "created": "2018-05-01T02:06:12.726Z",
-    "modified": "2018-05-01T02:06:12.726Z",
+    "modified": "2018-07-10T14:56:03.360Z",
     "game": 75,
     "user": 1,
-    "score_home": "0",
-    "score_away": "0"
+    "score_home": "2",
+    "score_away": "1"
   }
 },
 {
@@ -748,11 +748,11 @@
   "pk": 81,
   "fields": {
     "created": "2018-05-01T02:06:12.736Z",
-    "modified": "2018-05-01T02:06:12.737Z",
+    "modified": "2018-07-12T00:04:08.464Z",
     "game": 76,
     "user": 1,
-    "score_home": "0",
-    "score_away": "0"
+    "score_home": "3",
+    "score_away": "1"
   }
 },
 {
@@ -760,11 +760,11 @@
   "pk": 82,
   "fields": {
     "created": "2018-05-01T02:06:12.747Z",
-    "modified": "2018-05-01T02:06:12.748Z",
+    "modified": "2018-07-14T22:55:24.971Z",
     "game": 77,
     "user": 1,
     "score_home": "0",
-    "score_away": "0"
+    "score_away": "2"
   }
 },
 {
@@ -6736,11 +6736,11 @@
   "pk": 585,
   "fields": {
     "created": "2018-05-01T20:04:38.346Z",
-    "modified": "2018-05-01T20:04:38.346Z",
+    "modified": "2018-06-30T15:22:33.930Z",
     "game": 63,
     "user": 4,
-    "score_home": "0",
-    "score_away": "0"
+    "score_home": "2",
+    "score_away": "1"
   }
 },
 {
@@ -6748,11 +6748,11 @@
   "pk": 586,
   "fields": {
     "created": "2018-05-01T20:04:38.408Z",
-    "modified": "2018-05-01T20:04:38.409Z",
+    "modified": "2018-06-30T15:22:33.959Z",
     "game": 64,
     "user": 4,
-    "score_home": "0",
-    "score_away": "0"
+    "score_home": "2",
+    "score_away": "1"
   }
 },
 {
@@ -6760,11 +6760,11 @@
   "pk": 587,
   "fields": {
     "created": "2018-05-01T20:04:38.466Z",
-    "modified": "2018-05-01T20:04:38.466Z",
+    "modified": "2018-06-30T15:22:33.986Z",
     "game": 65,
     "user": 4,
-    "score_home": "0",
-    "score_away": "0"
+    "score_home": "2",
+    "score_away": "1"
   }
 },
 {
@@ -6772,11 +6772,11 @@
   "pk": 588,
   "fields": {
     "created": "2018-05-01T20:04:38.523Z",
-    "modified": "2018-05-01T20:04:38.524Z",
+    "modified": "2018-06-30T15:22:34.019Z",
     "game": 66,
     "user": 4,
-    "score_home": "0",
-    "score_away": "0"
+    "score_home": "1",
+    "score_away": "2"
   }
 },
 {
@@ -6784,11 +6784,11 @@
   "pk": 589,
   "fields": {
     "created": "2018-05-01T20:04:38.579Z",
-    "modified": "2018-05-01T20:04:38.579Z",
+    "modified": "2018-06-30T15:22:34.043Z",
     "game": 67,
     "user": 4,
-    "score_home": "0",
-    "score_away": "0"
+    "score_home": "3",
+    "score_away": "1"
   }
 },
 {
@@ -6796,11 +6796,11 @@
   "pk": 590,
   "fields": {
     "created": "2018-05-01T20:04:38.638Z",
-    "modified": "2018-05-01T20:04:38.638Z",
+    "modified": "2018-06-30T15:22:34.067Z",
     "game": 68,
     "user": 4,
-    "score_home": "0",
-    "score_away": "0"
+    "score_home": "1",
+    "score_away": "1"
   }
 },
 {
@@ -6808,11 +6808,11 @@
   "pk": 591,
   "fields": {
     "created": "2018-05-01T20:04:38.697Z",
-    "modified": "2018-05-01T20:04:38.697Z",
+    "modified": "2018-06-30T15:22:34.090Z",
     "game": 69,
     "user": 4,
-    "score_home": "0",
-    "score_away": "0"
+    "score_home": "1",
+    "score_away": "3"
   }
 },
 {
@@ -6820,11 +6820,11 @@
   "pk": 592,
   "fields": {
     "created": "2018-05-01T20:04:38.752Z",
-    "modified": "2018-05-01T20:04:38.752Z",
+    "modified": "2018-07-03T19:21:27.762Z",
     "game": 70,
     "user": 4,
-    "score_home": "0",
-    "score_away": "0"
+    "score_home": "2",
+    "score_away": "1"
   }
 },
 {
@@ -6832,11 +6832,11 @@
   "pk": 593,
   "fields": {
     "created": "2018-05-01T20:04:38.806Z",
-    "modified": "2018-05-01T20:04:38.807Z",
+    "modified": "2018-07-03T19:21:27.791Z",
     "game": 71,
     "user": 4,
-    "score_home": "0",
-    "score_away": "0"
+    "score_home": "1",
+    "score_away": "3"
   }
 },
 {
@@ -6844,11 +6844,11 @@
   "pk": 594,
   "fields": {
     "created": "2018-05-01T20:04:38.861Z",
-    "modified": "2018-05-01T20:04:38.861Z",
+    "modified": "2018-07-07T01:23:34.142Z",
     "game": 72,
     "user": 4,
-    "score_home": "0",
-    "score_away": "0"
+    "score_home": "2",
+    "score_away": "1"
   }
 },
 {
@@ -6856,11 +6856,11 @@
   "pk": 595,
   "fields": {
     "created": "2018-05-01T20:04:38.917Z",
-    "modified": "2018-05-01T20:04:38.917Z",
+    "modified": "2018-07-07T01:23:34.161Z",
     "game": 73,
     "user": 4,
-    "score_home": "0",
-    "score_away": "0"
+    "score_home": "2",
+    "score_away": "1"
   }
 },
 {
@@ -6868,11 +6868,11 @@
   "pk": 596,
   "fields": {
     "created": "2018-05-01T20:04:38.971Z",
-    "modified": "2018-05-01T20:04:38.971Z",
+    "modified": "2018-07-10T16:38:40.932Z",
     "game": 74,
     "user": 4,
-    "score_home": "0",
-    "score_away": "0"
+    "score_home": "2",
+    "score_away": "3"
   }
 },
 {
@@ -6880,11 +6880,11 @@
   "pk": 597,
   "fields": {
     "created": "2018-05-01T20:04:39.035Z",
-    "modified": "2018-05-01T20:04:39.035Z",
+    "modified": "2018-07-10T16:38:40.953Z",
     "game": 75,
     "user": 4,
-    "score_home": "0",
-    "score_away": "0"
+    "score_home": "1",
+    "score_away": "3"
   }
 },
 {
@@ -9748,11 +9748,11 @@
   "pk": 842,
   "fields": {
     "created": "2018-05-13T03:50:58.855Z",
-    "modified": "2018-06-25T02:40:39.057Z",
+    "modified": "2018-06-28T13:13:47.772Z",
     "game": 55,
     "user": 14,
-    "score_home": "0",
-    "score_away": "0"
+    "score_home": "2",
+    "score_away": "1"
   }
 },
 {
@@ -9760,11 +9760,11 @@
   "pk": 843,
   "fields": {
     "created": "2018-05-13T03:50:58.912Z",
-    "modified": "2018-06-25T02:40:39.082Z",
+    "modified": "2018-06-28T13:13:47.795Z",
     "game": 56,
     "user": 14,
-    "score_home": "0",
-    "score_away": "0"
+    "score_home": "2",
+    "score_away": "1"
   }
 },
 {
@@ -9772,11 +9772,11 @@
   "pk": 844,
   "fields": {
     "created": "2018-05-13T03:50:58.973Z",
-    "modified": "2018-06-25T02:40:39.106Z",
+    "modified": "2018-06-28T16:20:03.840Z",
     "game": 58,
     "user": 14,
-    "score_home": "0",
-    "score_away": "0"
+    "score_home": "3",
+    "score_away": "2"
   }
 },
 {
@@ -9784,11 +9784,11 @@
   "pk": 845,
   "fields": {
     "created": "2018-05-13T03:50:59.038Z",
-    "modified": "2018-06-25T02:40:39.131Z",
+    "modified": "2018-06-28T16:20:03.867Z",
     "game": 59,
     "user": 14,
-    "score_home": "0",
-    "score_away": "0"
+    "score_home": "1",
+    "score_away": "1"
   }
 },
 {
@@ -9796,11 +9796,11 @@
   "pk": 846,
   "fields": {
     "created": "2018-05-13T03:50:59.100Z",
-    "modified": "2018-05-13T03:50:59.100Z",
+    "modified": "2018-06-29T13:30:50.570Z",
     "game": 62,
     "user": 14,
-    "score_home": "0",
-    "score_away": "0"
+    "score_home": "2",
+    "score_away": "1"
   }
 },
 {
@@ -9808,11 +9808,11 @@
   "pk": 847,
   "fields": {
     "created": "2018-05-13T03:50:59.158Z",
-    "modified": "2018-05-13T03:50:59.158Z",
+    "modified": "2018-06-29T13:30:50.593Z",
     "game": 63,
     "user": 14,
-    "score_home": "0",
-    "score_away": "0"
+    "score_home": "1",
+    "score_away": "2"
   }
 },
 {
@@ -9820,10 +9820,10 @@
   "pk": 848,
   "fields": {
     "created": "2018-05-13T03:50:59.217Z",
-    "modified": "2018-05-13T03:50:59.217Z",
+    "modified": "2018-06-29T13:30:50.615Z",
     "game": 64,
     "user": 14,
-    "score_home": "0",
+    "score_home": "1",
     "score_away": "0"
   }
 },
@@ -9832,11 +9832,11 @@
   "pk": 849,
   "fields": {
     "created": "2018-05-13T03:50:59.279Z",
-    "modified": "2018-05-13T03:50:59.280Z",
+    "modified": "2018-06-29T13:30:50.636Z",
     "game": 65,
     "user": 14,
-    "score_home": "0",
-    "score_away": "0"
+    "score_home": "1",
+    "score_away": "2"
   }
 },
 {
@@ -9844,11 +9844,11 @@
   "pk": 850,
   "fields": {
     "created": "2018-05-13T03:50:59.348Z",
-    "modified": "2018-05-13T03:50:59.348Z",
+    "modified": "2018-06-29T13:30:50.659Z",
     "game": 66,
     "user": 14,
-    "score_home": "0",
-    "score_away": "0"
+    "score_home": "2",
+    "score_away": "1"
   }
 },
 {
@@ -9856,10 +9856,10 @@
   "pk": 851,
   "fields": {
     "created": "2018-05-13T03:50:59.415Z",
-    "modified": "2018-05-13T03:50:59.415Z",
+    "modified": "2018-07-02T16:21:34.508Z",
     "game": 67,
     "user": 14,
-    "score_home": "0",
+    "score_home": "3",
     "score_away": "0"
   }
 },
@@ -9868,11 +9868,11 @@
   "pk": 852,
   "fields": {
     "created": "2018-05-13T03:50:59.472Z",
-    "modified": "2018-05-13T03:50:59.473Z",
+    "modified": "2018-07-02T16:21:34.533Z",
     "game": 68,
     "user": 14,
     "score_home": "0",
-    "score_away": "0"
+    "score_away": "2"
   }
 },
 {
@@ -9880,11 +9880,11 @@
   "pk": 853,
   "fields": {
     "created": "2018-05-13T03:50:59.528Z",
-    "modified": "2018-05-13T03:50:59.528Z",
+    "modified": "2018-07-02T16:21:34.556Z",
     "game": 69,
     "user": 14,
-    "score_home": "0",
-    "score_away": "0"
+    "score_home": "1",
+    "score_away": "3"
   }
 },
 {
@@ -9892,11 +9892,11 @@
   "pk": 854,
   "fields": {
     "created": "2018-05-13T03:50:59.594Z",
-    "modified": "2018-05-13T03:50:59.595Z",
+    "modified": "2018-07-06T13:12:18.242Z",
     "game": 70,
     "user": 14,
-    "score_home": "0",
-    "score_away": "0"
+    "score_home": "1",
+    "score_away": "2"
   }
 },
 {
@@ -9904,11 +9904,11 @@
   "pk": 855,
   "fields": {
     "created": "2018-05-13T03:50:59.658Z",
-    "modified": "2018-05-13T03:50:59.658Z",
+    "modified": "2018-07-06T14:22:04.586Z",
     "game": 71,
     "user": 14,
-    "score_home": "0",
-    "score_away": "0"
+    "score_home": "2",
+    "score_away": "3"
   }
 },
 {
@@ -9916,11 +9916,11 @@
   "pk": 856,
   "fields": {
     "created": "2018-05-13T03:50:59.732Z",
-    "modified": "2018-05-13T03:50:59.732Z",
+    "modified": "2018-07-06T14:22:04.612Z",
     "game": 72,
     "user": 14,
     "score_home": "0",
-    "score_away": "0"
+    "score_away": "2"
   }
 },
 {
@@ -9928,11 +9928,11 @@
   "pk": 857,
   "fields": {
     "created": "2018-05-13T03:50:59.798Z",
-    "modified": "2018-05-13T03:50:59.798Z",
+    "modified": "2018-07-06T14:22:04.634Z",
     "game": 73,
     "user": 14,
-    "score_home": "0",
-    "score_away": "0"
+    "score_home": "1",
+    "score_away": "2"
   }
 },
 {
@@ -9952,11 +9952,11 @@
   "pk": 859,
   "fields": {
     "created": "2018-05-13T03:50:59.910Z",
-    "modified": "2018-05-13T03:50:59.910Z",
+    "modified": "2018-07-10T18:26:12.563Z",
     "game": 75,
     "user": 14,
-    "score_home": "0",
-    "score_away": "0"
+    "score_home": "2",
+    "score_away": "1"
   }
 },
 {
@@ -18988,10 +18988,10 @@
   "pk": 1612,
   "fields": {
     "created": "2018-06-15T13:58:02.898Z",
-    "modified": "2018-06-19T13:53:54.153Z",
+    "modified": "2018-06-28T17:35:27.603Z",
     "game": 58,
     "user": 7,
-    "score_home": "1",
+    "score_home": "2",
     "score_away": "1"
   }
 },
@@ -19000,7 +19000,7 @@
   "pk": 1613,
   "fields": {
     "created": "2018-06-15T13:58:02.964Z",
-    "modified": "2018-06-19T13:53:54.172Z",
+    "modified": "2018-06-28T17:35:27.631Z",
     "game": 59,
     "user": 7,
     "score_home": "1",
@@ -19012,10 +19012,10 @@
   "pk": 1614,
   "fields": {
     "created": "2018-06-15T13:58:03.244Z",
-    "modified": "2018-06-15T13:58:03.244Z",
+    "modified": "2018-06-29T00:22:47.985Z",
     "game": 62,
     "user": 7,
-    "score_home": "0",
+    "score_home": "1",
     "score_away": "0"
   }
 },
@@ -19024,11 +19024,11 @@
   "pk": 1615,
   "fields": {
     "created": "2018-06-15T13:58:03.575Z",
-    "modified": "2018-06-15T13:58:03.575Z",
+    "modified": "2018-06-29T00:22:48.014Z",
     "game": 63,
     "user": 7,
-    "score_home": "0",
-    "score_away": "0"
+    "score_home": "2",
+    "score_away": "1"
   }
 },
 {
@@ -19036,10 +19036,10 @@
   "pk": 1616,
   "fields": {
     "created": "2018-06-15T13:58:03.625Z",
-    "modified": "2018-06-15T13:58:03.626Z",
+    "modified": "2018-06-29T00:22:48.037Z",
     "game": 64,
     "user": 7,
-    "score_home": "0",
+    "score_home": "2",
     "score_away": "0"
   }
 },
@@ -19048,11 +19048,11 @@
   "pk": 1617,
   "fields": {
     "created": "2018-06-15T13:58:03.678Z",
-    "modified": "2018-06-15T13:58:03.678Z",
+    "modified": "2018-06-29T00:22:48.058Z",
     "game": 65,
     "user": 7,
-    "score_home": "0",
-    "score_away": "0"
+    "score_home": "3",
+    "score_away": "1"
   }
 },
 {
@@ -19060,11 +19060,11 @@
   "pk": 1618,
   "fields": {
     "created": "2018-06-15T13:58:03.739Z",
-    "modified": "2018-06-15T13:58:03.740Z",
+    "modified": "2018-06-29T00:22:48.078Z",
     "game": 66,
     "user": 7,
-    "score_home": "0",
-    "score_away": "0"
+    "score_home": "2",
+    "score_away": "1"
   }
 },
 {
@@ -19072,10 +19072,10 @@
   "pk": 1619,
   "fields": {
     "created": "2018-06-15T13:58:03.788Z",
-    "modified": "2018-06-15T13:58:03.789Z",
+    "modified": "2018-06-29T00:22:48.113Z",
     "game": 67,
     "user": 7,
-    "score_home": "0",
+    "score_home": "2",
     "score_away": "0"
   }
 },
@@ -19084,11 +19084,11 @@
   "pk": 1620,
   "fields": {
     "created": "2018-06-15T13:58:03.844Z",
-    "modified": "2018-06-15T13:58:03.844Z",
+    "modified": "2018-06-29T00:22:48.137Z",
     "game": 68,
     "user": 7,
-    "score_home": "0",
-    "score_away": "0"
+    "score_home": "2",
+    "score_away": "1"
   }
 },
 {
@@ -19096,11 +19096,11 @@
   "pk": 1621,
   "fields": {
     "created": "2018-06-15T13:58:03.899Z",
-    "modified": "2018-06-15T13:58:03.899Z",
+    "modified": "2018-06-29T00:22:48.160Z",
     "game": 69,
     "user": 7,
-    "score_home": "0",
-    "score_away": "0"
+    "score_home": "2",
+    "score_away": "3"
   }
 },
 {
@@ -19108,11 +19108,11 @@
   "pk": 1622,
   "fields": {
     "created": "2018-06-15T13:58:03.959Z",
-    "modified": "2018-06-15T13:58:03.960Z",
+    "modified": "2018-07-04T14:57:35.131Z",
     "game": 70,
     "user": 7,
-    "score_home": "0",
-    "score_away": "0"
+    "score_home": "2",
+    "score_away": "1"
   }
 },
 {
@@ -19120,11 +19120,11 @@
   "pk": 1623,
   "fields": {
     "created": "2018-06-15T13:58:04.023Z",
-    "modified": "2018-06-15T13:58:04.023Z",
+    "modified": "2018-07-04T14:57:35.157Z",
     "game": 71,
     "user": 7,
-    "score_home": "0",
-    "score_away": "0"
+    "score_home": "1",
+    "score_away": "2"
   }
 },
 {
@@ -19132,11 +19132,11 @@
   "pk": 1624,
   "fields": {
     "created": "2018-06-15T13:58:04.076Z",
-    "modified": "2018-06-15T13:58:04.076Z",
+    "modified": "2018-07-04T14:57:35.179Z",
     "game": 72,
     "user": 7,
-    "score_home": "0",
-    "score_away": "0"
+    "score_home": "1",
+    "score_away": "2"
   }
 },
 {
@@ -19144,11 +19144,11 @@
   "pk": 1625,
   "fields": {
     "created": "2018-06-15T13:58:04.130Z",
-    "modified": "2018-06-15T13:58:04.130Z",
+    "modified": "2018-07-04T14:57:35.201Z",
     "game": 73,
     "user": 7,
-    "score_home": "0",
-    "score_away": "0"
+    "score_home": "1",
+    "score_away": "2"
   }
 },
 {
@@ -19156,11 +19156,11 @@
   "pk": 1626,
   "fields": {
     "created": "2018-06-15T13:58:04.315Z",
-    "modified": "2018-06-15T13:58:04.315Z",
+    "modified": "2018-07-08T01:13:25.380Z",
     "game": 74,
     "user": 7,
-    "score_home": "0",
-    "score_away": "0"
+    "score_home": "1",
+    "score_away": "2"
   }
 },
 {
@@ -19168,11 +19168,11 @@
   "pk": 1627,
   "fields": {
     "created": "2018-06-15T13:58:04.390Z",
-    "modified": "2018-06-15T13:58:04.390Z",
+    "modified": "2018-07-08T01:13:25.401Z",
     "game": 75,
     "user": 7,
-    "score_home": "0",
-    "score_away": "0"
+    "score_home": "2",
+    "score_away": "1"
   }
 },
 {
@@ -19180,10 +19180,10 @@
   "pk": 1628,
   "fields": {
     "created": "2018-06-15T13:58:04.463Z",
-    "modified": "2018-06-15T13:58:04.464Z",
+    "modified": "2018-07-12T00:58:24.128Z",
     "game": 76,
     "user": 7,
-    "score_home": "0",
+    "score_home": "1",
     "score_away": "0"
   }
 },
@@ -19780,11 +19780,11 @@
   "pk": 1678,
   "fields": {
     "created": "2018-06-16T19:06:13.554Z",
-    "modified": "2018-06-16T19:06:13.554Z",
+    "modified": "2018-06-29T21:37:07.396Z",
     "game": 62,
     "user": 23,
-    "score_home": "0",
-    "score_away": "0"
+    "score_home": "1",
+    "score_away": "2"
   }
 },
 {
@@ -19792,11 +19792,11 @@
   "pk": 1679,
   "fields": {
     "created": "2018-06-16T19:06:13.601Z",
-    "modified": "2018-06-16T19:06:13.602Z",
+    "modified": "2018-06-29T21:37:07.431Z",
     "game": 63,
     "user": 23,
-    "score_home": "0",
-    "score_away": "0"
+    "score_home": "2",
+    "score_away": "1"
   }
 },
 {
@@ -19804,10 +19804,10 @@
   "pk": 1680,
   "fields": {
     "created": "2018-06-16T19:06:13.660Z",
-    "modified": "2018-06-16T19:06:13.661Z",
+    "modified": "2018-06-29T21:37:07.451Z",
     "game": 64,
     "user": 23,
-    "score_home": "0",
+    "score_home": "2",
     "score_away": "0"
   }
 },
@@ -19816,10 +19816,10 @@
   "pk": 1681,
   "fields": {
     "created": "2018-06-16T19:06:13.712Z",
-    "modified": "2018-06-16T19:06:13.713Z",
+    "modified": "2018-06-29T21:37:07.473Z",
     "game": 65,
     "user": 23,
-    "score_home": "0",
+    "score_home": "2",
     "score_away": "0"
   }
 },
@@ -19828,10 +19828,10 @@
   "pk": 1682,
   "fields": {
     "created": "2018-06-16T19:06:13.767Z",
-    "modified": "2018-06-16T19:06:13.767Z",
+    "modified": "2018-06-29T21:37:07.495Z",
     "game": 66,
     "user": 23,
-    "score_home": "0",
+    "score_home": "2",
     "score_away": "0"
   }
 },
@@ -19840,11 +19840,11 @@
   "pk": 1683,
   "fields": {
     "created": "2018-06-16T19:06:13.841Z",
-    "modified": "2018-06-16T19:06:13.841Z",
+    "modified": "2018-06-29T21:37:07.516Z",
     "game": 67,
     "user": 23,
-    "score_home": "0",
-    "score_away": "0"
+    "score_home": "3",
+    "score_away": "1"
   }
 },
 {
@@ -19852,11 +19852,11 @@
   "pk": 1684,
   "fields": {
     "created": "2018-06-16T19:06:13.893Z",
-    "modified": "2018-06-16T19:06:13.894Z",
+    "modified": "2018-06-29T21:37:07.537Z",
     "game": 68,
     "user": 23,
-    "score_home": "0",
-    "score_away": "0"
+    "score_home": "1",
+    "score_away": "2"
   }
 },
 {
@@ -19864,10 +19864,10 @@
   "pk": 1685,
   "fields": {
     "created": "2018-06-16T19:06:13.943Z",
-    "modified": "2018-06-16T19:06:13.943Z",
+    "modified": "2018-06-29T21:37:07.557Z",
     "game": 69,
     "user": 23,
-    "score_home": "0",
+    "score_home": "1",
     "score_away": "0"
   }
 },
@@ -20548,10 +20548,10 @@
   "pk": 1742,
   "fields": {
     "created": "2018-06-16T20:47:05.951Z",
-    "modified": "2018-06-16T20:47:05.951Z",
+    "modified": "2018-06-29T16:22:43.350Z",
     "game": 62,
     "user": 24,
-    "score_home": "0",
+    "score_home": "1",
     "score_away": "0"
   }
 },
@@ -20560,11 +20560,11 @@
   "pk": 1743,
   "fields": {
     "created": "2018-06-16T20:47:05.999Z",
-    "modified": "2018-06-16T20:47:06.000Z",
+    "modified": "2018-06-29T16:22:43.384Z",
     "game": 63,
     "user": 24,
-    "score_home": "0",
-    "score_away": "0"
+    "score_home": "2",
+    "score_away": "1"
   }
 },
 {
@@ -20572,10 +20572,10 @@
   "pk": 1744,
   "fields": {
     "created": "2018-06-16T20:47:06.050Z",
-    "modified": "2018-06-16T20:47:06.051Z",
+    "modified": "2018-06-29T16:22:43.419Z",
     "game": 64,
     "user": 24,
-    "score_home": "0",
+    "score_home": "2",
     "score_away": "0"
   }
 },
@@ -20584,10 +20584,10 @@
   "pk": 1745,
   "fields": {
     "created": "2018-06-16T20:47:06.105Z",
-    "modified": "2018-06-16T20:47:06.106Z",
+    "modified": "2018-06-29T16:22:43.461Z",
     "game": 65,
     "user": 24,
-    "score_home": "0",
+    "score_home": "2",
     "score_away": "0"
   }
 },
@@ -20596,10 +20596,10 @@
   "pk": 1746,
   "fields": {
     "created": "2018-06-16T20:47:06.151Z",
-    "modified": "2018-06-16T20:47:06.151Z",
+    "modified": "2018-06-29T16:22:43.498Z",
     "game": 66,
     "user": 24,
-    "score_home": "0",
+    "score_home": "1",
     "score_away": "0"
   }
 },
@@ -20608,10 +20608,10 @@
   "pk": 1747,
   "fields": {
     "created": "2018-06-16T20:47:06.194Z",
-    "modified": "2018-06-16T20:47:06.195Z",
+    "modified": "2018-06-29T16:22:43.535Z",
     "game": 67,
     "user": 24,
-    "score_home": "0",
+    "score_home": "2",
     "score_away": "0"
   }
 },
@@ -20620,11 +20620,11 @@
   "pk": 1748,
   "fields": {
     "created": "2018-06-16T20:47:06.236Z",
-    "modified": "2018-06-16T20:47:06.236Z",
+    "modified": "2018-06-29T16:22:43.577Z",
     "game": 68,
     "user": 24,
-    "score_home": "0",
-    "score_away": "0"
+    "score_home": "2",
+    "score_away": "1"
   }
 },
 {
@@ -20632,11 +20632,11 @@
   "pk": 1749,
   "fields": {
     "created": "2018-06-16T20:47:06.329Z",
-    "modified": "2018-06-16T20:47:06.329Z",
+    "modified": "2018-06-29T16:22:43.625Z",
     "game": 69,
     "user": 24,
     "score_home": "0",
-    "score_away": "0"
+    "score_away": "2"
   }
 },
 {
@@ -20704,10 +20704,10 @@
   "pk": 1755,
   "fields": {
     "created": "2018-06-16T20:47:06.676Z",
-    "modified": "2018-06-16T20:47:06.676Z",
+    "modified": "2018-07-10T20:13:45.630Z",
     "game": 75,
     "user": 24,
-    "score_home": "0",
+    "score_home": "1",
     "score_away": "0"
   }
 },
@@ -21499,6 +21499,762 @@
     "modified": "2018-06-17T03:44:04.306Z",
     "game": 77,
     "user": 2,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1822,
+  "fields": {
+    "created": "2018-07-21T01:34:27.265Z",
+    "modified": "2018-07-21T01:34:27.265Z",
+    "game": 3,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1823,
+  "fields": {
+    "created": "2018-07-21T01:34:27.335Z",
+    "modified": "2018-07-21T01:34:27.336Z",
+    "game": 6,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1824,
+  "fields": {
+    "created": "2018-07-21T01:34:27.387Z",
+    "modified": "2018-07-21T01:34:27.387Z",
+    "game": 7,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1825,
+  "fields": {
+    "created": "2018-07-21T01:34:27.443Z",
+    "modified": "2018-07-21T01:34:27.444Z",
+    "game": 8,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1826,
+  "fields": {
+    "created": "2018-07-21T01:34:27.502Z",
+    "modified": "2018-07-21T01:34:27.502Z",
+    "game": 9,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1827,
+  "fields": {
+    "created": "2018-07-21T01:34:27.558Z",
+    "modified": "2018-07-21T01:34:27.559Z",
+    "game": 10,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1828,
+  "fields": {
+    "created": "2018-07-21T01:34:27.604Z",
+    "modified": "2018-07-21T01:34:27.604Z",
+    "game": 11,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1829,
+  "fields": {
+    "created": "2018-07-21T01:34:27.650Z",
+    "modified": "2018-07-21T01:34:27.650Z",
+    "game": 20,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1830,
+  "fields": {
+    "created": "2018-07-21T01:34:27.700Z",
+    "modified": "2018-07-21T01:34:27.701Z",
+    "game": 12,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1831,
+  "fields": {
+    "created": "2018-07-21T01:34:27.756Z",
+    "modified": "2018-07-21T01:34:27.757Z",
+    "game": 13,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1832,
+  "fields": {
+    "created": "2018-07-21T01:34:27.821Z",
+    "modified": "2018-07-21T01:34:27.822Z",
+    "game": 14,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1833,
+  "fields": {
+    "created": "2018-07-21T01:34:27.865Z",
+    "modified": "2018-07-21T01:34:27.865Z",
+    "game": 15,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1834,
+  "fields": {
+    "created": "2018-07-21T01:34:27.908Z",
+    "modified": "2018-07-21T01:34:27.909Z",
+    "game": 16,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1835,
+  "fields": {
+    "created": "2018-07-21T01:34:27.954Z",
+    "modified": "2018-07-21T01:34:27.954Z",
+    "game": 17,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1836,
+  "fields": {
+    "created": "2018-07-21T01:34:28.005Z",
+    "modified": "2018-07-21T01:34:28.005Z",
+    "game": 18,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1837,
+  "fields": {
+    "created": "2018-07-21T01:34:28.067Z",
+    "modified": "2018-07-21T01:34:28.068Z",
+    "game": 19,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1838,
+  "fields": {
+    "created": "2018-07-21T01:34:28.116Z",
+    "modified": "2018-07-21T01:34:28.117Z",
+    "game": 27,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1839,
+  "fields": {
+    "created": "2018-07-21T01:34:28.171Z",
+    "modified": "2018-07-21T01:34:28.171Z",
+    "game": 28,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1840,
+  "fields": {
+    "created": "2018-07-21T01:34:28.226Z",
+    "modified": "2018-07-21T01:34:28.226Z",
+    "game": 29,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1841,
+  "fields": {
+    "created": "2018-07-21T01:34:28.283Z",
+    "modified": "2018-07-21T01:34:28.284Z",
+    "game": 30,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1842,
+  "fields": {
+    "created": "2018-07-21T01:34:28.333Z",
+    "modified": "2018-07-21T01:34:28.334Z",
+    "game": 31,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1843,
+  "fields": {
+    "created": "2018-07-21T01:34:28.381Z",
+    "modified": "2018-07-21T01:34:28.383Z",
+    "game": 32,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1844,
+  "fields": {
+    "created": "2018-07-21T01:34:28.438Z",
+    "modified": "2018-07-21T01:34:28.438Z",
+    "game": 33,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1845,
+  "fields": {
+    "created": "2018-07-21T01:34:28.490Z",
+    "modified": "2018-07-21T01:34:28.491Z",
+    "game": 34,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1846,
+  "fields": {
+    "created": "2018-07-21T01:34:28.543Z",
+    "modified": "2018-07-21T01:34:28.544Z",
+    "game": 35,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1847,
+  "fields": {
+    "created": "2018-07-21T01:34:28.602Z",
+    "modified": "2018-07-21T01:34:28.602Z",
+    "game": 36,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1848,
+  "fields": {
+    "created": "2018-07-21T01:34:28.651Z",
+    "modified": "2018-07-21T01:34:28.651Z",
+    "game": 37,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1849,
+  "fields": {
+    "created": "2018-07-21T01:34:28.703Z",
+    "modified": "2018-07-21T01:34:28.704Z",
+    "game": 38,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1850,
+  "fields": {
+    "created": "2018-07-21T01:34:28.753Z",
+    "modified": "2018-07-21T01:34:28.754Z",
+    "game": 39,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1851,
+  "fields": {
+    "created": "2018-07-21T01:34:28.818Z",
+    "modified": "2018-07-21T01:34:28.818Z",
+    "game": 40,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1852,
+  "fields": {
+    "created": "2018-07-21T01:34:28.876Z",
+    "modified": "2018-07-21T01:34:28.877Z",
+    "game": 41,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1853,
+  "fields": {
+    "created": "2018-07-21T01:34:28.934Z",
+    "modified": "2018-07-21T01:34:28.934Z",
+    "game": 42,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1854,
+  "fields": {
+    "created": "2018-07-21T01:34:28.990Z",
+    "modified": "2018-07-21T01:34:28.991Z",
+    "game": 43,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1855,
+  "fields": {
+    "created": "2018-07-21T01:34:29.043Z",
+    "modified": "2018-07-21T01:34:29.047Z",
+    "game": 44,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1856,
+  "fields": {
+    "created": "2018-07-21T01:34:29.112Z",
+    "modified": "2018-07-21T01:34:29.113Z",
+    "game": 45,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1857,
+  "fields": {
+    "created": "2018-07-21T01:34:29.173Z",
+    "modified": "2018-07-21T01:34:29.173Z",
+    "game": 46,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1858,
+  "fields": {
+    "created": "2018-07-21T01:34:29.254Z",
+    "modified": "2018-07-21T01:34:29.255Z",
+    "game": 47,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1859,
+  "fields": {
+    "created": "2018-07-21T01:34:29.313Z",
+    "modified": "2018-07-21T01:34:29.313Z",
+    "game": 48,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1860,
+  "fields": {
+    "created": "2018-07-21T01:34:29.385Z",
+    "modified": "2018-07-21T01:34:29.386Z",
+    "game": 49,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1861,
+  "fields": {
+    "created": "2018-07-21T01:34:29.500Z",
+    "modified": "2018-07-21T01:34:29.500Z",
+    "game": 50,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1862,
+  "fields": {
+    "created": "2018-07-21T01:34:29.653Z",
+    "modified": "2018-07-21T01:34:29.654Z",
+    "game": 51,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1863,
+  "fields": {
+    "created": "2018-07-21T01:34:29.724Z",
+    "modified": "2018-07-21T01:34:29.725Z",
+    "game": 52,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1864,
+  "fields": {
+    "created": "2018-07-21T01:34:29.778Z",
+    "modified": "2018-07-21T01:34:29.778Z",
+    "game": 53,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1865,
+  "fields": {
+    "created": "2018-07-21T01:34:29.847Z",
+    "modified": "2018-07-21T01:34:29.847Z",
+    "game": 54,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1866,
+  "fields": {
+    "created": "2018-07-21T01:34:29.908Z",
+    "modified": "2018-07-21T01:34:29.908Z",
+    "game": 55,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1867,
+  "fields": {
+    "created": "2018-07-21T01:34:29.988Z",
+    "modified": "2018-07-21T01:34:29.989Z",
+    "game": 56,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1868,
+  "fields": {
+    "created": "2018-07-21T01:34:30.051Z",
+    "modified": "2018-07-21T01:34:30.051Z",
+    "game": 58,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1869,
+  "fields": {
+    "created": "2018-07-21T01:34:30.133Z",
+    "modified": "2018-07-21T01:34:30.133Z",
+    "game": 59,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1870,
+  "fields": {
+    "created": "2018-07-21T01:34:30.281Z",
+    "modified": "2018-07-21T01:34:30.281Z",
+    "game": 62,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1871,
+  "fields": {
+    "created": "2018-07-21T01:34:30.339Z",
+    "modified": "2018-07-21T01:34:30.339Z",
+    "game": 63,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1872,
+  "fields": {
+    "created": "2018-07-21T01:34:30.394Z",
+    "modified": "2018-07-21T01:34:30.394Z",
+    "game": 64,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1873,
+  "fields": {
+    "created": "2018-07-21T01:34:30.461Z",
+    "modified": "2018-07-21T01:34:30.461Z",
+    "game": 65,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1874,
+  "fields": {
+    "created": "2018-07-21T01:34:30.519Z",
+    "modified": "2018-07-21T01:34:30.520Z",
+    "game": 66,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1875,
+  "fields": {
+    "created": "2018-07-21T01:34:30.573Z",
+    "modified": "2018-07-21T01:34:30.573Z",
+    "game": 67,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1876,
+  "fields": {
+    "created": "2018-07-21T01:34:30.636Z",
+    "modified": "2018-07-21T01:34:30.637Z",
+    "game": 68,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1877,
+  "fields": {
+    "created": "2018-07-21T01:34:30.693Z",
+    "modified": "2018-07-21T01:34:30.693Z",
+    "game": 69,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1878,
+  "fields": {
+    "created": "2018-07-21T01:34:30.753Z",
+    "modified": "2018-07-21T01:34:30.754Z",
+    "game": 70,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1879,
+  "fields": {
+    "created": "2018-07-21T01:34:30.851Z",
+    "modified": "2018-07-21T01:34:30.852Z",
+    "game": 71,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1880,
+  "fields": {
+    "created": "2018-07-21T01:34:30.937Z",
+    "modified": "2018-07-21T01:34:30.938Z",
+    "game": 72,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1881,
+  "fields": {
+    "created": "2018-07-21T01:34:31.034Z",
+    "modified": "2018-07-21T01:34:31.034Z",
+    "game": 73,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1882,
+  "fields": {
+    "created": "2018-07-21T01:34:31.119Z",
+    "modified": "2018-07-21T01:34:31.120Z",
+    "game": 74,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1883,
+  "fields": {
+    "created": "2018-07-21T01:34:31.191Z",
+    "modified": "2018-07-21T01:34:31.191Z",
+    "game": 75,
+    "user": 23,
+    "score_home": "0",
+    "score_away": "0"
+  }
+},
+{
+  "model": "quiniela.gameresult",
+  "pk": 1884,
+  "fields": {
+    "created": "2018-07-21T01:34:31.280Z",
+    "modified": "2018-07-21T01:34:31.280Z",
+    "game": 76,
+    "user": 23,
     "score_home": "0",
     "score_away": "0"
   }

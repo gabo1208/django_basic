@@ -197,9 +197,9 @@
   "fields": {
     "team": 21,
     "group": 5,
-    "score": 4,
+    "score": 7,
     "games_checked": 1,
-    "goals_difference": 2,
+    "goals_difference": 4,
     "extra": 0
   }
 },
@@ -209,7 +209,7 @@
   "fields": {
     "team": 17,
     "group": 5,
-    "score": 0,
+    "score": 1,
     "games_checked": 1,
     "goals_difference": -3,
     "extra": 0
@@ -221,7 +221,7 @@
   "fields": {
     "team": 22,
     "group": 5,
-    "score": 4,
+    "score": 5,
     "games_checked": 1,
     "goals_difference": 1,
     "extra": 0
@@ -235,7 +235,7 @@
     "group": 5,
     "score": 3,
     "games_checked": 1,
-    "goals_difference": 0,
+    "goals_difference": -2,
     "extra": 0
   }
 },
@@ -293,9 +293,9 @@
   "fields": {
     "team": 25,
     "group": 7,
-    "score": 6,
+    "score": 9,
     "games_checked": 1,
-    "goals_difference": 6,
+    "goals_difference": 7,
     "extra": 0
   }
 },
@@ -307,7 +307,7 @@
     "group": 7,
     "score": 6,
     "games_checked": 1,
-    "goals_difference": 6,
+    "goals_difference": 5,
     "extra": 0
   }
 },
@@ -319,7 +319,7 @@
     "group": 7,
     "score": 0,
     "games_checked": 1,
-    "goals_difference": -8,
+    "goals_difference": -9,
     "extra": 0
   }
 },
@@ -329,9 +329,9 @@
   "fields": {
     "team": 27,
     "group": 7,
-    "score": 0,
+    "score": 3,
     "games_checked": 1,
-    "goals_difference": -4,
+    "goals_difference": -3,
     "extra": 0
   }
 },
@@ -341,9 +341,9 @@
   "fields": {
     "team": 29,
     "group": 8,
-    "score": 3,
+    "score": 6,
     "games_checked": 0,
-    "goals_difference": 2,
+    "goals_difference": 3,
     "extra": 0
   }
 },
@@ -355,7 +355,7 @@
     "group": 8,
     "score": 4,
     "games_checked": 0,
-    "goals_difference": 1,
+    "goals_difference": 0,
     "extra": 0
   }
 },
@@ -365,9 +365,9 @@
   "fields": {
     "team": 31,
     "group": 8,
-    "score": 0,
+    "score": 3,
     "games_checked": 0,
-    "goals_difference": -4,
+    "goals_difference": -3,
     "extra": 0
   }
 },
@@ -379,7 +379,7 @@
     "group": 8,
     "score": 4,
     "games_checked": 0,
-    "goals_difference": 1,
+    "goals_difference": 0,
     "extra": 0
   }
 }
